@@ -13,7 +13,7 @@
 <meta property="og:title" content="Каталог мебели — China Store">
 <meta property="og:description" content="Мебель из Китая напрямую с фабрик — гостиная, спальня, кухня, кабинет, свет и декор, терраса.">
 <meta name="theme-color" content="#FAF6EF">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B2502C'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23FAF6EF' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23B2502C'/%3E%3Cpath d='M72,32 A25,25 0 1 0 72,68' fill='none' stroke='%23FAF6EF' stroke-width='9' stroke-linecap='round'/%3E%3Cpath d='M75,36 C64,30 53,35 53,45 C53,55 78,52 78,62 C78,72 65,77 55,71' fill='none' stroke='%23FAF6EF' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -41,8 +41,9 @@ button{font-family:inherit;cursor:pointer}
 /* ─── NAV ────────────────────────────────────────────────────────────────── */
 nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blur(16px);background:rgba(250,246,239,.82);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;height:100%}
-.logo{font-family:var(--serif);font-size:24px;letter-spacing:.01em}
+.logo{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif);font-size:24px;letter-spacing:.01em}
 .logo span{color:var(--accent);font-style:italic}
+.logo-mark{width:28px;height:28px;flex-shrink:0}
 .nav-links{display:flex;gap:36px;align-items:center}
 .nav-links a{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;transition:color .3s}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
@@ -185,11 +186,12 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
 <symbol id="icon-shelf" viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="1"/><line x1="8" y1="18" x2="40" y2="18"/><line x1="8" y1="30" x2="40" y2="30"/></symbol>
 <symbol id="icon-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><path d="M13 7 L18 12 L13 17"/></symbol>
 <symbol id="icon-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="icon-mark" viewBox="0 0 100 100"><path d="M 72,30 A 27,27 0 1 0 72,70" fill="none" stroke="#B2502C" stroke-width="9" stroke-linecap="round"/><path d="M 76,34 C 64,27 52,33 52,44 C 52,55 80,51 80,63 C 80,74 66,80 55,73" fill="none" stroke="#8B4A28" stroke-width="9" stroke-linecap="round"/></symbol>
 </svg>
 
 <nav>
   <div class="container nav-inner">
-    <a href="index.html" class="logo">China <span>Store</span></a>
+    <a href="index.html" class="logo"><svg class="logo-mark"><use href="#icon-mark"/></svg>China <span>Store</span></a>
     <div class="nav-links">
       <a href="catalog.html" class="active">Каталог</a>
       <a href="index.html#process">Как это работает</a>
@@ -328,7 +330,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo">China <span>Store</span></a>
+        <a href="index.html" class="logo"><svg class="logo-mark"><use href="#icon-mark"/></svg>China <span>Store</span></a>
         <p>Мебель напрямую с фабрик Китая. Дизайн, материалы и сервис на уровне европейских шоурумов.</p>
       </div>
       <div class="footer-col">

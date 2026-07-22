@@ -13,7 +13,7 @@
 <meta property="og:title" content="China Store — мебель из Китая напрямую с фабрик">
 <meta property="og:description" content="Дизайнерская мебель напрямую с проверенных фабрик Китая — без наценки посредников. Подбор, контроль качества и доставка «под ключ».">
 <meta name="theme-color" content="#FAF6EF">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B2502C'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23FAF6EF' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23B2502C'/%3E%3Cpath d='M72,32 A25,25 0 1 0 72,68' fill='none' stroke='%23FAF6EF' stroke-width='9' stroke-linecap='round'/%3E%3Cpath d='M75,36 C64,30 53,35 53,45 C53,55 78,52 78,62 C78,72 65,77 55,71' fill='none' stroke='%23FAF6EF' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -51,8 +51,9 @@ button{font-family:inherit;cursor:pointer}
 /* ─── NAV ────────────────────────────────────────────────────────────────── */
 nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blur(16px);background:rgba(250,246,239,.82);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;height:100%}
-.logo{font-family:var(--serif);font-size:24px;letter-spacing:.01em}
+.logo{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif);font-size:24px;letter-spacing:.01em}
 .logo span{color:var(--accent);font-style:italic}
+.logo-mark{width:28px;height:28px;flex-shrink:0}
 .nav-links{display:flex;gap:36px;align-items:center}
 .nav-links a{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;transition:color .3s}
 .nav-links a:hover{color:var(--ink)}
@@ -274,11 +275,12 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
 <symbol id="icon-chat" viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="24" rx="8"/><path d="M14 33 L14 41 L22 33 Z"/></symbol>
 <symbol id="icon-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><path d="M13 7 L18 12 L13 17"/></symbol>
 <symbol id="icon-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="icon-mark" viewBox="0 0 100 100"><path d="M 72,30 A 27,27 0 1 0 72,70" fill="none" stroke="#B2502C" stroke-width="9" stroke-linecap="round"/><path d="M 76,34 C 64,27 52,33 52,44 C 52,55 80,51 80,63 C 80,74 66,80 55,73" fill="none" stroke="#8B4A28" stroke-width="9" stroke-linecap="round"/></symbol>
 </svg>
 
 <nav>
   <div class="container nav-inner">
-    <a href="index.html" class="logo">China <span>Store</span></a>
+    <a href="index.html" class="logo"><svg class="logo-mark"><use href="#icon-mark"/></svg>China <span>Store</span></a>
     <div class="nav-links">
       <a href="catalog.html">Каталог</a>
       <a href="#process">Как это работает</a>
@@ -627,7 +629,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo">China <span>Store</span></a>
+        <a href="index.html" class="logo"><svg class="logo-mark"><use href="#icon-mark"/></svg>China <span>Store</span></a>
         <p>Мебель напрямую с фабрик Китая. Дизайн, материалы и сервис на уровне европейских шоурумов.</p>
       </div>
       <div class="footer-col">
