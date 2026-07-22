@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Каталог мебели — China Store</title>
+<meta name="description" content="Каталог мебели из Китая напрямую с фабрик: гостиная, спальня, кухня, кабинет, свет и декор, уличная мебель. Без наценки посредников.">
+<link rel="canonical" href="https://www.chinastore.ru/catalog.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://www.chinastore.ru/catalog.html">
+<meta property="og:site_name" content="China Store">
+<meta property="og:title" content="Каталог мебели — China Store">
+<meta property="og:description" content="Мебель из Китая напрямую с фабрик — гостиная, спальня, кухня, кабинет, свет и декор, терраса.">
+<meta name="theme-color" content="#FAF6EF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B2502C'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23FAF6EF' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & TOKENS ─────────────────────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#FAF6EF;--bg2:#F1E8DB;--bg3:#E9DCC8;
+--ink:#2B241C;--muted:#7C6F5F;
+--line:rgba(43,36,28,.12);--line2:rgba(43,36,28,.22);
+--accent:#B2502C;--accent-ink:#FAF6EF;--signal:#63704A;
+--serif:'Instrument Serif',serif;--sans:'Manrope',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{width:min(1280px,92%);margin:auto}
+section{padding:120px 0}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:rgba(178,80,44,.18)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── NAV ────────────────────────────────────────────────────────────────── */
+nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blur(16px);background:rgba(250,246,239,.82);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:100%}
+.logo{font-family:var(--serif);font-size:24px;letter-spacing:.01em}
+.logo span{color:var(--accent);font-style:italic}
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-btn{background:var(--accent);color:var(--accent-ink);padding:13px 24px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-radius:2px;transition:.3s}
+.nav-btn:hover{background:var(--ink)}
+.menu{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.menu span{width:22px;height:1.5px;background:var(--ink)}
+.mobile-menu{position:fixed;inset:0;background:rgba(250,246,239,.98);z-index:1100;display:none;flex-direction:column;justify-content:center;align-items:center;gap:30px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:26px;color:var(--ink)}
+.mobile-close{position:absolute;top:26px;right:26px;background:none;border:none;color:var(--ink)}
+.mobile-close .icon{width:26px;height:26px}
+
+/* ─── PAGE HEAD ──────────────────────────────────────────────────────────── */
+.page-head{padding:164px 0 0}
+.page-head .section-kicker{display:block}
+.page-head h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);letter-spacing:-.01em;margin:14px 0 18px}
+.page-head p{font-size:15.5px;color:var(--muted);max-width:560px;line-height:1.75}
+
+/* ─── SECTION HEAD (shared) ──────────────────────────────────────────────── */
+.section-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;margin-bottom:14px;display:block}
+.section-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.01em;line-height:1.08}
+
+/* ─── FILTER BAR ─────────────────────────────────────────────────────────── */
+.catalog-section{padding-top:56px}
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px}
+.filter-btn{border:1px solid var(--line2);background:none;color:var(--ink);padding:11px 22px;font-size:12px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;border-radius:30px;transition:.25s}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent)}
+.filter-btn.active{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.filter-count{font-size:13px;color:var(--muted);margin-bottom:28px}
+
+/* ─── PRODUCT CARD ───────────────────────────────────────────────────────── */
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product-card{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg2);transition:.35s;display:flex;flex-direction:column}
+.product-card.hidden{display:none}
+.product-card:hover{border-color:var(--line2);box-shadow:0 24px 48px rgba(43,36,28,.10);transform:translateY(-3px)}
+.product-media{position:relative;aspect-ratio:1/1;overflow:hidden}
+.product-media img{width:100%;height:100%;object-fit:cover}
+.product-media .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
+.product-media .ph.show{display:flex}
+.product-media .ph .icon{width:34%;height:34%;stroke:rgba(43,36,28,.5)}
+.product-media.living-room{background:linear-gradient(135deg,#EAD0B3,#C1734A)}
+.product-media.bedroom{background:linear-gradient(135deg,#ECD8D0,#C08D7C)}
+.product-media.kitchen{background:linear-gradient(135deg,#E6DEC4,#A88A54)}
+.product-media.office{background:linear-gradient(135deg,#E6DFCC,#8E7A52)}
+.product-media.decor{background:linear-gradient(135deg,#E3DCC9,#8A6A4A)}
+.product-media.outdoor{background:linear-gradient(135deg,#DCE3D2,#6E8368)}
+.product-cat{position:absolute;top:12px;left:12px;background:rgba(250,246,239,.88);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:6px 10px;border-radius:2px;z-index:2}
+.product-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.product-body h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.2}
+.product-desc{font-size:12.5px;color:var(--muted);line-height:1.5}
+.product-foot{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.product-price{font-size:13px;font-weight:700;color:var(--ink)}
+.btn-order{background:none;border:1px solid var(--line2);color:var(--ink);padding:9px 14px;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border-radius:2px;transition:.25s;white-space:nowrap}
+.btn-order:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+.empty-state{display:none;text-align:center;padding:80px 20px;color:var(--muted)}
+.empty-state.show{display:block}
+
+/* ─── CTA STRIP ──────────────────────────────────────────────────────────── */
+.cta-strip{background:var(--ink);color:var(--bg);border-radius:8px;padding:56px 48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cta-strip h3{font-family:var(--serif);font-weight:400;font-size:30px;max-width:480px}
+.cta-strip p{color:rgba(250,246,239,.6);font-size:14px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:17px 30px;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;transition:.3s;border-radius:2px;border:1px solid transparent;white-space:nowrap}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--bg);color:var(--ink)}
+
+/* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;margin-top:0}
+.footer-grid{display:grid;grid-template-columns:1.3fr .9fr .9fr .9fr;gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(250,246,239,.14)}
+.footer-brand .logo{color:var(--bg)}
+.footer-brand .logo span{color:var(--accent)}
+.footer-brand p{font-size:13.5px;line-height:1.7;margin-top:16px;max-width:280px;color:rgba(250,246,239,.55)}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:18px}
+.footer-col a,.footer-col span{display:block;font-size:13.5px;color:rgba(250,246,239,.72);margin-bottom:12px;transition:.25s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:12px;color:rgba(250,246,239,.4);flex-wrap:wrap;gap:12px}
+
+/* ─── MODAL ──────────────────────────────────────────────────────────────── */
+.modal-overlay{position:fixed;inset:0;background:rgba(43,36,28,.55);z-index:2000;display:none;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.active{display:flex}
+.modal{background:var(--bg);border-radius:8px;padding:40px;width:min(440px,100%);position:relative}
+.modal-close{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted)}
+.modal-close .icon{width:20px;height:20px}
+.modal-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-size:10.5px;font-weight:700;margin-bottom:10px;display:block}
+.modal h3{font-family:var(--serif);font-weight:400;font-size:26px;margin-bottom:22px}
+.form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.form-row label{font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--muted)}
+.form-row input{background:var(--bg2);border:1px solid var(--line2);border-radius:3px;padding:14px 16px;font-family:inherit;font-size:14.5px;color:var(--ink)}
+.form-row input:focus{outline:none;border-color:var(--accent)}
+.form-actions{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.form-actions .btn{justify-content:center;width:100%;border:1px solid var(--line2);background:none;color:var(--ink)}
+.form-actions .btn.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.form-actions .btn:hover{border-color:var(--accent);color:var(--accent)}
+.form-actions .btn.btn-primary:hover{background:var(--ink);border-color:var(--ink);color:var(--accent-ink)}
+
+/* ─── REVEAL / MOTION ────────────────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{transition:none;opacity:1;transform:none}
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
+@media (max-width:960px){
+  .nav-links{display:none}
+  .menu{display:flex}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;row-gap:36px}
+  .cta-strip{padding:40px 28px}
+  section{padding:88px 0}
+  .page-head{padding-top:140px}
+}
+@media (max-width:640px){
+  .prod-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── SVG SPRITE ─────────────────────────────────────────────────────────── -->
+<svg style="display:none">
+<symbol id="icon-sofa" viewBox="0 0 48 48"><rect x="4" y="18" width="8" height="20" rx="3"/><rect x="36" y="18" width="8" height="20" rx="3"/><rect x="10" y="14" width="28" height="12" rx="4"/><rect x="6" y="24" width="36" height="14" rx="4"/><line x1="12" y1="38" x2="12" y2="42"/><line x1="36" y1="38" x2="36" y2="42"/></symbol>
+<symbol id="icon-armchair" viewBox="0 0 48 48"><rect x="6" y="20" width="7" height="16" rx="3"/><rect x="35" y="20" width="7" height="16" rx="3"/><rect x="12" y="12" width="24" height="16" rx="5"/><rect x="10" y="26" width="28" height="12" rx="4"/><line x1="14" y1="38" x2="14" y2="42"/><line x1="34" y1="38" x2="34" y2="42"/></symbol>
+<symbol id="icon-bed" viewBox="0 0 48 48"><rect x="6" y="10" width="6" height="28" rx="2"/><rect x="6" y="24" width="36" height="12" rx="3"/><rect x="10" y="17" width="12" height="9" rx="2"/><line x1="8" y1="38" x2="8" y2="42"/><line x1="40" y1="38" x2="40" y2="42"/></symbol>
+<symbol id="icon-table" viewBox="0 0 48 48"><rect x="6" y="16" width="36" height="6" rx="2"/><line x1="10" y1="22" x2="10" y2="40"/><line x1="38" y1="22" x2="38" y2="40"/><line x1="14" y1="22" x2="12" y2="40"/><line x1="34" y1="22" x2="36" y2="40"/></symbol>
+<symbol id="icon-wardrobe" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="2"/><line x1="24" y1="6" x2="24" y2="42"/><line x1="20" y1="22" x2="20" y2="26"/><line x1="28" y1="22" x2="28" y2="26"/></symbol>
+<symbol id="icon-chair" viewBox="0 0 48 48"><rect x="12" y="24" width="20" height="6" rx="2"/><rect x="12" y="8" width="20" height="16" rx="2"/><line x1="14" y1="30" x2="12" y2="42"/><line x1="30" y1="30" x2="32" y2="42"/></symbol>
+<symbol id="icon-lamp" viewBox="0 0 48 48"><path d="M16 12 L32 12 L36 24 L12 24 Z"/><line x1="24" y1="24" x2="24" y2="40"/><ellipse cx="24" cy="41" rx="9" ry="2.4"/></symbol>
+<symbol id="icon-mirror" viewBox="0 0 48 48"><ellipse cx="24" cy="19" rx="13" ry="17"/><line x1="24" y1="36" x2="24" y2="42"/><line x1="17" y1="42" x2="31" y2="42"/></symbol>
+<symbol id="icon-rug" viewBox="0 0 48 48"><rect x="6" y="11" width="36" height="26" rx="3"/><rect x="12" y="17" width="24" height="14" rx="2"/></symbol>
+<symbol id="icon-vase" viewBox="0 0 48 48"><path d="M19 7 L19 13 C19 13 12 20 12 28 C12 35 17 40 24 40 C31 40 36 35 36 28 C36 20 29 13 29 13 L29 7 Z"/><line x1="19" y1="7" x2="29" y2="7"/></symbol>
+<symbol id="icon-outdoor" viewBox="0 0 48 48"><path d="M6 17 L24 6 L42 17 Z"/><line x1="24" y1="17" x2="24" y2="38"/><ellipse cx="24" cy="40" rx="11" ry="2.6"/></symbol>
+<symbol id="icon-desk" viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="5" rx="2"/><rect x="10" y="19" width="10" height="15"/><line x1="36" y1="19" x2="36" y2="38"/><line x1="10" y1="34" x2="20" y2="34"/></symbol>
+<symbol id="icon-shelf" viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="1"/><line x1="8" y1="18" x2="40" y2="18"/><line x1="8" y1="30" x2="40" y2="30"/></symbol>
+<symbol id="icon-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><path d="M13 7 L18 12 L13 17"/></symbol>
+<symbol id="icon-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+</svg>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">China <span>Store</span></a>
+    <div class="nav-links">
+      <a href="catalog.html" class="active">Каталог</a>
+      <a href="index.html#process">Как это работает</a>
+      <a href="index.html#why">Почему мы</a>
+      <a href="index.html#contact">Контакты</a>
+      <a href="https://wa.me/79001234567" target="_blank" rel="noopener" class="nav-btn">Написать в WhatsApp</a>
+    </div>
+    <button class="menu" id="menuBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Закрыть меню"><svg class="icon"><use href="#icon-close"/></svg></button>
+  <a href="catalog.html">Каталог</a>
+  <a href="index.html#process">Как это работает</a>
+  <a href="index.html#why">Почему мы</a>
+  <a href="index.html#contact">Контакты</a>
+</div>
+
+<div class="page-head container">
+  <span class="section-kicker">Каталог</span>
+  <h1>Вся мебель China Store</h1>
+  <p>30 моделей из шести категорий — от диванов и кроватей до света, декора и мебели для террасы. Материалы, размеры и цвет обивки можно изменить под ваш интерьер.</p>
+</div>
+
+<section class="container catalog-section">
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-filter="all">Все</button>
+    <button class="filter-btn" data-filter="living-room">Гостиная</button>
+    <button class="filter-btn" data-filter="bedroom">Спальня</button>
+    <button class="filter-btn" data-filter="kitchen">Кухня и столовая</button>
+    <button class="filter-btn" data-filter="office">Кабинет</button>
+    <button class="filter-btn" data-filter="decor">Свет и декор</button>
+    <button class="filter-btn" data-filter="outdoor">Терраса и сад</button>
+  </div>
+  <p class="filter-count" id="filterCount"></p>
+
+  <div class="prod-grid" id="prodGrid">
+
+    <!-- ГОСТИНАЯ -->
+    <article class="product-card reveal" data-category="living-room" data-name="Диван Milano">
+      <div class="product-media living-room">
+        <img src="images/living-room/sofa-milano.jpg" alt="Диван Milano" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-sofa"/></svg></div>
+        <span class="product-cat">Гостиная</span>
+      </div>
+      <div class="product-body"><h3>Диван Milano</h3><p class="product-desc">3-местный, велюр</p>
+        <div class="product-foot"><span class="product-price">от 89 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="living-room" data-name="Диван-кровать Oslo">
+      <div class="product-media living-room">
+        <img src="images/living-room/sofa-oslo.jpg" alt="Диван-кровать Oslo" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-sofa"/></svg></div>
+        <span class="product-cat">Гостиная</span>
+      </div>
+      <div class="product-body"><h3>Диван-кровать Oslo</h3><p class="product-desc">Раскладной, рогожка</p>
+        <div class="product-foot"><span class="product-price">от 76 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="living-room" data-name="Кресло Verona">
+      <div class="product-media living-room">
+        <img src="images/living-room/armchair-verona.jpg" alt="Кресло Verona" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
+        <span class="product-cat">Гостиная</span>
+      </div>
+      <div class="product-body"><h3>Кресло Verona</h3><p class="product-desc">Гнутый бук, шенилл</p>
+        <div class="product-foot"><span class="product-price">от 34 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="living-room" data-name="Журнальный столик Kyoto">
+      <div class="product-media living-room">
+        <img src="images/living-room/table-kyoto.jpg" alt="Журнальный столик Kyoto" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
+        <span class="product-cat">Гостиная</span>
+      </div>
+      <div class="product-body"><h3>Журнальный столик Kyoto</h3><p class="product-desc">Мрамор и металл</p>
+        <div class="product-foot"><span class="product-price">от 21 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="living-room" data-name="Тумба под ТВ Lugano">
+      <div class="product-media living-room">
+        <img src="images/living-room/tv-unit-lugano.jpg" alt="Тумба под ТВ Lugano" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-wardrobe"/></svg></div>
+        <span class="product-cat">Гостиная</span>
+      </div>
+      <div class="product-body"><h3>Тумба под ТВ Lugano</h3><p class="product-desc">Шпон ореха</p>
+        <div class="product-foot"><span class="product-price">от 28 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+
+    <!-- СПАЛЬНЯ -->
+    <article class="product-card reveal" data-category="bedroom" data-name="Кровать Torino">
+      <div class="product-media bedroom">
+        <img src="images/bedroom/bed-torino.jpg" alt="Кровать Torino" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-bed"/></svg></div>
+        <span class="product-cat">Спальня</span>
+      </div>
+      <div class="product-body"><h3>Кровать Torino</h3><p class="product-desc">160×200, экокожа, мягкое изголовье</p>
+        <div class="product-foot"><span class="product-price">от 54 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="bedroom" data-name="Кровать Bergamo">
+      <div class="product-media bedroom">
+        <img src="images/bedroom/bed-bergamo.jpg" alt="Кровать Bergamo" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-bed"/></svg></div>
+        <span class="product-cat">Спальня</span>
+      </div>
+      <div class="product-body"><h3>Кровать Bergamo</h3><p class="product-desc">180×200, велюр, подъёмный механизм</p>
+        <div class="product-foot"><span class="product-price">от 68 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="bedroom" data-name="Шкаф Firenze">
+      <div class="product-media bedroom">
+        <img src="images/bedroom/wardrobe-firenze.jpg" alt="Шкаф Firenze" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-wardrobe"/></svg></div>
+        <span class="product-cat">Спальня</span>
+      </div>
+      <div class="product-body"><h3>Шкаф Firenze</h3><p class="product-desc">3 створки, с зеркалом</p>
+        <div class="product-foot"><span class="product-price">от 61 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="bedroom" data-name="Прикроватная тумба Como">
+      <div class="product-media bedroom">
+        <img src="images/bedroom/nightstand-como.jpg" alt="Прикроватная тумба Como" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-wardrobe"/></svg></div>
+        <span class="product-cat">Спальня</span>
+      </div>
+      <div class="product-body"><h3>Тумба Como</h3><p class="product-desc">Прикроватная, пара</p>
+        <div class="product-foot"><span class="product-price">от 14 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="bedroom" data-name="Комод Siena">
+      <div class="product-media bedroom">
+        <img src="images/bedroom/dresser-siena.jpg" alt="Комод Siena" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-wardrobe"/></svg></div>
+        <span class="product-cat">Спальня</span>
+      </div>
+      <div class="product-body"><h3>Комод Siena</h3><p class="product-desc">5 ящиков</p>
+        <div class="product-foot"><span class="product-price">от 39 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+
+    <!-- КУХНЯ И СТОЛОВАЯ -->
+    <article class="product-card reveal" data-category="kitchen" data-name="Обеденный стол Modena">
+      <div class="product-media kitchen">
+        <img src="images/kitchen/table-modena.jpg" alt="Обеденный стол Modena" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
+        <span class="product-cat">Кухня</span>
+      </div>
+      <div class="product-body"><h3>Стол Modena</h3><p class="product-desc">Керамогранит, раздвижной механизм</p>
+        <div class="product-foot"><span class="product-price">от 58 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="kitchen" data-name="Стулья Napoli (комплект 4 шт)">
+      <div class="product-media kitchen">
+        <img src="images/kitchen/chairs-napoli.jpg" alt="Стулья Napoli" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
+        <span class="product-cat">Кухня</span>
+      </div>
+      <div class="product-body"><h3>Стулья Napoli</h3><p class="product-desc">Экокожа, комплект 4 шт</p>
+        <div class="product-foot"><span class="product-price">от 32 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="kitchen" data-name="Барный стул Trento">
+      <div class="product-media kitchen">
+        <img src="images/kitchen/barstool-trento.jpg" alt="Барный стул Trento" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
+        <span class="product-cat">Кухня</span>
+      </div>
+      <div class="product-body"><h3>Барный стул Trento</h3><p class="product-desc">Металл, экокожа</p>
+        <div class="product-foot"><span class="product-price">от 9 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="kitchen" data-name="Буфет Parma">
+      <div class="product-media kitchen">
+        <img src="images/kitchen/buffet-parma.jpg" alt="Буфет Parma" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-wardrobe"/></svg></div>
+        <span class="product-cat">Кухня</span>
+      </div>
+      <div class="product-body"><h3>Буфет Parma</h3><p class="product-desc">Витрина и фасады</p>
+        <div class="product-foot"><span class="product-price">от 71 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="kitchen" data-name="Стол-трансформер Genoa">
+      <div class="product-media kitchen">
+        <img src="images/kitchen/table-genoa.jpg" alt="Стол-трансформер Genoa" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
+        <span class="product-cat">Кухня</span>
+      </div>
+      <div class="product-body"><h3>Стол-трансформер Genoa</h3><p class="product-desc">Раскладной механизм</p>
+        <div class="product-foot"><span class="product-price">от 44 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+
+    <!-- КАБИНЕТ -->
+    <article class="product-card reveal" data-category="office" data-name="Письменный стол Zurich">
+      <div class="product-media office">
+        <img src="images/office/desk-zurich.jpg" alt="Письменный стол Zurich" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-desk"/></svg></div>
+        <span class="product-cat">Кабинет</span>
+      </div>
+      <div class="product-body"><h3>Стол Zurich</h3><p class="product-desc">МДФ и металл</p>
+        <div class="product-foot"><span class="product-price">от 26 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="office" data-name="Кресло руководителя Geneva">
+      <div class="product-media office">
+        <img src="images/office/chair-geneva.jpg" alt="Кресло руководителя Geneva" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
+        <span class="product-cat">Кабинет</span>
+      </div>
+      <div class="product-body"><h3>Кресло Geneva</h3><p class="product-desc">Экокожа, механизм качания</p>
+        <div class="product-foot"><span class="product-price">от 33 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="office" data-name="Стеллаж Basel">
+      <div class="product-media office">
+        <img src="images/office/shelf-basel.jpg" alt="Стеллаж Basel" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-shelf"/></svg></div>
+        <span class="product-cat">Кабинет</span>
+      </div>
+      <div class="product-body"><h3>Стеллаж Basel</h3><p class="product-desc">5 полок, металл и дерево</p>
+        <div class="product-foot"><span class="product-price">от 19 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="office" data-name="Стол переговорный Lausanne">
+      <div class="product-media office">
+        <img src="images/office/table-lausanne.jpg" alt="Стол переговорный Lausanne" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
+        <span class="product-cat">Кабинет</span>
+      </div>
+      <div class="product-body"><h3>Стол Lausanne</h3><p class="product-desc">Переговорный, на 6 персон</p>
+        <div class="product-foot"><span class="product-price">от 82 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="office" data-name="Тумба офисная Bern">
+      <div class="product-media office">
+        <img src="images/office/cabinet-bern.jpg" alt="Тумба офисная Bern" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-wardrobe"/></svg></div>
+        <span class="product-cat">Кабинет</span>
+      </div>
+      <div class="product-body"><h3>Тумба Bern</h3><p class="product-desc">3 ящика, на колёсах</p>
+        <div class="product-foot"><span class="product-price">от 16 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+
+    <!-- СВЕТ И ДЕКОР -->
+    <article class="product-card reveal" data-category="decor" data-name="Торшер Amber">
+      <div class="product-media decor">
+        <img src="images/decor/lamp-amber.jpg" alt="Торшер Amber" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-lamp"/></svg></div>
+        <span class="product-cat">Свет и декор</span>
+      </div>
+      <div class="product-body"><h3>Торшер Amber</h3><p class="product-desc">Латунь, тканевый абажур</p>
+        <div class="product-foot"><span class="product-price">от 12 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="decor" data-name="Люстра Aurora">
+      <div class="product-media decor">
+        <img src="images/decor/chandelier-aurora.jpg" alt="Люстра Aurora" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-lamp"/></svg></div>
+        <span class="product-cat">Свет и декор</span>
+      </div>
+      <div class="product-body"><h3>Люстра Aurora</h3><p class="product-desc">Каскад, стекло</p>
+        <div class="product-foot"><span class="product-price">от 24 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="decor" data-name="Зеркало Nova">
+      <div class="product-media decor">
+        <img src="images/decor/mirror-nova.jpg" alt="Зеркало Nova" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-mirror"/></svg></div>
+        <span class="product-cat">Свет и декор</span>
+      </div>
+      <div class="product-body"><h3>Зеркало Nova</h3><p class="product-desc">Овал, металлическая рама</p>
+        <div class="product-foot"><span class="product-price">от 15 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="decor" data-name="Ковёр Terra">
+      <div class="product-media decor">
+        <img src="images/decor/rug-terra.jpg" alt="Ковёр Terra" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-rug"/></svg></div>
+        <span class="product-cat">Свет и декор</span>
+      </div>
+      <div class="product-body"><h3>Ковёр Terra</h3><p class="product-desc">Шерсть и вискоза, ручная работа</p>
+        <div class="product-foot"><span class="product-price">от 27 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="decor" data-name="Вазы Sabbia">
+      <div class="product-media decor">
+        <img src="images/decor/vase-sabbia.jpg" alt="Вазы Sabbia" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-vase"/></svg></div>
+        <span class="product-cat">Свет и декор</span>
+      </div>
+      <div class="product-body"><h3>Вазы Sabbia</h3><p class="product-desc">Керамика, набор из 2</p>
+        <div class="product-foot"><span class="product-price">от 6 800 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+
+    <!-- ТЕРРАСА И САД -->
+    <article class="product-card reveal" data-category="outdoor" data-name="Комплект Palermo">
+      <div class="product-media outdoor">
+        <img src="images/outdoor/set-palermo.jpg" alt="Комплект мебели Palermo" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-outdoor"/></svg></div>
+        <span class="product-cat">Терраса</span>
+      </div>
+      <div class="product-body"><h3>Комплект Palermo</h3><p class="product-desc">Диван, 2 кресла и столик, ротанг</p>
+        <div class="product-foot"><span class="product-price">от 96 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="outdoor" data-name="Шезлонг Capri">
+      <div class="product-media outdoor">
+        <img src="images/outdoor/lounger-capri.jpg" alt="Шезлонг Capri" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-outdoor"/></svg></div>
+        <span class="product-cat">Терраса</span>
+      </div>
+      <div class="product-body"><h3>Шезлонг Capri</h3><p class="product-desc">Алюминий, текстилен</p>
+        <div class="product-foot"><span class="product-price">от 21 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="outdoor" data-name="Обеденная группа Sorrento">
+      <div class="product-media outdoor">
+        <img src="images/outdoor/dining-sorrento.jpg" alt="Обеденная группа Sorrento" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-outdoor"/></svg></div>
+        <span class="product-cat">Терраса</span>
+      </div>
+      <div class="product-body"><h3>Группа Sorrento</h3><p class="product-desc">Стол и 6 стульев, HPL-пластик</p>
+        <div class="product-foot"><span class="product-price">от 88 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="outdoor" data-name="Подвесное кресло Ibiza">
+      <div class="product-media outdoor">
+        <img src="images/outdoor/chair-ibiza.jpg" alt="Подвесное кресло Ibiza" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-outdoor"/></svg></div>
+        <span class="product-cat">Терраса</span>
+      </div>
+      <div class="product-body"><h3>Кресло Ibiza</h3><p class="product-desc">Подвесное, кокон с каркасом</p>
+        <div class="product-foot"><span class="product-price">от 31 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-category="outdoor" data-name="Зонт садовый Amalfi">
+      <div class="product-media outdoor">
+        <img src="images/outdoor/umbrella-amalfi.jpg" alt="Зонт садовый Amalfi" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-outdoor"/></svg></div>
+        <span class="product-cat">Терраса</span>
+      </div>
+      <div class="product-body"><h3>Зонт Amalfi</h3><p class="product-desc">3×3 м, с основанием</p>
+        <div class="product-foot"><span class="product-price">от 18 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+
+  </div>
+  <p class="empty-state" id="emptyState">В этой категории пока нет позиций — напишите нам, подберём индивидуально.</p>
+</section>
+
+<section class="container">
+  <div class="cta-strip reveal">
+    <div>
+      <h3>Не нашли нужную модель?</h3>
+      <p>Пришлите фото или ссылку на понравившийся вариант — подберём аналог на фабриках-партнёрах.</p>
+    </div>
+    <a href="index.html#contact" class="btn btn-primary">Обсудить подбор</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">China <span>Store</span></a>
+        <p>Мебель напрямую с фабрик Китая. Дизайн, материалы и сервис на уровне европейских шоурумов.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Каталог</h4>
+        <a href="catalog.html#living-room">Гостиная</a>
+        <a href="catalog.html#bedroom">Спальня</a>
+        <a href="catalog.html#kitchen">Кухня и столовая</a>
+        <a href="catalog.html#office">Кабинет</a>
+        <a href="catalog.html#decor">Свет и декор</a>
+        <a href="catalog.html#outdoor">Терраса и сад</a>
+      </div>
+      <div class="footer-col">
+        <h4>Компания</h4>
+        <a href="index.html#process">Как это работает</a>
+        <a href="index.html#why">Почему мы</a>
+        <a href="index.html#contact">Контакты</a>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <span>+7 900 123-45-67</span>
+        <span>hello@chinastore.ru</span>
+        <a href="https://t.me/chinastore_mebel" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/79001234567" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 China Store. Все права защищены.</span>
+      <span>Мебель из Китая напрямую с фабрик</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── ORDER MODAL ────────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Закрыть"><svg class="icon"><use href="#icon-close"/></svg></button>
+    <span class="modal-kicker">Быстрый заказ</span>
+    <h3 id="modalProductName">Товар</h3>
+    <div class="form-row">
+      <label for="mName">Имя</label>
+      <input type="text" id="mName" placeholder="Как к вам обращаться">
+    </div>
+    <div class="form-row">
+      <label for="mPhone">Телефон</label>
+      <input type="tel" id="mPhone" placeholder="+7">
+    </div>
+    <div class="form-actions">
+      <button type="button" class="btn btn-primary" onclick="sendOrder('wa')">Отправить в WhatsApp</button>
+      <button type="button" class="btn" onclick="sendOrder('tg')">Отправить в Telegram</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var WA_PHONE = "79001234567";
+var TG_USER = "chinastore_mebel";
+var CATEGORY_LABELS = {
+  "living-room":"гостиной","bedroom":"спальни","kitchen":"кухни и столовой",
+  "office":"кабинета","decor":"света и декора","outdoor":"террасы и сада"
+};
+
+function handleImgError(img){
+  img.style.display = 'none';
+  var ph = img.parentElement.querySelector('.ph');
+  if (ph) ph.classList.add('show');
+}
+
+function buildMessage(product, name, phone){
+  var lines = [];
+  lines.push(product ? ('Здравствуйте! Интересует: ' + product) : 'Здравствуйте! Хочу подобрать мебель.');
+  if (name) lines.push('Имя: ' + name);
+  if (phone) lines.push('Телефон: ' + phone);
+  return lines.join('\n');
+}
+
+function openChannel(channel, text){
+  var encoded = encodeURIComponent(text);
+  var url = channel === 'wa'
+    ? ('https://wa.me/' + WA_PHONE + '?text=' + encoded)
+    : ('https://t.me/' + TG_USER + '?text=' + encoded);
+  window.open(url, '_blank', 'noopener');
+}
+
+var currentProduct = '';
+function sendOrder(channel){
+  var name = document.getElementById('mName').value.trim();
+  var phone = document.getElementById('mPhone').value.trim();
+  openChannel(channel, buildMessage(currentProduct, name, phone));
+}
+
+function openOrderModal(productName){
+  currentProduct = productName || '';
+  document.getElementById('modalProductName').textContent = productName || 'Товар';
+  document.getElementById('mName').value = '';
+  document.getElementById('mPhone').value = '';
+  document.getElementById('orderModal').classList.add('active');
+}
+function closeOrderModal(){
+  document.getElementById('orderModal').classList.remove('active');
+}
+
+document.addEventListener('click', function(e){
+  var orderBtn = e.target.closest('[data-order]');
+  if (orderBtn){
+    var card = orderBtn.closest('[data-name]');
+    openOrderModal(card ? card.getAttribute('data-name') : '');
+  }
+});
+document.getElementById('modalClose').addEventListener('click', closeOrderModal);
+document.getElementById('orderModal').addEventListener('click', function(e){
+  if (e.target === this) closeOrderModal();
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeOrderModal();
+});
+
+var menuBtn = document.getElementById('menuBtn');
+var mobileMenu = document.getElementById('mobileMenu');
+var mobileClose = document.getElementById('mobileClose');
+if (menuBtn){
+  menuBtn.addEventListener('click', function(){ mobileMenu.classList.add('active'); });
+  mobileClose.addEventListener('click', function(){ mobileMenu.classList.remove('active'); });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('active'); });
+  });
+}
+
+/* ─── FILTERING ──────────────────────────────────────────────────────────── */
+var filterBtns = document.querySelectorAll('.filter-btn');
+var cards = document.querySelectorAll('.product-card');
+var emptyState = document.getElementById('emptyState');
+var filterCount = document.getElementById('filterCount');
+
+function applyFilter(filter){
+  var visible = 0;
+  cards.forEach(function(card){
+    var match = filter === 'all' || card.getAttribute('data-category') === filter;
+    card.classList.toggle('hidden', !match);
+    if (match) visible++;
+  });
+  emptyState.classList.toggle('show', visible === 0);
+  filterCount.textContent = filter === 'all'
+    ? ('Показано моделей: ' + visible)
+    : ('Показано моделей для ' + CATEGORY_LABELS[filter] + ': ' + visible);
+  filterBtns.forEach(function(btn){
+    btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
+  });
+}
+
+filterBtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    applyFilter(btn.getAttribute('data-filter'));
+    history.replaceState(null, '', btn.getAttribute('data-filter') === 'all' ? 'catalog.html' : ('#' + btn.getAttribute('data-filter')));
+  });
+});
+
+function applyFilterFromHash(){
+  var h = location.hash.replace('#','');
+  applyFilter(CATEGORY_LABELS[h] ? h : 'all');
+}
+applyFilterFromHash();
+window.addEventListener('hashchange', applyFilterFromHash);
+
+if ('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+}
+</script>
+</body>
+</html>

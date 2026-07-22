@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Store — мебель из Китая напрямую с фабрик</title>
+<meta name="description" content="Дизайнерская мебель напрямую с проверенных фабрик Китая — без наценки посредников. Подбор, контроль качества и доставка «под ключ» до двери.">
+<link rel="canonical" href="https://www.chinastore.ru/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://www.chinastore.ru/">
+<meta property="og:site_name" content="China Store">
+<meta property="og:title" content="China Store — мебель из Китая напрямую с фабрик">
+<meta property="og:description" content="Дизайнерская мебель напрямую с проверенных фабрик Китая — без наценки посредников. Подбор, контроль качества и доставка «под ключ».">
+<meta name="theme-color" content="#FAF6EF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B2502C'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23FAF6EF' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "China Store",
+  "url": "https://www.chinastore.ru/",
+  "description": "Заказ и доставка мебели напрямую с фабрик Китая: гостиная, спальня, кухня, кабинет, свет и декор, уличная мебель.",
+  "areaServed": "RU"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & TOKENS ─────────────────────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#FAF6EF;--bg2:#F1E8DB;--bg3:#E9DCC8;
+--ink:#2B241C;--muted:#7C6F5F;
+--line:rgba(43,36,28,.12);--line2:rgba(43,36,28,.22);
+--accent:#B2502C;--accent-ink:#FAF6EF;--signal:#63704A;
+--serif:'Instrument Serif',serif;--sans:'Manrope',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{width:min(1280px,92%);margin:auto}
+section{padding:120px 0}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:rgba(178,80,44,.18)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── NAV ────────────────────────────────────────────────────────────────── */
+nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blur(16px);background:rgba(250,246,239,.82);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:100%}
+.logo{font-family:var(--serif);font-size:24px;letter-spacing:.01em}
+.logo span{color:var(--accent);font-style:italic}
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--ink)}
+.nav-btn{background:var(--accent);color:var(--accent-ink);padding:13px 24px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-radius:2px;transition:.3s}
+.nav-btn:hover{background:var(--ink)}
+.menu{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.menu span{width:22px;height:1.5px;background:var(--ink)}
+.mobile-menu{position:fixed;inset:0;background:rgba(250,246,239,.98);z-index:1100;display:none;flex-direction:column;justify-content:center;align-items:center;gap:30px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:26px;color:var(--ink)}
+.mobile-close{position:absolute;top:26px;right:26px;background:none;border:none;color:var(--ink)}
+.mobile-close .icon{width:26px;height:26px}
+
+/* ─── HERO ───────────────────────────────────────────────────────────────── */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:84px;background:linear-gradient(180deg,#FBF8F2,var(--bg))}
+.hero-glow{position:absolute;top:-25%;right:-15%;width:70%;height:100%;background:radial-gradient(circle at top right,rgba(178,80,44,.12),transparent 55%);pointer-events:none;z-index:1}
+.hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.hero-kicker{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.hero-kicker::before{content:'';width:34px;height:1px;background:var(--accent)}
+.hero-kicker span{color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.6vw,84px);line-height:1.04;letter-spacing:-.01em;margin-bottom:26px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:17px;color:#5c5245;line-height:1.75;margin-bottom:30px;max-width:480px}
+.hero-benefits{display:flex;flex-direction:column;gap:11px;margin-bottom:36px}
+.hero-benefits div{display:flex;align-items:center;gap:12px;font-size:13.5px;color:#4b4338}
+.hero-benefits div span{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:17px 30px;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;transition:.3s;border-radius:2px;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--ink)}
+.btn-secondary{border-color:var(--line2);color:var(--ink)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+.hero-visual{position:relative;height:560px}
+.hv-panel{position:absolute;overflow:hidden;border-radius:6px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+.hv-panel .icon{stroke:rgba(43,36,28,.55)}
+.hv-panel-a{width:76%;height:78%;top:0;right:0}
+.hv-panel-a .icon{width:38%;height:38%}
+.hv-panel-b{width:52%;height:50%;left:0;bottom:0;box-shadow:0 40px 70px rgba(43,36,28,.18);border-color:var(--line2)}
+.hv-panel-b .icon{width:32%;height:32%}
+.hv-tag{position:absolute;bottom:22px;right:22px;background:var(--bg);border:1px solid var(--line2);padding:16px 20px;display:flex;flex-direction:column;gap:2px;z-index:3;border-radius:3px}
+.hv-tag-num{font-family:var(--serif);font-size:28px;color:var(--accent);line-height:1}
+.hv-tag-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+
+/* ─── MARQUEE ────────────────────────────────────────────────────────────── */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:20px 0;background:var(--bg2)}
+.marquee-track{display:inline-flex;align-items:center;gap:36px;animation:marquee 32s linear infinite}
+.marquee-track span{font-family:var(--serif);font-size:18px;color:#7d7263;letter-spacing:.5px}
+.marquee-track .dot{color:var(--accent);font-size:11px}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── SECTION HEAD ───────────────────────────────────────────────────────── */
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:52px}
+.section-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;margin-bottom:14px;display:block}
+.section-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.01em;line-height:1.08}
+.section-link{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding-bottom:6px}
+.section-link .icon{width:14px;height:14px}
+
+/* ─── CATEGORIES ─────────────────────────────────────────────────────────── */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cat-card{position:relative;border:1px solid var(--line);border-radius:6px;padding:36px 28px;display:flex;flex-direction:column;gap:16px;transition:.35s;background:var(--bg2)}
+.cat-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.cat-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--bg3)}
+.cat-icon .icon{width:22px;height:22px;stroke:var(--accent)}
+.cat-card h3{font-family:var(--serif);font-weight:400;font-size:23px}
+.cat-card p{font-size:13.5px;color:var(--muted);line-height:1.6}
+.cat-more{margin-top:6px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.cat-more .icon{width:13px;height:13px;transition:.3s}
+.cat-card:hover .cat-more .icon{transform:translateX(3px)}
+
+/* ─── PRODUCT CARD (shared with catalog.html) ───────────────────────────── */
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.product-card{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg2);transition:.35s;display:flex;flex-direction:column}
+.product-card:hover{border-color:var(--line2);box-shadow:0 24px 48px rgba(43,36,28,.10);transform:translateY(-3px)}
+.product-media{position:relative;aspect-ratio:1/1;overflow:hidden}
+.product-media img{width:100%;height:100%;object-fit:cover}
+.product-media .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
+.product-media .ph.show{display:flex}
+.product-media .ph .icon{width:34%;height:34%;stroke:rgba(43,36,28,.5)}
+.product-media.living-room{background:linear-gradient(135deg,#EAD0B3,#C1734A)}
+.product-media.bedroom{background:linear-gradient(135deg,#ECD8D0,#C08D7C)}
+.product-media.kitchen{background:linear-gradient(135deg,#E6DEC4,#A88A54)}
+.product-media.office{background:linear-gradient(135deg,#E6DFCC,#8E7A52)}
+.product-media.decor{background:linear-gradient(135deg,#E3DCC9,#8A6A4A)}
+.product-media.outdoor{background:linear-gradient(135deg,#DCE3D2,#6E8368)}
+.product-cat{position:absolute;top:12px;left:12px;background:rgba(250,246,239,.88);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:6px 10px;border-radius:2px;z-index:2}
+.product-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.product-body h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.2}
+.product-desc{font-size:12.5px;color:var(--muted);line-height:1.5}
+.product-foot{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.product-price{font-size:13px;font-weight:700;color:var(--ink)}
+.btn-order{background:none;border:1px solid var(--line2);color:var(--ink);padding:9px 14px;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border-radius:2px;transition:.25s;white-space:nowrap}
+.btn-order:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.prod-cta{text-align:center;margin-top:48px}
+
+/* ─── PROCESS ─────────────────────────────────────────────────────────────── */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.process-step{position:relative;padding-top:28px;border-top:1px solid var(--line2)}
+.process-num{font-family:var(--serif);font-size:15px;color:var(--accent);margin-bottom:18px;display:block}
+.process-step h3{font-family:var(--serif);font-weight:400;font-size:22px;margin-bottom:12px}
+.process-step p{font-size:13.5px;color:var(--muted);line-height:1.7}
+
+/* ─── WHY / ADVANTAGES ───────────────────────────────────────────────────── */
+.why{background:var(--bg2)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.why-item{background:var(--bg2);padding:40px 34px;display:flex;flex-direction:column;gap:16px}
+.why-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--bg)}
+.why-icon .icon{width:22px;height:22px;stroke:var(--accent)}
+.why-item h3{font-family:var(--serif);font-weight:400;font-size:21px}
+.why-item p{font-size:13.5px;color:var(--muted);line-height:1.7}
+
+/* ─── CONTACT ─────────────────────────────────────────────────────────────── */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px}
+.contact-info p{font-size:15px;color:#5c5245;line-height:1.75;margin-bottom:32px;max-width:420px}
+.contact-list{display:flex;flex-direction:column;gap:18px;margin-bottom:32px}
+.contact-list a,.contact-list div{display:flex;align-items:center;gap:14px;font-size:14.5px}
+.contact-list .icon-wrap{width:38px;height:38px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-list .icon-wrap .icon{width:18px;height:18px;stroke:var(--accent)}
+.contact-list a{color:var(--ink);transition:.25s}
+.contact-list a:hover{color:var(--accent)}
+.contact-note{font-size:12px;color:var(--muted);line-height:1.6;max-width:400px}
+
+.form-card{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:40px}
+.form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.form-row label{font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--muted)}
+.form-row input,.form-row textarea{background:var(--bg);border:1px solid var(--line2);border-radius:3px;padding:14px 16px;font-family:inherit;font-size:14.5px;color:var(--ink)}
+.form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--accent)}
+.form-row textarea{resize:vertical;min-height:90px}
+.form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.form-actions .btn{border:1px solid var(--line2);background:none;color:var(--ink)}
+.form-actions .btn.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.form-actions .btn:hover{border-color:var(--accent);color:var(--accent)}
+.form-actions .btn.btn-primary:hover{background:var(--ink);border-color:var(--ink);color:var(--accent-ink)}
+
+/* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .9fr .9fr .9fr;gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(250,246,239,.14)}
+.footer-brand .logo{color:var(--bg)}
+.footer-brand .logo span{color:var(--accent)}
+.footer-brand p{font-size:13.5px;line-height:1.7;margin-top:16px;max-width:280px;color:rgba(250,246,239,.55)}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:18px}
+.footer-col a,.footer-col span{display:block;font-size:13.5px;color:rgba(250,246,239,.72);margin-bottom:12px;transition:.25s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:12px;color:rgba(250,246,239,.4);flex-wrap:wrap;gap:12px}
+
+/* ─── MODAL ──────────────────────────────────────────────────────────────── */
+.modal-overlay{position:fixed;inset:0;background:rgba(43,36,28,.55);z-index:2000;display:none;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.active{display:flex}
+.modal{background:var(--bg);border-radius:8px;padding:40px;width:min(440px,100%);position:relative}
+.modal-close{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted)}
+.modal-close .icon{width:20px;height:20px}
+.modal-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-size:10.5px;font-weight:700;margin-bottom:10px;display:block}
+.modal h3{font-family:var(--serif);font-weight:400;font-size:26px;margin-bottom:22px}
+.modal .form-row{margin-bottom:16px}
+.modal .form-actions{flex-direction:column}
+.modal .form-actions .btn{justify-content:center;width:100%}
+
+/* ─── REVEAL / MOTION ────────────────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{transition:none;opacity:1;transform:none}
+  .marquee-track{animation:none}
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
+@media (max-width:960px){
+  .nav-links{display:none}
+  .menu{display:flex}
+  .hero .container{grid-template-columns:1fr}
+  .hero-visual{height:420px;margin-top:20px}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr);row-gap:40px}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .footer-grid{grid-template-columns:1fr 1fr;row-gap:36px}
+  section{padding:88px 0}
+}
+@media (max-width:640px){
+  .cat-grid{grid-template-columns:1fr}
+  .prod-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .section-head{flex-direction:column;align-items:flex-start;gap:16px}
+  .hero-buttons{width:100%}
+  .hero-buttons .btn{flex:1;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── SVG SPRITE ─────────────────────────────────────────────────────────── -->
+<svg style="display:none">
+<symbol id="icon-sofa" viewBox="0 0 48 48"><rect x="4" y="18" width="8" height="20" rx="3"/><rect x="36" y="18" width="8" height="20" rx="3"/><rect x="10" y="14" width="28" height="12" rx="4"/><rect x="6" y="24" width="36" height="14" rx="4"/><line x1="12" y1="38" x2="12" y2="42"/><line x1="36" y1="38" x2="36" y2="42"/></symbol>
+<symbol id="icon-armchair" viewBox="0 0 48 48"><rect x="6" y="20" width="7" height="16" rx="3"/><rect x="35" y="20" width="7" height="16" rx="3"/><rect x="12" y="12" width="24" height="16" rx="5"/><rect x="10" y="26" width="28" height="12" rx="4"/><line x1="14" y1="38" x2="14" y2="42"/><line x1="34" y1="38" x2="34" y2="42"/></symbol>
+<symbol id="icon-bed" viewBox="0 0 48 48"><rect x="6" y="10" width="6" height="28" rx="2"/><rect x="6" y="24" width="36" height="12" rx="3"/><rect x="10" y="17" width="12" height="9" rx="2"/><line x1="8" y1="38" x2="8" y2="42"/><line x1="40" y1="38" x2="40" y2="42"/></symbol>
+<symbol id="icon-table" viewBox="0 0 48 48"><rect x="6" y="16" width="36" height="6" rx="2"/><line x1="10" y1="22" x2="10" y2="40"/><line x1="38" y1="22" x2="38" y2="40"/><line x1="14" y1="22" x2="12" y2="40"/><line x1="34" y1="22" x2="36" y2="40"/></symbol>
+<symbol id="icon-wardrobe" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="2"/><line x1="24" y1="6" x2="24" y2="42"/><line x1="20" y1="22" x2="20" y2="26"/><line x1="28" y1="22" x2="28" y2="26"/></symbol>
+<symbol id="icon-chair" viewBox="0 0 48 48"><rect x="12" y="24" width="20" height="6" rx="2"/><rect x="12" y="8" width="20" height="16" rx="2"/><line x1="14" y1="30" x2="12" y2="42"/><line x1="30" y1="30" x2="32" y2="42"/></symbol>
+<symbol id="icon-lamp" viewBox="0 0 48 48"><path d="M16 12 L32 12 L36 24 L12 24 Z"/><line x1="24" y1="24" x2="24" y2="40"/><ellipse cx="24" cy="41" rx="9" ry="2.4"/></symbol>
+<symbol id="icon-mirror" viewBox="0 0 48 48"><ellipse cx="24" cy="19" rx="13" ry="17"/><line x1="24" y1="36" x2="24" y2="42"/><line x1="17" y1="42" x2="31" y2="42"/></symbol>
+<symbol id="icon-rug" viewBox="0 0 48 48"><rect x="6" y="11" width="36" height="26" rx="3"/><rect x="12" y="17" width="24" height="14" rx="2"/></symbol>
+<symbol id="icon-vase" viewBox="0 0 48 48"><path d="M19 7 L19 13 C19 13 12 20 12 28 C12 35 17 40 24 40 C31 40 36 35 36 28 C36 20 29 13 29 13 L29 7 Z"/><line x1="19" y1="7" x2="29" y2="7"/></symbol>
+<symbol id="icon-outdoor" viewBox="0 0 48 48"><path d="M6 17 L24 6 L42 17 Z"/><line x1="24" y1="17" x2="24" y2="38"/><ellipse cx="24" cy="40" rx="11" ry="2.6"/></symbol>
+<symbol id="icon-desk" viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="5" rx="2"/><rect x="10" y="19" width="10" height="15"/><line x1="36" y1="19" x2="36" y2="38"/><line x1="10" y1="34" x2="20" y2="34"/></symbol>
+<symbol id="icon-shelf" viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="1"/><line x1="8" y1="18" x2="40" y2="18"/><line x1="8" y1="30" x2="40" y2="30"/></symbol>
+<symbol id="icon-truck" viewBox="0 0 48 48"><rect x="4" y="18" width="24" height="14" rx="1"/><path d="M28 22 H38 L42 27 V32 H28 Z"/><circle cx="13" cy="35" r="4"/><circle cx="34" cy="35" r="4"/></symbol>
+<symbol id="icon-shield" viewBox="0 0 48 48"><path d="M24 6 L38 12 L38 23 C38 33 32 39 24 43 C16 39 10 33 10 23 L10 12 Z"/><path d="M17 23 L22 28 L31 18"/></symbol>
+<symbol id="icon-ruler" viewBox="0 0 48 48"><rect x="6" y="18" width="36" height="12" rx="2"/><line x1="12" y1="18" x2="12" y2="24"/><line x1="18" y1="18" x2="18" y2="24"/><line x1="24" y1="18" x2="24" y2="26"/><line x1="30" y1="18" x2="30" y2="24"/><line x1="36" y1="18" x2="36" y2="24"/></symbol>
+<symbol id="icon-box" viewBox="0 0 48 48"><path d="M8 16 L24 8 L40 16 L40 40 L8 40 Z"/><line x1="8" y1="16" x2="24" y2="24"/><line x1="40" y1="16" x2="24" y2="24"/><line x1="24" y1="24" x2="24" y2="40"/></symbol>
+<symbol id="icon-tag" viewBox="0 0 48 48"><path d="M6 22 L22 6 L42 6 L42 26 L26 42 Z"/><circle cx="16" cy="16" r="2.6"/></symbol>
+<symbol id="icon-chat" viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="24" rx="8"/><path d="M14 33 L14 41 L22 33 Z"/></symbol>
+<symbol id="icon-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><path d="M13 7 L18 12 L13 17"/></symbol>
+<symbol id="icon-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+</svg>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">China <span>Store</span></a>
+    <div class="nav-links">
+      <a href="catalog.html">Каталог</a>
+      <a href="#process">Как это работает</a>
+      <a href="#why">Почему мы</a>
+      <a href="#contact">Контакты</a>
+      <a href="https://wa.me/79001234567" target="_blank" rel="noopener" class="nav-btn">Написать в WhatsApp</a>
+    </div>
+    <button class="menu" id="menuBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Закрыть меню"><svg class="icon"><use href="#icon-close"/></svg></button>
+  <a href="catalog.html">Каталог</a>
+  <a href="#process">Как это работает</a>
+  <a href="#why">Почему мы</a>
+  <a href="#contact">Контакты</a>
+</div>
+
+<!-- ─── HERO ───────────────────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div>
+      <div class="hero-kicker"><span>Прямые поставки из Китая</span></div>
+      <h1>Мебель без наценки <em>посредников</em></h1>
+      <p class="hero-sub">Подбираем и привозим мебель напрямую с проверенных фабрик Китая — тот же уровень дизайна и материалов, что в европейских шоурумах, но без двойной-тройной наценки перекупщиков.</p>
+      <div class="hero-benefits">
+        <div><span></span>Прямые контракты с фабриками — без посредников</div>
+        <div><span></span>Фото- и видеоотчёт на каждом этапе заказа</div>
+        <div><span></span>Доставка «под ключ» до двери в любой город</div>
+      </div>
+      <div class="hero-buttons">
+        <a href="catalog.html" class="btn btn-primary">Смотреть каталог</a>
+        <a href="#contact" class="btn btn-secondary">Подобрать мебель</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hv-panel hv-panel-a living-room reveal"><svg class="icon"><use href="#icon-sofa"/></svg></div>
+      <div class="hv-panel hv-panel-b decor reveal"><svg class="icon"><use href="#icon-lamp"/></svg></div>
+      <div class="hv-tag">
+        <span class="hv-tag-num">5–7</span>
+        <span class="hv-tag-label">недель под ключ</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>ГОСТИНАЯ</span><span class="dot">✦</span>
+    <span>СПАЛЬНЯ</span><span class="dot">✦</span>
+    <span>КУХНЯ И СТОЛОВАЯ</span><span class="dot">✦</span>
+    <span>КАБИНЕТ</span><span class="dot">✦</span>
+    <span>СВЕТ И ДЕКОР</span><span class="dot">✦</span>
+    <span>ТЕРРАСА И САД</span><span class="dot">✦</span>
+    <span>ГОСТИНАЯ</span><span class="dot">✦</span>
+    <span>СПАЛЬНЯ</span><span class="dot">✦</span>
+    <span>КУХНЯ И СТОЛОВАЯ</span><span class="dot">✦</span>
+    <span>КАБИНЕТ</span><span class="dot">✦</span>
+    <span>СВЕТ И ДЕКОР</span><span class="dot">✦</span>
+    <span>ТЕРРАСА И САД</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ─── CATEGORIES ─────────────────────────────────────────────────────────── -->
+<section class="container">
+  <div class="section-head">
+    <div>
+      <span class="section-kicker">Каталог</span>
+      <h2 class="section-title">Мебель для каждой комнаты</h2>
+    </div>
+    <a href="catalog.html" class="section-link">Весь каталог <svg class="icon"><use href="#icon-arrow"/></svg></a>
+  </div>
+  <div class="cat-grid">
+    <a href="catalog.html#living-room" class="cat-card reveal">
+      <div class="cat-icon"><svg class="icon"><use href="#icon-sofa"/></svg></div>
+      <h3>Гостиная</h3>
+      <p>Диваны, кресла, журнальные столики и системы хранения</p>
+      <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
+    </a>
+    <a href="catalog.html#bedroom" class="cat-card reveal">
+      <div class="cat-icon"><svg class="icon"><use href="#icon-bed"/></svg></div>
+      <h3>Спальня</h3>
+      <p>Кровати, шкафы, комоды и прикроватные тумбы</p>
+      <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
+    </a>
+    <a href="catalog.html#kitchen" class="cat-card reveal">
+      <div class="cat-icon"><svg class="icon"><use href="#icon-table"/></svg></div>
+      <h3>Кухня и столовая</h3>
+      <p>Обеденные группы, стулья и буфеты</p>
+      <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
+    </a>
+    <a href="catalog.html#office" class="cat-card reveal">
+      <div class="cat-icon"><svg class="icon"><use href="#icon-desk"/></svg></div>
+      <h3>Кабинет</h3>
+      <p>Письменные столы, кресла и стеллажи</p>
+      <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
+    </a>
+    <a href="catalog.html#decor" class="cat-card reveal">
+      <div class="cat-icon"><svg class="icon"><use href="#icon-lamp"/></svg></div>
+      <h3>Свет и декор</h3>
+      <p>Люстры, торшеры, зеркала и ковры ручной работы</p>
+      <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
+    </a>
+    <a href="catalog.html#outdoor" class="cat-card reveal">
+      <div class="cat-icon"><svg class="icon"><use href="#icon-outdoor"/></svg></div>
+      <h3>Терраса и сад</h3>
+      <p>Комплекты и предметы для отдыха на воздухе</p>
+      <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- ─── FEATURED PRODUCTS ──────────────────────────────────────────────────── -->
+<section class="container">
+  <div class="section-head">
+    <div>
+      <span class="section-kicker">Популярное</span>
+      <h2 class="section-title">Хиты каталога</h2>
+    </div>
+    <a href="catalog.html" class="section-link">Весь каталог <svg class="icon"><use href="#icon-arrow"/></svg></a>
+  </div>
+  <div class="prod-grid">
+    <article class="product-card reveal" data-name="Диван Milano">
+      <div class="product-media living-room">
+        <img src="images/living-room/sofa-milano.jpg" alt="Диван Milano" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-sofa"/></svg></div>
+        <span class="product-cat">Гостиная</span>
+      </div>
+      <div class="product-body">
+        <h3>Диван Milano</h3>
+        <p class="product-desc">3-местный, велюр</p>
+        <div class="product-foot"><span class="product-price">от 89 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-name="Кресло Verona">
+      <div class="product-media living-room">
+        <img src="images/living-room/armchair-verona.jpg" alt="Кресло Verona" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
+        <span class="product-cat">Гостиная</span>
+      </div>
+      <div class="product-body">
+        <h3>Кресло Verona</h3>
+        <p class="product-desc">Гнутый бук, шенилл</p>
+        <div class="product-foot"><span class="product-price">от 34 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-name="Кровать Bergamo">
+      <div class="product-media bedroom">
+        <img src="images/bedroom/bed-bergamo.jpg" alt="Кровать Bergamo" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-bed"/></svg></div>
+        <span class="product-cat">Спальня</span>
+      </div>
+      <div class="product-body">
+        <h3>Кровать Bergamo</h3>
+        <p class="product-desc">180×200, велюр, подъёмный механизм</p>
+        <div class="product-foot"><span class="product-price">от 68 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-name="Обеденный стол Modena">
+      <div class="product-media kitchen">
+        <img src="images/kitchen/table-modena.jpg" alt="Обеденный стол Modena" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
+        <span class="product-cat">Кухня</span>
+      </div>
+      <div class="product-body">
+        <h3>Обеденный стол Modena</h3>
+        <p class="product-desc">Керамогранит, раздвижной механизм</p>
+        <div class="product-foot"><span class="product-price">от 58 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-name="Кресло руководителя Geneva">
+      <div class="product-media office">
+        <img src="images/office/chair-geneva.jpg" alt="Кресло руководителя Geneva" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
+        <span class="product-cat">Кабинет</span>
+      </div>
+      <div class="product-body">
+        <h3>Кресло руководителя Geneva</h3>
+        <p class="product-desc">Экокожа, механизм качания</p>
+        <div class="product-foot"><span class="product-price">от 33 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-name="Торшер Amber">
+      <div class="product-media decor">
+        <img src="images/decor/lamp-amber.jpg" alt="Торшер Amber" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-lamp"/></svg></div>
+        <span class="product-cat">Свет и декор</span>
+      </div>
+      <div class="product-body">
+        <h3>Торшер Amber</h3>
+        <p class="product-desc">Латунь, тканевый абажур</p>
+        <div class="product-foot"><span class="product-price">от 12 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-name="Комплект Palermo">
+      <div class="product-media outdoor">
+        <img src="images/outdoor/set-palermo.jpg" alt="Комплект мебели Palermo" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-outdoor"/></svg></div>
+        <span class="product-cat">Терраса</span>
+      </div>
+      <div class="product-body">
+        <h3>Комплект Palermo</h3>
+        <p class="product-desc">Диван, 2 кресла и столик, ротанг</p>
+        <div class="product-foot"><span class="product-price">от 96 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+    <article class="product-card reveal" data-name="Шкаф Firenze">
+      <div class="product-media bedroom">
+        <img src="images/bedroom/wardrobe-firenze.jpg" alt="Шкаф Firenze" loading="lazy" onerror="handleImgError(this)">
+        <div class="ph"><svg class="icon"><use href="#icon-wardrobe"/></svg></div>
+        <span class="product-cat">Спальня</span>
+      </div>
+      <div class="product-body">
+        <h3>Шкаф Firenze</h3>
+        <p class="product-desc">3 створки, с зеркалом</p>
+        <div class="product-foot"><span class="product-price">от 61 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+      </div>
+    </article>
+  </div>
+  <div class="prod-cta"><a href="catalog.html" class="btn btn-secondary">Показать весь каталог</a></div>
+</section>
+
+<!-- ─── PROCESS ─────────────────────────────────────────────────────────────── -->
+<section id="process" class="container">
+  <div class="section-head">
+    <div>
+      <span class="section-kicker">Процесс</span>
+      <h2 class="section-title">Как мы работаем</h2>
+    </div>
+  </div>
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <span class="process-num">01</span>
+      <h3>Консультация</h3>
+      <p>Расскажите о своём интерьере, бюджете и сроках — подберём модели из каталогов фабрик-партнёров и пришлём фото и видео образцов.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="process-num">02</span>
+      <h3>Заказ</h3>
+      <p>Утверждаем финальный вариант — размер, материал, цвет обивки — и оформляем заказ на фабрике по договору.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="process-num">03</span>
+      <h3>Контроль качества</h3>
+      <p>Проверяем сборку и упаковку на складе в Китае лично, до отправки — присылаем фото- и видеоотчёт.</p>
+    </div>
+    <div class="process-step reveal">
+      <span class="process-num">04</span>
+      <h3>Доставка</h3>
+      <p>Организуем логистику от фабрики до вашего адреса — от карго-перевозки до сборки на месте.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY ─────────────────────────────────────────────────────────────────── -->
+<section id="why" class="why">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="section-kicker">Почему мы</span>
+        <h2 class="section-title">Работаем так, как хотели бы себе</h2>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-icon"><svg class="icon"><use href="#icon-box"/></svg></div>
+        <h3>Без посредников</h3>
+        <p>Работаем напрямую с фабриками — вы платите за мебель, а не за цепочку перепродавцов.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon"><svg class="icon"><use href="#icon-shield"/></svg></div>
+        <h3>Контроль качества</h3>
+        <p>Проверяем каждую партию на месте перед отправкой: материалы, фурнитуру, сборку.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon"><svg class="icon"><use href="#icon-ruler"/></svg></div>
+        <h3>Кастомизация</h3>
+        <p>Меняем размер, ткань обивки и цвет фурнитуры под ваш интерьер — почти для любой модели.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon"><svg class="icon"><use href="#icon-truck"/></svg></div>
+        <h3>Прозрачная логистика</h3>
+        <p>Отслеживаем груз на каждом этапе — от фабрики до вашего подъезда.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon"><svg class="icon"><use href="#icon-chat"/></svg></div>
+        <h3>Личный менеджер</h3>
+        <p>Ведём заказ от подбора до сборки — на связи в WhatsApp и Telegram.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon"><svg class="icon"><use href="#icon-tag"/></svg></div>
+        <h3>Любой бюджет</h3>
+        <p>От практичных моделей массового сегмента до авторской мебели и дизайнерских реплик.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─────────────────────────────────────────────────────────────── -->
+<section id="contact" class="container">
+  <div class="section-head">
+    <div>
+      <span class="section-kicker">Контакты</span>
+      <h2 class="section-title">Обсудим ваш интерьер</h2>
+    </div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <p>Опишите, что вы ищете, — пришлём подборку моделей и расчёт стоимости с доставкой в течение дня.</p>
+      <div class="contact-list">
+        <a href="tel:+79001234567"><span class="icon-wrap"><svg class="icon"><use href="#icon-chat"/></svg></span> +7 900 123-45-67</a>
+        <a href="https://wa.me/79001234567" target="_blank" rel="noopener"><span class="icon-wrap"><svg class="icon"><use href="#icon-chat"/></svg></span> WhatsApp</a>
+        <a href="https://t.me/chinastore_mebel" target="_blank" rel="noopener"><span class="icon-wrap"><svg class="icon"><use href="#icon-chat"/></svg></span> Telegram · @chinastore_mebel</a>
+        <a href="mailto:hello@chinastore.ru"><span class="icon-wrap"><svg class="icon"><use href="#icon-chat"/></svg></span> hello@chinastore.ru</a>
+        <div><span class="icon-wrap"><svg class="icon"><use href="#icon-box"/></svg></span> Пн–Сб, 9:00–20:00 МСК</div>
+      </div>
+      <p class="contact-note">Цены в каталоге указаны ориентировочно и уточняются менеджером с учётом курса, комплектации и логистики.</p>
+    </div>
+    <div class="form-card reveal">
+      <form onsubmit="return false">
+        <div class="form-row">
+          <label for="cName">Имя</label>
+          <input type="text" id="cName" placeholder="Как к вам обращаться">
+        </div>
+        <div class="form-row">
+          <label for="cPhone">Телефон</label>
+          <input type="tel" id="cPhone" placeholder="+7">
+        </div>
+        <div class="form-row">
+          <label for="cMsg">Что вы ищете</label>
+          <textarea id="cMsg" placeholder="Например: диван в гостиную, бюджет до 100 000 ₽"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary" onclick="sendLead('wa')">Отправить в WhatsApp</button>
+          <button type="button" class="btn" onclick="sendLead('tg')">Отправить в Telegram</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">China <span>Store</span></a>
+        <p>Мебель напрямую с фабрик Китая. Дизайн, материалы и сервис на уровне европейских шоурумов.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Каталог</h4>
+        <a href="catalog.html#living-room">Гостиная</a>
+        <a href="catalog.html#bedroom">Спальня</a>
+        <a href="catalog.html#kitchen">Кухня и столовая</a>
+        <a href="catalog.html#office">Кабинет</a>
+        <a href="catalog.html#decor">Свет и декор</a>
+        <a href="catalog.html#outdoor">Терраса и сад</a>
+      </div>
+      <div class="footer-col">
+        <h4>Компания</h4>
+        <a href="#process">Как это работает</a>
+        <a href="#why">Почему мы</a>
+        <a href="#contact">Контакты</a>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <span>+7 900 123-45-67</span>
+        <span>hello@chinastore.ru</span>
+        <a href="https://t.me/chinastore_mebel" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/79001234567" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 China Store. Все права защищены.</span>
+      <span>Мебель из Китая напрямую с фабрик</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── ORDER MODAL ────────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Закрыть"><svg class="icon"><use href="#icon-close"/></svg></button>
+    <span class="modal-kicker">Быстрый заказ</span>
+    <h3 id="modalProductName">Товар</h3>
+    <div class="form-row">
+      <label for="mName">Имя</label>
+      <input type="text" id="mName" placeholder="Как к вам обращаться">
+    </div>
+    <div class="form-row">
+      <label for="mPhone">Телефон</label>
+      <input type="tel" id="mPhone" placeholder="+7">
+    </div>
+    <div class="form-actions">
+      <button type="button" class="btn btn-primary" onclick="sendOrder('wa')">Отправить в WhatsApp</button>
+      <button type="button" class="btn" onclick="sendOrder('tg')">Отправить в Telegram</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var WA_PHONE = "79001234567";
+var TG_USER = "chinastore_mebel";
+
+function handleImgError(img){
+  img.style.display = 'none';
+  var ph = img.parentElement.querySelector('.ph');
+  if (ph) ph.classList.add('show');
+}
+
+function buildMessage(product, name, phone, comment){
+  var lines = [];
+  lines.push(product ? ('Здравствуйте! Интересует: ' + product) : 'Здравствуйте! Хочу подобрать мебель.');
+  if (comment) lines.push(comment);
+  if (name) lines.push('Имя: ' + name);
+  if (phone) lines.push('Телефон: ' + phone);
+  return lines.join('\n');
+}
+
+function openChannel(channel, text){
+  var encoded = encodeURIComponent(text);
+  var url = channel === 'wa'
+    ? ('https://wa.me/' + WA_PHONE + '?text=' + encoded)
+    : ('https://t.me/' + TG_USER + '?text=' + encoded);
+  window.open(url, '_blank', 'noopener');
+}
+
+function sendLead(channel){
+  var name = document.getElementById('cName').value.trim();
+  var phone = document.getElementById('cPhone').value.trim();
+  var msg = document.getElementById('cMsg').value.trim();
+  openChannel(channel, buildMessage(null, name, phone, msg));
+}
+
+var currentProduct = '';
+function sendOrder(channel){
+  var name = document.getElementById('mName').value.trim();
+  var phone = document.getElementById('mPhone').value.trim();
+  openChannel(channel, buildMessage(currentProduct, name, phone, null));
+}
+
+function openOrderModal(productName){
+  currentProduct = productName || '';
+  document.getElementById('modalProductName').textContent = productName || 'Товар';
+  document.getElementById('mName').value = '';
+  document.getElementById('mPhone').value = '';
+  document.getElementById('orderModal').classList.add('active');
+}
+function closeOrderModal(){
+  document.getElementById('orderModal').classList.remove('active');
+}
+
+document.addEventListener('click', function(e){
+  var orderBtn = e.target.closest('[data-order]');
+  if (orderBtn){
+    var card = orderBtn.closest('[data-name]');
+    openOrderModal(card ? card.getAttribute('data-name') : '');
+  }
+});
+document.getElementById('modalClose').addEventListener('click', closeOrderModal);
+document.getElementById('orderModal').addEventListener('click', function(e){
+  if (e.target === this) closeOrderModal();
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeOrderModal();
+});
+
+var menuBtn = document.getElementById('menuBtn');
+var mobileMenu = document.getElementById('mobileMenu');
+var mobileClose = document.getElementById('mobileClose');
+if (menuBtn){
+  menuBtn.addEventListener('click', function(){ mobileMenu.classList.add('active'); });
+  mobileClose.addEventListener('click', function(){ mobileMenu.classList.remove('active'); });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('active'); });
+  });
+}
+
+if ('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+}
+</script>
+</body>
+</html>
