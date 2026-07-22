@@ -46,8 +46,8 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .nav-links{display:flex;gap:36px;align-items:center}
 .nav-links a{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;transition:color .3s}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
-.nav-btn{background:var(--accent);color:var(--accent-ink);padding:13px 24px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-radius:2px;transition:.3s}
-.nav-btn:hover{background:var(--ink)}
+.nav-links .nav-btn{background:var(--accent);color:var(--accent-ink);padding:13px 24px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-radius:2px;transition:.3s}
+.nav-links .nav-btn:hover{background:var(--ink);color:var(--accent-ink)}
 .menu{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
 .menu span{width:22px;height:1.5px;background:var(--ink)}
 .mobile-menu{position:fixed;inset:0;background:rgba(250,246,239,.98);z-index:1100;display:none;flex-direction:column;justify-content:center;align-items:center;gap:30px}
@@ -192,7 +192,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
       <a href="index.html#process">Как это работает</a>
       <a href="index.html#why">Почему мы</a>
       <a href="index.html#contact">Контакты</a>
-      <a href="https://wa.me/79001234567" target="_blank" rel="noopener" class="nav-btn">Написать в WhatsApp</a>
+      <a href="https://t.me/chinastore_mebel" target="_blank" rel="noopener" class="nav-btn">Написать в Telegram</a>
     </div>
     <button class="menu" id="menuBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
   </div>
@@ -604,8 +604,8 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
       <input type="tel" id="mPhone" placeholder="+7">
     </div>
     <div class="form-actions">
-      <button type="button" class="btn btn-primary" onclick="sendOrder('wa')">Отправить в WhatsApp</button>
-      <button type="button" class="btn" onclick="sendOrder('tg')">Отправить в Telegram</button>
+      <button type="button" class="btn btn-primary" onclick="sendOrder('tg')">Отправить в Telegram</button>
+      <button type="button" class="btn" onclick="sendOrder('wa')">Отправить в WhatsApp</button>
     </div>
   </div>
 </div>
