@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Политика обработки персональных данных — China Store</title>
+<meta name="description" content="Политика обработки персональных данных China Store — как собираются, используются и защищаются данные пользователей сайта.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://www.chinastore.ru/privacy.html">
+<meta name="theme-color" content="#FAF6EF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23B2502C'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23FAF6EF' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#FAF6EF;--bg2:#F1E8DB;--bg3:#E9DCC8;
+--ink:#2B241C;--muted:#7C6F5F;
+--line:rgba(43,36,28,.12);--line2:rgba(43,36,28,.22);
+--accent:#B2502C;--accent-ink:#FAF6EF;--signal:#63704A;
+--serif:'Instrument Serif',serif;--sans:'Manrope',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{width:min(1280px,92%);margin:auto}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:rgba(178,80,44,.18)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blur(16px);background:rgba(250,246,239,.82);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:100%}
+.logo{font-family:var(--serif);font-size:24px;letter-spacing:.01em}
+.logo span{color:var(--accent);font-style:italic}
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links .nav-btn{background:var(--accent);color:var(--accent-ink);padding:13px 24px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-radius:2px;transition:.3s}
+.nav-links .nav-btn:hover{background:var(--ink);color:var(--accent-ink)}
+.menu{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.menu span{width:22px;height:1.5px;background:var(--ink)}
+.mobile-menu{position:fixed;inset:0;background:rgba(250,246,239,.98);z-index:1100;display:none;flex-direction:column;justify-content:center;align-items:center;gap:30px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:26px;color:var(--ink)}
+.mobile-close{position:absolute;top:26px;right:26px;background:none;border:none;color:var(--ink)}
+.mobile-close .icon{width:26px;height:26px}
+
+/* LEGAL DOC */
+.wrap{max-width:820px;margin:0 auto;padding:164px 24px 100px}
+.page-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;margin-bottom:14px;display:block}
+.page-title{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.6vw,54px);letter-spacing:-.01em;line-height:1.05;margin-bottom:16px}
+.page-date{font-size:13px;color:var(--muted);margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.section{margin-bottom:44px}
+.section-title{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:16px;padding-left:16px;border-left:2px solid var(--accent)}
+.section p,.section li{font-size:15px;color:#4b4338;line-height:1.75}
+.section p+p{margin-top:12px}
+.section ul,.section ol{padding-left:22px;display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.section li{list-style:disc}
+.section ol li{list-style:decimal}
+.section a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.section a:hover{color:var(--ink)}
+.highlight{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin-top:16px}
+.highlight p{font-size:14px;color:var(--muted)}
+
+table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13.5px}
+th{text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:var(--muted);padding:12px 14px;border-bottom:1px solid var(--line2)}
+td{padding:14px 14px;border-bottom:1px solid var(--line);color:#4b4338;vertical-align:top;line-height:1.6}
+tr:last-child td{border-bottom:none}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(250,246,239,.7);padding:56px 0 32px}
+.footer-simple{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-bottom:24px}
+.footer-simple .logo{color:var(--bg)}
+.footer-simple .logo span{color:var(--accent)}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap}
+.footer-links a{font-size:12.5px;color:rgba(250,246,239,.72);transition:.25s}
+.footer-links a:hover{color:var(--accent)}
+.footer-bottom{padding-top:20px;border-top:1px solid rgba(250,246,239,.14);font-size:12px;color:rgba(250,246,239,.4)}
+
+@media (max-width:960px){
+  .nav-links{display:none}
+  .menu{display:flex}
+  .wrap{padding-top:140px}
+}
+@media (max-width:640px){
+  .footer-simple{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<svg style="display:none">
+<symbol id="icon-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+</svg>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">China <span>Store</span></a>
+    <div class="nav-links">
+      <a href="catalog.html">Каталог</a>
+      <a href="index.html#process">Как это работает</a>
+      <a href="index.html#why">Почему мы</a>
+      <a href="index.html#contact">Контакты</a>
+      <a href="https://t.me/chinastore_mebel" target="_blank" rel="noopener" class="nav-btn">Написать в Telegram</a>
+    </div>
+    <button class="menu" id="menuBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Закрыть меню"><svg class="icon"><use href="#icon-close"/></svg></button>
+  <a href="catalog.html">Каталог</a>
+  <a href="index.html#process">Как это работает</a>
+  <a href="index.html#why">Почему мы</a>
+  <a href="index.html#contact">Контакты</a>
+</div>
+
+<div class="wrap">
+  <span class="page-kicker">Правовая информация</span>
+  <h1 class="page-title">Политика обработки<br>персональных данных</h1>
+  <div class="page-date">Редакция от 22 июля 2026 г. · Вступает в силу с момента публикации</div>
+
+  <div class="section">
+    <div class="section-title">1. Общие положения</div>
+    <p>Настоящая Политика обработки персональных данных (далее — «Политика») определяет порядок сбора, хранения, использования, передачи и защиты персональных данных пользователей сайта <strong>chinastore.ru</strong> (далее — «Сайт»), а также сведения о реализуемых требованиях к защите персональных данных.</p>
+    <p>Политика разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных», Федеральным законом от 27.07.2006 № 149-ФЗ «Об информации, информационных технологиях и о защите информации» и иными нормативными актами Российской Федерации.</p>
+    <p>Используя Сайт, заполняя формы обратной связи и оформляя заявку на подбор мебели, вы подтверждаете согласие с условиями настоящей Политики. Если вы не согласны с её условиями, пожалуйста, не используйте Сайт и не отправляйте свои данные.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">2. Оператор персональных данных</div>
+    <div class="highlight">
+      <p><strong>Наименование:</strong> [ИП Фамилия Имя Отчество / ООО «Наименование»]</p>
+      <p style="margin-top:8px"><strong>ИНН:</strong> [ИНН]</p>
+      <p style="margin-top:8px"><strong>ОГРНИП/ОГРН:</strong> [ОГРНИП/ОГРН]</p>
+      <p style="margin-top:8px"><strong>Адрес:</strong> [юридический / фактический адрес]</p>
+      <p style="margin-top:8px"><strong>Email:</strong> <a href="mailto:hello@chinastore.ru">hello@chinastore.ru</a></p>
+      <p style="margin-top:8px"><strong>Телефон:</strong> <a href="tel:+79001234567">+7 900 123-45-67</a></p>
+      <p style="margin-top:8px"><strong>Telegram:</strong> <a href="https://t.me/chinastore_mebel" target="_blank">@chinastore_mebel</a></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">3. Состав обрабатываемых персональных данных</div>
+    <p>Сайт не требует регистрации и не содержит личного кабинета. Персональные данные передаются Оператору только тогда, когда пользователь сам заполняет форму на Сайте:</p>
+    <table>
+      <thead>
+        <tr><th>Категория</th><th>Данные</th><th>Где собираются</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Контактные данные</strong></td>
+          <td>Имя, номер телефона</td>
+          <td>Форма «Обсудим ваш интерьер», форма быстрого заказа в карточке товара</td>
+        </tr>
+        <tr>
+          <td><strong>Данные заявки</strong></td>
+          <td>Название интересующего товара, комментарий к заказу (бюджет, пожелания)</td>
+          <td>Форма «Обсудим ваш интерьер», форма быстрого заказа</td>
+        </tr>
+        <tr>
+          <td><strong>Технические данные</strong></td>
+          <td>IP-адрес, тип браузера и устройства, дата и время обращения к Сайту</td>
+          <td>Автоматически, стандартные журналы хостинг-провайдера</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:16px">Оператор не собирает специальные категории персональных данных (о здоровье, расовой или национальной принадлежности, политических и религиозных взглядах и т.п.) и не запрашивает данные банковских карт или иные платёжные реквизиты через Сайт.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">4. Как передаются данные из формы</div>
+    <p>Сайт не имеет собственной базы данных и не сохраняет данные форм на своих серверах. При нажатии кнопки «Отправить в Telegram» или «Отправить в WhatsApp» браузер пользователя формирует ссылку на мессенджер с уже заполненным текстом сообщения (введённые имя, телефон и комментарий) и открывает соответствующее приложение или веб-версию мессенджера.</p>
+    <p style="margin-top:12px">Дальнейшая передача, доставка и хранение сообщения происходят внутри инфраструктуры мессенджера, которым вы воспользовались:</p>
+    <ul>
+      <li><strong>Telegram</strong> — оператор Telegram FZ-LLC, политика конфиденциальности: <a href="https://telegram.org/privacy" target="_blank">telegram.org/privacy</a>;</li>
+      <li><strong>WhatsApp</strong> — оператор Meta Platforms, Inc., политика конфиденциальности: <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank">whatsapp.com/legal/privacy-policy</a>.</li>
+    </ul>
+    <p style="margin-top:12px">Отправленное сообщение поступает Оператору как обычное сообщение в чате мессенджера и обрабатывается в целях, указанных в разделе 5 настоящей Политики. Если вы не хотите, чтобы ваши данные передавались через конкретный мессенджер, свяжитесь с Оператором любым иным указанным на Сайте способом.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">5. Цели обработки персональных данных</div>
+    <ol>
+      <li>Обратная связь с пользователем по его заявке — консультация, подбор мебели, расчёт стоимости и сроков;</li>
+      <li>Оформление и сопровождение заказа на изготовление и доставку мебели;</li>
+      <li>Информирование о статусе заказа, логистике и иных существенных условиях сделки;</li>
+      <li>Исполнение требований законодательства РФ (в том числе законодательства о защите прав потребителей).</li>
+    </ol>
+    <p style="margin-top:16px">Обработка персональных данных в иных целях не осуществляется.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">6. Правовые основания обработки</div>
+    <ul>
+      <li><strong>Согласие субъекта персональных данных</strong> (п. 1 ч. 1 ст. 6 ФЗ-152) — вы выражаете согласие, самостоятельно заполняя и отправляя форму на Сайте;</li>
+      <li><strong>Исполнение договора</strong> (п. 5 ч. 1 ст. 6 ФЗ-152) — если по результатам обращения заключается договор на изготовление и поставку товара (см. Публичную оферту).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">7. Сроки хранения данных</div>
+    <p>Поскольку данные из форм передаются напрямую в мессенджер и не попадают в базу данных Сайта, срок их хранения определяется историей переписки в Telegram или WhatsApp Оператора и вашими собственными настройками мессенджера.</p>
+    <p style="margin-top:12px">Технические журналы хостинг-провайдера (IP-адрес, время обращения) хранятся в течение срока, установленного провайдером хостинга, как правило не более 12 месяцев, и используются исключительно для обеспечения безопасности и работоспособности Сайта.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">8. Права субъекта персональных данных</div>
+    <p>В соответствии с ФЗ-152 вы вправе:</p>
+    <ul>
+      <li>получить информацию о том, какие ваши данные обрабатываются Оператором;</li>
+      <li>потребовать уточнения, исправления или удаления неточных данных;</li>
+      <li>отозвать согласие на обработку персональных данных;</li>
+      <li>обратиться с жалобой в Роскомнадзор (<a href="https://rkn.gov.ru" target="_blank">rkn.gov.ru</a>), если считаете, что ваши права нарушены.</li>
+    </ul>
+    <p style="margin-top:16px">Для реализации этих прав направьте запрос на <a href="mailto:hello@chinastore.ru">hello@chinastore.ru</a> или в Telegram <a href="https://t.me/chinastore_mebel" target="_blank">@chinastore_mebel</a>. Запрос рассматривается в течение 30 календарных дней.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">9. Файлы cookie и аналитика</div>
+    <p>На момент публикации настоящей Политики Сайт не использует сервисы веб-аналитики и не устанавливает cookie-файлы для отслеживания пользователей. Хостинг-провайдер может использовать технически необходимые файлы для обеспечения работы и безопасности Сайта.</p>
+    <p style="margin-top:12px">Если в будущем на Сайте будут подключены системы аналитики или рекламные сервисы, эта информация будет отражена в обновлённой редакции настоящей Политики до начала их использования.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">10. Защита персональных данных</div>
+    <p>Сайт работает по защищённому протоколу HTTPS. Оператор применяет организационные и технические меры для защиты данных, которые вы ему направляете, от несанкционированного доступа, изменения, раскрытия или уничтожения, в объёме, соразмерном тому, что Сайт не хранит эти данные самостоятельно, а лишь инициирует их передачу через мессенджер по вашему собственному действию.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">11. Дети</div>
+    <p>Сайт не предназначен для лиц младше 18 лет, и Оператор сознательно не собирает данные несовершеннолетних. Заказ и оплата товара оформляются дееспособным лицом.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">12. Изменение Политики</div>
+    <p>Оператор вправе вносить изменения в настоящую Политику. Актуальная редакция всегда размещена на этой странице с указанием даты редакции. Продолжение использования Сайта после публикации изменений означает согласие с обновлённой Политикой.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">13. Контакты</div>
+    <div class="highlight">
+      <p><strong>Email:</strong> <a href="mailto:hello@chinastore.ru">hello@chinastore.ru</a></p>
+      <p style="margin-top:8px"><strong>Телефон:</strong> <a href="tel:+79001234567">+7 900 123-45-67</a></p>
+      <p style="margin-top:8px"><strong>Telegram:</strong> <a href="https://t.me/chinastore_mebel" target="_blank">@chinastore_mebel</a></p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-simple">
+      <a href="index.html" class="logo">China <span>Store</span></a>
+      <div class="footer-links">
+        <a href="index.html">На главную</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="oferta.html">Публичная оферта</a>
+        <a href="index.html#contact">Контакты</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 China Store. Все права защищены.</div>
+  </div>
+</footer>
+
+<script>
+var menuBtn = document.getElementById('menuBtn');
+var mobileMenu = document.getElementById('mobileMenu');
+var mobileClose = document.getElementById('mobileClose');
+if (menuBtn){
+  menuBtn.addEventListener('click', function(){ mobileMenu.classList.add('active'); });
+  mobileClose.addEventListener('click', function(){ mobileMenu.classList.remove('active'); });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('active'); });
+  });
+}
+</script>
+</body>
+</html>
