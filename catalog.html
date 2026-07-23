@@ -112,7 +112,7 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .product-card{border:none;border-radius:0;overflow:visible;background:none;transition:.35s;display:flex;flex-direction:column}
 .product-card.hidden{display:none}
 .product-card:hover .product-media img{transform:scale(1.045)}
-.product-media{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:4px;background:var(--bg2)}
+.product-media{display:block;position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:4px;background:var(--bg2)}
 .product-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .product-media .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
 .product-media .ph.show{display:flex}
@@ -304,152 +304,152 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
   <div class="prod-grid" id="prodGrid">
 
     <article class="product-card reveal" data-category="tables" data-name="Обеденный стол ARC">
-      <div class="product-media tables">
+      <a href="product.html?p=arc" class="product-media tables" aria-label="Обеденный стол ARC">
         <img src="images/kitchen/arc.jpg" alt="Обеденный стол ARC" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
         <span class="product-cat">Стол</span>
-      </div>
-      <div class="product-body"><h3>Стол ARC</h3><p class="product-spec">Массив дерева · на 6–8 персон</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=arc">Стол ARC</a></h3><p class="product-spec">Массив дерева · на 6–8 персон</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Стул NORD">
-      <div class="product-media chairs">
+      <a href="product.html?p=nord" class="product-media chairs" aria-label="Стул NORD">
         <img src="images/kitchen/nord.jpg" alt="Стул NORD" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
         <span class="product-cat">Стул</span>
-      </div>
-      <div class="product-body"><h3>Стул NORD</h3><p class="product-spec">Массив дерева · Scandinavian</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=nord">Стул NORD</a></h3><p class="product-spec">Массив дерева · Scandinavian</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Обеденный стол PURE">
-      <div class="product-media tables">
+      <a href="product.html?p=pure" class="product-media tables" aria-label="Обеденный стол PURE">
         <img src="images/kitchen/pure.jpg" alt="Обеденный стол PURE" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
         <span class="product-cat">Стол</span>
-      </div>
-      <div class="product-body"><h3>Стол PURE</h3><p class="product-spec">Массив дерева · для столовой</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=pure">Стол PURE</a></h3><p class="product-spec">Массив дерева · для столовой</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло OAK Natural">
-      <div class="product-media chairs">
+      <a href="product.html?p=oak-natural" class="product-media chairs" aria-label="Кресло OAK Natural">
         <img src="images/kitchen/oak-natural.jpg" alt="Кресло OAK Natural" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
         <span class="product-cat">Кресло</span>
-      </div>
-      <div class="product-body"><h3>Кресло OAK Natural</h3><p class="product-spec">Массив дерева · натуральный цвет</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=oak-natural">Кресло OAK Natural</a></h3><p class="product-spec">Массив дерева · натуральный цвет</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло OAK Walnut">
-      <div class="product-media chairs">
+      <a href="product.html?p=oak-walnut" class="product-media chairs" aria-label="Кресло OAK Walnut">
         <img src="images/kitchen/oak-walnut.jpg" alt="Кресло OAK Walnut" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
         <span class="product-cat">Кресло</span>
-      </div>
-      <div class="product-body"><h3>Кресло OAK Walnut</h3><p class="product-spec">Массив дерева · оттенок орех</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=oak-walnut">Кресло OAK Walnut</a></h3><p class="product-spec">Массив дерева · оттенок орех</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло OAK Honey">
-      <div class="product-media chairs">
+      <a href="product.html?p=oak-honey" class="product-media chairs" aria-label="Кресло OAK Honey">
         <img src="images/kitchen/oak-honey.jpg" alt="Кресло OAK Honey" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
         <span class="product-cat">Кресло</span>
-      </div>
-      <div class="product-body"><h3>Кресло OAK Honey</h3><p class="product-spec">Массив дерева · медовый оттенок</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=oak-honey">Кресло OAK Honey</a></h3><p class="product-spec">Массив дерева · медовый оттенок</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло LOOP">
-      <div class="product-media chairs">
+      <a href="product.html?p=loop" class="product-media chairs" aria-label="Кресло LOOP">
         <img src="images/kitchen/loop.jpg" alt="Кресло LOOP" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
         <span class="product-cat">Кресло</span>
-      </div>
-      <div class="product-body"><h3>Кресло LOOP</h3><p class="product-spec">Массив дерева · дугообразная спинка</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=loop">Кресло LOOP</a></h3><p class="product-spec">Массив дерева · дугообразная спинка</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол NOIR">
-      <div class="product-media tables">
+      <a href="product.html?p=noir" class="product-media tables" aria-label="Стол NOIR">
         <img src="images/kitchen/noir.jpg" alt="Стол NOIR" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
         <span class="product-cat">Стол</span>
-      </div>
-      <div class="product-body"><h3>Стол NOIR</h3><p class="product-spec">Массив ясеня · скульптурное основание</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=noir">Стол NOIR</a></h3><p class="product-spec">Массив ясеня · скульптурное основание</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол LINEN">
-      <div class="product-media tables">
+      <a href="product.html?p=linen" class="product-media tables" aria-label="Стол LINEN">
         <img src="images/kitchen/linen.jpg" alt="Стол LINEN" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
         <span class="product-cat">Стол</span>
-      </div>
-      <div class="product-body"><h3>Стол LINEN</h3><p class="product-spec">Массив дуба · комплект со стульями</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=linen">Стол LINEN</a></h3><p class="product-spec">Массив дуба · комплект со стульями</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Стул CESCA">
-      <div class="product-media chairs">
+      <a href="product.html?p=cesca" class="product-media chairs" aria-label="Стул CESCA">
         <img src="images/kitchen/cesca.jpg" alt="Стул CESCA" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
         <span class="product-cat">Стул</span>
-      </div>
-      <div class="product-body"><h3>Стул CESCA</h3><p class="product-spec">Ротанг и кожа · консольная рама</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=cesca">Стул CESCA</a></h3><p class="product-spec">Ротанг и кожа · консольная рама</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Стул BERG">
-      <div class="product-media chairs">
+      <a href="product.html?p=berg" class="product-media chairs" aria-label="Стул BERG">
         <img src="images/kitchen/berg.jpg" alt="Стул BERG" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
         <span class="product-cat">Стул</span>
-      </div>
-      <div class="product-body"><h3>Стул BERG</h3><p class="product-spec">Массив дерева · круглое сиденье</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=berg">Стул BERG</a></h3><p class="product-spec">Массив дерева · круглое сиденье</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван CLOUD">
-      <div class="product-media sofas">
+      <a href="product.html?p=cloud" class="product-media sofas" aria-label="Диван CLOUD">
         <img src="images/kitchen/cloud.jpg" alt="Диван CLOUD" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-sofa"/></svg></div>
         <span class="product-cat">Диван</span>
-      </div>
-      <div class="product-body"><h3>Диван CLOUD</h3><p class="product-spec">Букле · органичная изогнутая форма</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=cloud">Диван CLOUD</a></h3><p class="product-spec">Букле · органичная изогнутая форма</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван HOLM">
-      <div class="product-media sofas">
+      <a href="product.html?p=holm" class="product-media sofas" aria-label="Диван HOLM">
         <img src="images/kitchen/holm.jpg" alt="Диван HOLM" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-sofa"/></svg></div>
         <span class="product-cat">Диван</span>
-      </div>
-      <div class="product-body"><h3>Диван HOLM</h3><p class="product-spec">Массив дерева · 3-местный</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=holm">Диван HOLM</a></h3><p class="product-spec">Массив дерева · 3-местный</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба GLOW">
-      <div class="product-media cabinets">
+      <a href="product.html?p=glow" class="product-media cabinets" aria-label="Тумба GLOW">
         <img src="images/kitchen/glow.jpg" alt="Тумба GLOW" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-wardrobe"/></svg></div>
         <span class="product-cat">Тумба</span>
-      </div>
-      <div class="product-body"><h3>Тумба GLOW</h3><p class="product-spec">С LED-подсветкой · беспроводная зарядка</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=glow">Тумба GLOW</a></h3><p class="product-spec">С LED-подсветкой · беспроводная зарядка</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба MILK">
-      <div class="product-media cabinets">
+      <a href="product.html?p=milk" class="product-media cabinets" aria-label="Тумба MILK">
         <img src="images/kitchen/milk.jpg" alt="Тумба MILK" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-wardrobe"/></svg></div>
         <span class="product-cat">Тумба</span>
-      </div>
-      <div class="product-body"><h3>Тумба MILK</h3><p class="product-spec">Экокожа и массив дерева · 40×40×50 см</p>
+      </a>
+      <div class="product-body"><h3><a href="product.html?p=milk">Тумба MILK</a></h3><p class="product-spec">Экокожа и массив дерева · 40×40×50 см</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>

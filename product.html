@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Товар — China Store</title>
+<meta name="description" content="Карточка товара China Store: материал, размер, комплектация и оформление заказа.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://www.chinastore.ru/product.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="China Store">
+<meta property="og:image" content="https://www.chinastore.ru/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.chinastore.ru/images/og-cover.jpg">
+<meta name="theme-color" content="#FAF6EF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23B2502C'/%3E%3Cpath d='M72,32 A25,25 0 1 0 72,68' fill='none' stroke='%23FAF6EF' stroke-width='9' stroke-linecap='round'/%3E%3Cpath d='M75,36 C64,30 53,35 53,45 C53,55 78,52 78,62 C78,72 65,77 55,71' fill='none' stroke='%23FAF6EF' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="images/logo-touch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & TOKENS ─────────────────────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#FAF6EF;--bg2:#F1E8DB;--bg3:#E9DCC8;
+--ink:#2B241C;--muted:#7C6F5F;
+--line:rgba(43,36,28,.12);--line2:rgba(43,36,28,.22);
+--accent:#B2502C;--accent-ink:#FAF6EF;--signal:#63704A;
+--serif:'Instrument Serif',serif;--sans:'Manrope',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{width:min(1280px,92%);margin:auto}
+section{padding:120px 0}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:rgba(178,80,44,.18)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── NAV ────────────────────────────────────────────────────────────────── */
+nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blur(16px);background:rgba(250,246,239,.82);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:100%}
+.logo{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif);font-size:24px;letter-spacing:.01em}
+.logo span{color:var(--accent);font-style:italic}
+.logo-mark{width:28px;height:28px;flex-shrink:0}
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links .nav-btn{background:var(--accent);color:var(--accent-ink);padding:13px 24px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-radius:2px;transition:.3s}
+.nav-links .nav-btn:hover{background:var(--ink);color:var(--accent-ink)}
+.menu{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.menu span{width:22px;height:1.5px;background:var(--ink)}
+.mobile-menu{position:fixed;inset:0;background:rgba(250,246,239,.98);z-index:1100;display:none;flex-direction:column;justify-content:center;align-items:center;gap:30px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:26px;color:var(--ink)}
+.mobile-close{position:absolute;top:26px;right:26px;background:none;border:none;color:var(--ink)}
+.mobile-close .icon{width:26px;height:26px}
+
+/* ─── BREADCRUMB / HEAD ──────────────────────────────────────────────────── */
+.pd-head{padding:150px 0 0}
+.breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--muted)}
+.breadcrumb a{color:var(--muted);transition:color .25s}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span.current{color:var(--ink)}
+
+/* ─── PRODUCT DETAIL ─────────────────────────────────────────────────────── */
+.pd-section{padding:40px 0 100px}
+.pd-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.pd-media{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:1/1;background:var(--bg2)}
+.pd-media img{width:100%;height:100%;object-fit:cover}
+.pd-media .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
+.pd-media .ph.show{display:flex}
+.pd-media .ph .icon{width:30%;height:30%;stroke:rgba(43,36,28,.5)}
+.pd-media .product-cat{position:absolute;top:16px;left:16px;background:rgba(250,246,239,.92);color:var(--ink);font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:7px 12px;border-radius:20px;z-index:2}
+.pd-info{display:flex;flex-direction:column}
+.pd-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;display:block}
+.pd-info h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.6vw,44px);letter-spacing:-.01em;margin:10px 0 10px}
+.pd-spec{font-size:14px;color:var(--muted);margin-bottom:22px}
+.pd-desc{font-size:15px;color:#5c5245;line-height:1.75;margin-bottom:30px;max-width:460px}
+.pd-price-row{display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin-bottom:32px}
+.pd-price{font-family:var(--serif);font-size:26px;color:var(--ink)}
+.pd-specs{list-style:none;display:flex;flex-direction:column;gap:11px;padding:24px 0;margin-bottom:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pd-specs li{display:flex;justify-content:space-between;gap:16px;font-size:13.5px}
+.pd-specs li span:first-child{color:var(--muted)}
+.pd-specs li span:last-child{font-weight:600;text-align:right}
+.pd-trust{display:flex;flex-direction:column;gap:13px}
+.pd-trust div{display:flex;align-items:center;gap:11px;font-size:13px;color:#4b4338}
+.pd-trust .icon{width:18px;height:18px;stroke:var(--accent);flex-shrink:0}
+
+.pd-notfound{text-align:center;padding:60px 20px 20px}
+.pd-notfound h1{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.4vw,38px);margin-bottom:16px}
+.pd-notfound p{color:var(--muted);margin-bottom:28px}
+
+/* ─── RELATED ────────────────────────────────────────────────────────────── */
+.pd-related{padding-top:0}
+.pd-related-head{margin-bottom:40px}
+.pd-related-head span{color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;margin-bottom:12px;display:block}
+.pd-related-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3vw,34px);letter-spacing:-.01em}
+
+/* ─── PRODUCT CARD (shared) ──────────────────────────────────────────────── */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 24px}
+.product-card{border:none;border-radius:0;overflow:visible;background:none;display:flex;flex-direction:column}
+.product-card:hover .product-media img{transform:scale(1.045)}
+.product-media{display:block;position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:4px;background:var(--bg2)}
+.product-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.product-media .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
+.product-media .ph.show{display:flex}
+.product-media .ph .icon{width:34%;height:34%;stroke:rgba(43,36,28,.5)}
+.product-media.tables{background:linear-gradient(135deg,#EAD0B3,#C1734A)}
+.product-media.chairs{background:linear-gradient(135deg,#E6DFCC,#8E7A52)}
+.product-media.sofas{background:linear-gradient(135deg,#ECD8D0,#C08D7C)}
+.product-media.cabinets{background:linear-gradient(135deg,#E3DCC9,#8A6A4A)}
+.product-cat{position:absolute;top:10px;left:10px;background:rgba(250,246,239,.92);color:var(--ink);font-size:9.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:5px 9px;border-radius:20px;z-index:2}
+.product-body{padding:16px 2px 0;display:flex;flex-direction:column;gap:4px;flex:1}
+.product-body h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.25}
+.product-spec{font-size:12.5px;color:var(--muted);line-height:1.5}
+.product-foot{margin-top:12px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.product-price{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.btn-order{background:var(--ink);border:1px solid var(--ink);color:var(--bg);padding:10px 16px;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border-radius:30px;transition:.25s;white-space:nowrap}
+.btn-order:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:17px 30px;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;transition:.3s;border-radius:2px;border:1px solid transparent;white-space:nowrap}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--ink)}
+.btn-secondary{border-color:var(--line2);color:var(--ink)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;margin-top:0}
+.footer-grid{display:grid;grid-template-columns:1.3fr .9fr .9fr .9fr;gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(250,246,239,.14)}
+.footer-brand .logo{color:var(--bg)}
+.footer-brand .logo span{color:var(--accent)}
+.footer-brand p{font-size:13.5px;line-height:1.7;margin-top:16px;max-width:280px;color:rgba(250,246,239,.55)}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:18px}
+.footer-col a,.footer-col span{display:block;font-size:13.5px;color:rgba(250,246,239,.72);margin-bottom:12px;transition:.25s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:12px;color:rgba(250,246,239,.4);flex-wrap:wrap;gap:12px}
+
+/* ─── MODAL ──────────────────────────────────────────────────────────────── */
+.modal-overlay{position:fixed;inset:0;background:rgba(43,36,28,.55);z-index:2000;display:none;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.active{display:flex}
+.modal{background:var(--bg);border-radius:8px;padding:40px;width:min(440px,100%);position:relative}
+.modal-close{position:absolute;top:18px;right:18px;background:none;border:none;color:var(--muted)}
+.modal-close .icon{width:20px;height:20px}
+.modal-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-size:10.5px;font-weight:700;margin-bottom:10px;display:block}
+.modal h3{font-family:var(--serif);font-weight:400;font-size:26px;margin-bottom:22px}
+.form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.form-row label{font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--muted)}
+.form-row input{background:var(--bg2);border:1px solid var(--line2);border-radius:3px;padding:14px 16px;font-family:inherit;font-size:14.5px;color:var(--ink)}
+.form-row input:focus{outline:none;border-color:var(--accent)}
+.form-actions{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.form-consent{font-size:11.5px;color:var(--muted);line-height:1.6;margin-top:14px}
+.form-consent a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.form-consent a:hover{color:var(--accent)}
+.form-actions .btn{justify-content:center;width:100%;border:1px solid var(--line2);background:none;color:var(--ink)}
+.form-actions .btn.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.form-actions .btn:hover{border-color:var(--accent);color:var(--accent)}
+.form-actions .btn.btn-primary:hover{background:var(--ink);border-color:var(--ink);color:var(--accent-ink)}
+
+/* ─── REVEAL / MOTION ────────────────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{transition:none;opacity:1;transform:none}
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
+@media (max-width:960px){
+  .nav-links{display:none}
+  .menu{display:flex}
+  .pd-layout{grid-template-columns:1fr;gap:32px}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;row-gap:36px}
+  section{padding:88px 0}
+  .pd-head{padding-top:132px}
+  .pd-section{padding-bottom:72px}
+}
+@media (max-width:640px){
+  .prod-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .pd-price-row{flex-direction:column;align-items:stretch}
+  .pd-price-row .btn{width:100%;justify-content:center}
+}
+/* ─── COOKIE CONSENT ─────────────────────────────────────────────────────── */
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:1500;background:var(--ink);padding:22px 0;transform:translateY(120%);transition:transform .45s ease;box-shadow:0 -10px 32px rgba(0,0,0,.16)}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.cookie-inner p{font-size:12.5px;line-height:1.65;max-width:720px;margin:0;color:rgba(250,246,239,.75)}
+.cookie-inner a{color:var(--bg);text-decoration:underline;text-underline-offset:2px}
+.cookie-inner a:hover{color:var(--accent)}
+.cookie-accept{flex-shrink:0;padding:13px 28px;background:var(--accent);color:var(--accent-ink);border:none;border-radius:2px;font-family:inherit;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:.25s;white-space:nowrap}
+.cookie-accept:hover{background:var(--bg);color:var(--ink)}
+@media (max-width:640px){
+  .cookie-banner{padding:18px 0}
+  .cookie-inner{flex-direction:column;align-items:stretch;text-align:left;gap:16px}
+  .cookie-accept{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── SVG SPRITE ─────────────────────────────────────────────────────────── -->
+<svg style="display:none">
+<symbol id="icon-sofa" viewBox="0 0 48 48"><rect x="4" y="18" width="8" height="20" rx="3"/><rect x="36" y="18" width="8" height="20" rx="3"/><rect x="10" y="14" width="28" height="12" rx="4"/><rect x="6" y="24" width="36" height="14" rx="4"/><line x1="12" y1="38" x2="12" y2="42"/><line x1="36" y1="38" x2="36" y2="42"/></symbol>
+<symbol id="icon-armchair" viewBox="0 0 48 48"><rect x="6" y="20" width="7" height="16" rx="3"/><rect x="35" y="20" width="7" height="16" rx="3"/><rect x="12" y="12" width="24" height="16" rx="5"/><rect x="10" y="26" width="28" height="12" rx="4"/><line x1="14" y1="38" x2="14" y2="42"/><line x1="34" y1="38" x2="34" y2="42"/></symbol>
+<symbol id="icon-table" viewBox="0 0 48 48"><rect x="6" y="16" width="36" height="6" rx="2"/><line x1="10" y1="22" x2="10" y2="40"/><line x1="38" y1="22" x2="38" y2="40"/><line x1="14" y1="22" x2="12" y2="40"/><line x1="34" y1="22" x2="36" y2="40"/></symbol>
+<symbol id="icon-wardrobe" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="2"/><line x1="24" y1="6" x2="24" y2="42"/><line x1="20" y1="22" x2="20" y2="26"/><line x1="28" y1="22" x2="28" y2="26"/></symbol>
+<symbol id="icon-chair" viewBox="0 0 48 48"><rect x="12" y="24" width="20" height="6" rx="2"/><rect x="12" y="8" width="20" height="16" rx="2"/><line x1="14" y1="30" x2="12" y2="42"/><line x1="30" y1="30" x2="32" y2="42"/></symbol>
+<symbol id="icon-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="icon-mark" viewBox="0 0 100 100"><path d="M 72,30 A 27,27 0 1 0 72,70" fill="none" stroke="#B2502C" stroke-width="9" stroke-linecap="round"/><path d="M 76,34 C 64,27 52,33 52,44 C 52,55 80,51 80,63 C 80,74 66,80 55,73" fill="none" stroke="#8B4A28" stroke-width="9" stroke-linecap="round"/></symbol>
+<symbol id="icon-truck" viewBox="0 0 48 48"><rect x="4" y="18" width="24" height="14" rx="1"/><path d="M28 22 H38 L42 27 V32 H28 Z"/><circle cx="13" cy="35" r="4"/><circle cx="34" cy="35" r="4"/></symbol>
+<symbol id="icon-shield" viewBox="0 0 48 48"><path d="M24 6 L38 12 L38 23 C38 33 32 39 24 43 C16 39 10 33 10 23 L10 12 Z"/><path d="M17 23 L22 28 L31 18"/></symbol>
+<symbol id="icon-chat" viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="24" rx="8"/><path d="M14 33 L14 41 L22 33 Z"/></symbol>
+</svg>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><svg class="logo-mark"><use href="#icon-mark"/></svg>China <span>Store</span></a>
+    <div class="nav-links">
+      <a href="catalog.html" class="active">Каталог</a>
+      <a href="index.html#process">Как это работает</a>
+      <a href="index.html#why">Почему мы</a>
+      <a href="index.html#contact">Контакты</a>
+      <a href="https://t.me/LOCKED_CN_MANAGER" target="_blank" rel="noopener" class="nav-btn">Написать в Telegram</a>
+    </div>
+    <button class="menu" id="menuBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Закрыть меню"><svg class="icon"><use href="#icon-close"/></svg></button>
+  <a href="catalog.html">Каталог</a>
+  <a href="index.html#process">Как это работает</a>
+  <a href="index.html#why">Почему мы</a>
+  <a href="index.html#contact">Контакты</a>
+</div>
+
+<div class="pd-head container">
+  <div class="breadcrumb" id="pdBreadcrumb">
+    <a href="index.html">Главная</a><span>/</span><a href="catalog.html">Каталог</a>
+  </div>
+</div>
+
+<section class="container pd-section" id="pdSection"></section>
+
+<section class="container pd-related" id="pdRelatedSection" style="display:none">
+  <div class="pd-related-head">
+    <span>Похожие товары</span>
+    <h2>Другие модели этой категории</h2>
+  </div>
+  <div class="prod-grid" id="pdRelatedGrid"></div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><svg class="logo-mark"><use href="#icon-mark"/></svg>China <span>Store</span></a>
+        <p>Мебель напрямую с фабрик Китая. Дизайн, материалы и сервис на уровне европейских шоурумов.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Каталог</h4>
+        <a href="catalog.html#tables">Столы</a>
+        <a href="catalog.html#chairs">Стулья</a>
+        <a href="catalog.html#sofas">Диваны</a>
+        <a href="catalog.html#cabinets">Тумбы</a>
+      </div>
+      <div class="footer-col">
+        <h4>Компания</h4>
+        <a href="index.html#process">Как это работает</a>
+        <a href="index.html#why">Почему мы</a>
+        <a href="index.html#contact">Контакты</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="oferta.html">Публичная оферта</a>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <span>+7 916 508-65-69</span>
+        <span>hello@chinastore.ru</span>
+        <a href="https://t.me/LOCKED_CN_MANAGER" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/79165086569" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 China Store. Все права защищены.</span>
+      <span>Мебель из Китая напрямую с фабрик</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── ORDER MODAL ────────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Закрыть"><svg class="icon"><use href="#icon-close"/></svg></button>
+    <span class="modal-kicker">Быстрый заказ</span>
+    <h3 id="modalProductName">Товар</h3>
+    <div class="form-row">
+      <label for="mName">Имя</label>
+      <input type="text" id="mName" placeholder="Как к вам обращаться">
+    </div>
+    <div class="form-row">
+      <label for="mPhone">Телефон</label>
+      <input type="tel" id="mPhone" placeholder="+7">
+    </div>
+    <div class="form-actions">
+      <button type="button" class="btn btn-primary" onclick="sendOrder('tg')">Отправить в Telegram</button>
+      <button type="button" class="btn" onclick="sendOrder('wa')">Отправить в WhatsApp</button>
+    </div>
+    <p class="form-consent">Отправляя заявку, вы соглашаетесь с <a href="privacy.html">политикой обработки персональных данных</a> и <a href="oferta.html">публичной офертой</a>.</p>
+  </div>
+</div>
+
+<script>
+var WA_PHONE = "79165086569";
+var TG_USER = "LOCKED_CN_MANAGER";
+var CATEGORY_LABELS = { "tables":"Столы","chairs":"Стулья","sofas":"Диваны","cabinets":"Тумбы" };
+var CATEGORY_LABELS_GEN = { "tables":"столов","chairs":"стульев","sofas":"диванов","cabinets":"тумб" };
+var ICON_BY_CATEGORY = { "tables":"table","chairs":"chair","sofas":"sofa","cabinets":"wardrobe" };
+
+var PRODUCTS = [
+  { slug:"arc", name:"Стол ARC", fullName:"Обеденный стол ARC", category:"tables", badge:"Стол",
+    spec:"Массив дерева · на 6–8 персон", material:"Массив дерева",
+    desc:"Дизайнерский обеденный стол с массивным скульптурным основанием ручной работы. Столешница из массива дерева, рассчитан на 6–8 человек — для просторной кухни или гостиной-студии." },
+  { slug:"nord", name:"Стул NORD", fullName:"Стул NORD", category:"chairs", badge:"Стул",
+    spec:"Массив дерева · Scandinavian", material:"Массив дерева",
+    desc:"Минималистичный стул из массива дерева в скандинавском стиле. Лёгкая конструкция и устойчивый каркас — универсален для кухни, кабинета или столовой зоны." },
+  { slug:"pure", name:"Стол PURE", fullName:"Обеденный стол PURE", category:"tables", badge:"Стол",
+    spec:"Массив дерева · для столовой", material:"Массив дерева",
+    desc:"Просторный обеденный стол для современной столовой. Чистые линии и натуральная фактура дерева — акцент на материале, а не на декоре." },
+  { slug:"oak-natural", name:"Кресло OAK Natural", fullName:"Кресло OAK Natural", category:"chairs", badge:"Кресло",
+    spec:"Массив дерева · натуральный цвет", material:"Массив дерева",
+    desc:"Кресло с подлокотниками в натуральном оттенке дерева. Мягкий контур спинки и сиденья — для кухни или обеденной зоны." },
+  { slug:"oak-walnut", name:"Кресло OAK Walnut", fullName:"Кресло OAK Walnut", category:"chairs", badge:"Кресло",
+    spec:"Массив дерева · оттенок орех", material:"Массив дерева",
+    desc:"Та же модель кресла OAK, что и Natural, в тёплом оттенке ореха — для интерьеров с более тёмной палитрой дерева." },
+  { slug:"oak-honey", name:"Кресло OAK Honey", fullName:"Кресло OAK Honey", category:"chairs", badge:"Кресло",
+    spec:"Массив дерева · медовый оттенок", material:"Массив дерева",
+    desc:"Кресло OAK в медовом оттенке — самый светлый и тёплый вариант палитры коллекции." },
+  { slug:"loop", name:"Кресло LOOP", fullName:"Кресло LOOP", category:"chairs", badge:"Кресло",
+    spec:"Массив дерева · дугообразная спинка", material:"Массив дерева",
+    desc:"Кресло с плавной дугообразной спинкой из массива дерева. Скульптурная форма и устойчивая база — акцентный предмет для обеденной группы." },
+  { slug:"noir", name:"Стол NOIR", fullName:"Стол NOIR", category:"tables", badge:"Стол",
+    spec:"Массив ясеня · скульптурное основание", material:"Массив ясеня",
+    desc:"Обеденный стол на скульптурном тёмном основании, столешница из массива ясеня. Хорошо смотрится в комплекте со стульями с мягким сиденьем — выразительный центр интерьера." },
+  { slug:"linen", name:"Стол LINEN", fullName:"Стол LINEN", category:"tables", badge:"Стол",
+    spec:"Массив дуба · комплект со стульями", material:"Массив дуба",
+    desc:"Светлый обеденный стол из массива дуба, хорошо сочетается с классическими стульями на точёных ножках. Тёплая, светлая скандинавская эстетика для кухни или столовой." },
+  { slug:"cesca", name:"Стул CESCA", fullName:"Стул CESCA", category:"chairs", badge:"Стул",
+    spec:"Ротанг и кожа · консольная рама", material:"Ротанг, кожа, металл",
+    desc:"Культовая форма стула на консольной хромированной раме с плетёной спинкой и кожаным сиденьем. Лёгкий на вид, устойчивый на деле." },
+  { slug:"berg", name:"Стул BERG", fullName:"Стул BERG", category:"chairs", badge:"Стул",
+    spec:"Массив дерева · круглое сиденье", material:"Массив дерева, металл",
+    desc:"Стул в духе середины века: деревянная спинка с вырезом, круглое мягкое сиденье, хромированные ножки. Компактный и лёгкий — легко докупить вторую партию в тон." },
+  { slug:"cloud", name:"Диван CLOUD", fullName:"Диван CLOUD", category:"sofas", badge:"Диван",
+    spec:"Букле · органичная изогнутая форма", material:"Букле",
+    desc:"Диван органичной изогнутой формы, обивка букле. Мягкий силуэт без острых углов — акцент гостиной без визуальной тяжести." },
+  { slug:"holm", name:"Диван HOLM", fullName:"Диван HOLM", category:"sofas", badge:"Диван",
+    spec:"Массив дерева · 3-местный", material:"Массив дерева, текстиль",
+    desc:"Диван на раме из массива дерева, 3-местный. Классическая форма с открытыми подлокотниками — подходит для гостиной и кабинета для приёма гостей." },
+  { slug:"glow", name:"Тумба GLOW", fullName:"Тумба GLOW", category:"cabinets", badge:"Тумба",
+    spec:"С LED-подсветкой · беспроводная зарядка", material:"МДФ, экокожа",
+    desc:"Прикроватная тумба с LED-подсветкой и беспроводной зарядкой для телефона. Плавающая конструкция, ящик с кодовым замком — современная деталь для спальни." },
+  { slug:"milk", name:"Тумба MILK", fullName:"Тумба MILK", category:"cabinets", badge:"Тумба",
+    spec:"Экокожа и массив дерева · 40×40×50 см", material:"Экокожа, массив дерева",
+    desc:"Компактная тумба на деревянных ножках, отделка экокожей молочного оттенка. Два ящика для хранения — для спальни или прихожей." }
+];
+
+function handleImgError(img){
+  img.style.display = 'none';
+  var ph = img.parentElement.querySelector('.ph');
+  if (ph) ph.classList.add('show');
+}
+
+function buildMessage(product, name, phone){
+  var lines = [];
+  lines.push(product ? ('Здравствуйте! Интересует: ' + product) : 'Здравствуйте! Хочу подобрать мебель.');
+  if (name) lines.push('Имя: ' + name);
+  if (phone) lines.push('Телефон: ' + phone);
+  return lines.join('\n');
+}
+
+function openChannel(channel, text){
+  var encoded = encodeURIComponent(text);
+  var url = channel === 'wa'
+    ? ('https://wa.me/' + WA_PHONE + '?text=' + encoded)
+    : ('https://t.me/' + TG_USER + '?text=' + encoded);
+  window.open(url, '_blank', 'noopener');
+}
+
+var currentProduct = '';
+function sendOrder(channel){
+  var name = document.getElementById('mName').value.trim();
+  var phone = document.getElementById('mPhone').value.trim();
+  openChannel(channel, buildMessage(currentProduct, name, phone));
+}
+
+function openOrderModal(productName){
+  currentProduct = productName || '';
+  document.getElementById('modalProductName').textContent = productName || 'Товар';
+  document.getElementById('mName').value = '';
+  document.getElementById('mPhone').value = '';
+  document.getElementById('orderModal').classList.add('active');
+}
+function closeOrderModal(){
+  document.getElementById('orderModal').classList.remove('active');
+}
+
+document.addEventListener('click', function(e){
+  var orderBtn = e.target.closest('[data-order]');
+  if (orderBtn){
+    var card = orderBtn.closest('[data-name]');
+    openOrderModal(card ? card.getAttribute('data-name') : currentProduct);
+  }
+});
+document.getElementById('modalClose').addEventListener('click', closeOrderModal);
+document.getElementById('orderModal').addEventListener('click', function(e){
+  if (e.target === this) closeOrderModal();
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeOrderModal();
+});
+
+var menuBtn = document.getElementById('menuBtn');
+var mobileMenu = document.getElementById('mobileMenu');
+var mobileClose = document.getElementById('mobileClose');
+if (menuBtn){
+  menuBtn.addEventListener('click', function(){ mobileMenu.classList.add('active'); });
+  mobileClose.addEventListener('click', function(){ mobileMenu.classList.remove('active'); });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('active'); });
+  });
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+  });
+}
+
+function renderCard(p){
+  return '' +
+    '<article class="product-card reveal in" data-category="' + p.category + '" data-name="' + escapeHtml(p.fullName) + '">' +
+      '<a href="product.html?p=' + p.slug + '" class="product-media ' + p.category + '" aria-label="' + escapeHtml(p.name) + '">' +
+        '<img src="images/kitchen/' + p.slug + '.jpg" alt="' + escapeHtml(p.name) + '" loading="lazy" onerror="handleImgError(this)">' +
+        '<div class="ph"><svg class="icon"><use href="#icon-' + ICON_BY_CATEGORY[p.category] + '"/></svg></div>' +
+        '<span class="product-cat">' + escapeHtml(p.badge) + '</span>' +
+      '</a>' +
+      '<div class="product-body"><h3><a href="product.html?p=' + p.slug + '">' + escapeHtml(p.name) + '</a></h3><p class="product-spec">' + escapeHtml(p.spec) + '</p>' +
+        '<div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>' +
+      '</div>' +
+    '</article>';
+}
+
+function renderNotFound(){
+  document.getElementById('pdSection').innerHTML =
+    '<div class="pd-notfound">' +
+      '<h1>Товар не найден</h1>' +
+      '<p>Возможно, ссылка устарела. Загляните в каталог — там точно найдётся что-то похожее.</p>' +
+      '<a href="catalog.html" class="btn btn-primary">Смотреть каталог</a>' +
+    '</div>';
+}
+
+function render(){
+  var params = new URLSearchParams(location.search);
+  var slug = params.get('p');
+  var product = PRODUCTS.filter(function(p){ return p.slug === slug; })[0];
+
+  if (!product){
+    renderNotFound();
+    return;
+  }
+
+  document.title = product.name + ' — China Store';
+  currentProduct = product.fullName;
+
+  var catLabel = CATEGORY_LABELS[product.category];
+  document.getElementById('pdBreadcrumb').innerHTML =
+    '<a href="index.html">Главная</a><span>/</span>' +
+    '<a href="catalog.html">Каталог</a><span>/</span>' +
+    '<a href="catalog.html#' + product.category + '">' + catLabel + '</a><span>/</span>' +
+    '<span class="current">' + escapeHtml(product.name) + '</span>';
+
+  document.getElementById('pdSection').innerHTML =
+    '<div class="pd-layout">' +
+      '<div class="pd-media reveal in">' +
+        '<img src="images/kitchen/' + product.slug + '.jpg" alt="' + escapeHtml(product.name) + '" onerror="handleImgError(this)">' +
+        '<div class="ph"><svg class="icon"><use href="#icon-' + ICON_BY_CATEGORY[product.category] + '"/></svg></div>' +
+        '<span class="product-cat">' + escapeHtml(product.badge) + '</span>' +
+      '</div>' +
+      '<div class="pd-info reveal in">' +
+        '<span class="pd-kicker">' + catLabel + '</span>' +
+        '<h1>' + escapeHtml(product.name) + '</h1>' +
+        '<p class="pd-spec">' + escapeHtml(product.spec) + '</p>' +
+        '<p class="pd-desc">' + escapeHtml(product.desc) + '</p>' +
+        '<div class="pd-price-row">' +
+          '<span class="pd-price">Цена по запросу</span>' +
+          '<button type="button" class="btn btn-primary" data-order>Заказать</button>' +
+        '</div>' +
+        '<ul class="pd-specs">' +
+          '<li><span>Материал</span><span>' + escapeHtml(product.material) + '</span></li>' +
+          '<li><span>Категория</span><span>' + catLabel + '</span></li>' +
+          '<li><span>Артикул</span><span>CS-' + product.slug.toUpperCase() + '</span></li>' +
+          '<li><span>Изготовление</span><span>5–7 недель под ключ</span></li>' +
+        '</ul>' +
+        '<div class="pd-trust">' +
+          '<div><svg class="icon"><use href="#icon-truck"/></svg> Доставка «под ключ» по всей России</div>' +
+          '<div><svg class="icon"><use href="#icon-shield"/></svg> Проверка партии перед отправкой</div>' +
+          '<div><svg class="icon"><use href="#icon-chat"/></svg> Личный менеджер на связи в Telegram и WhatsApp</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+
+  var related = PRODUCTS.filter(function(p){ return p.category === product.category && p.slug !== product.slug; }).slice(0, 3);
+  if (related.length){
+    document.getElementById('pdRelatedGrid').innerHTML = related.map(renderCard).join('');
+    document.getElementById('pdRelatedSection').style.display = '';
+  }
+}
+
+render();
+
+if ('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+}
+</script>
+<div class="cookie-banner" id="cookieBanner">
+  <div class="container cookie-inner">
+    <p>Мы используем cookie для работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy.html">политикой обработки персональных данных</a> в соответствии с 152-ФЗ.</p>
+    <button type="button" class="cookie-accept" id="cookieAccept">Принять</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = 'cs_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  var btn = document.getElementById('cookieAccept');
+  if (!banner || !btn) return;
+  var accepted = false;
+  try { accepted = localStorage.getItem(KEY) === '1'; } catch(e){}
+  if (!accepted){
+    setTimeout(function(){ banner.classList.add('show'); }, 500);
+  }
+  btn.addEventListener('click', function(){
+    try { localStorage.setItem(KEY, '1'); } catch(e){}
+    banner.classList.remove('show');
+  });
+})();
+</script>
+</body>
+</html>
