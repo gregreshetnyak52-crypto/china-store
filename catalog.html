@@ -204,6 +204,20 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
   .prod-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
 }
+/* ─── COOKIE CONSENT ─────────────────────────────────────────────────────── */
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:1500;background:var(--ink);padding:22px 0;transform:translateY(120%);transition:transform .45s ease;box-shadow:0 -10px 32px rgba(0,0,0,.16)}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.cookie-inner p{font-size:12.5px;line-height:1.65;max-width:720px;margin:0;color:rgba(250,246,239,.75)}
+.cookie-inner a{color:var(--bg);text-decoration:underline;text-underline-offset:2px}
+.cookie-inner a:hover{color:var(--accent)}
+.cookie-accept{flex-shrink:0;padding:13px 28px;background:var(--accent);color:var(--accent-ink);border:none;border-radius:2px;font-family:inherit;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:.25s;white-space:nowrap}
+.cookie-accept:hover{background:var(--bg);color:var(--ink)}
+@media (max-width:640px){
+  .cookie-banner{padding:18px 0}
+  .cookie-inner{flex-direction:column;align-items:stretch;text-align:left;gap:16px}
+  .cookie-accept{width:100%;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -603,6 +617,29 @@ if ('IntersectionObserver' in window){
 } else {
   document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
 }
+</script>
+<div class="cookie-banner" id="cookieBanner">
+  <div class="container cookie-inner">
+    <p>Мы используем cookie для работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy.html">политикой обработки персональных данных</a> в соответствии с 152-ФЗ.</p>
+    <button type="button" class="cookie-accept" id="cookieAccept">Принять</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = 'cs_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  var btn = document.getElementById('cookieAccept');
+  if (!banner || !btn) return;
+  var accepted = false;
+  try { accepted = localStorage.getItem(KEY) === '1'; } catch(e){}
+  if (!accepted){
+    setTimeout(function(){ banner.classList.add('show'); }, 500);
+  }
+  btn.addEventListener('click', function(){
+    try { localStorage.setItem(KEY, '1'); } catch(e){}
+    banner.classList.remove('show');
+  });
+})();
 </script>
 </body>
 </html>
