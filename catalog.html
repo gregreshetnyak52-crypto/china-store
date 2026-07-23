@@ -72,6 +72,7 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .page-head .section-kicker{display:block}
 .page-head h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);letter-spacing:-.01em;margin:14px 0 18px}
 .page-head p{font-size:15.5px;color:var(--muted);max-width:560px;line-height:1.75}
+.page-meta{font-size:11.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);margin-top:22px;max-width:none}
 
 /* ─── SECTION HEAD (shared) ──────────────────────────────────────────────── */
 .section-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;margin-bottom:14px;display:block}
@@ -83,11 +84,16 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .cat-sidebar{width:230px;flex-shrink:0;position:sticky;top:104px}
 .cat-sidebar h4{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
 .cat-list{list-style:none;display:flex;flex-direction:column;gap:2px}
-.cat-item{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;border:none;background:none;color:var(--ink);padding:11px 4px;font-size:14px;font-weight:500;text-align:left;border-radius:3px;transition:.2s}
+.cat-item{width:100%;display:flex;align-items:center;gap:10px;border:none;background:none;color:var(--ink);padding:9px 4px;font-size:14px;font-weight:500;text-align:left;border-radius:3px;transition:.2s}
 .cat-item:hover{color:var(--accent)}
-.cat-item.active{color:var(--accent);font-weight:700}
+.cat-item:hover .cat-box{border-color:var(--accent)}
+.cat-item.active{color:var(--ink);font-weight:700}
+.cat-box{width:15px;height:15px;flex-shrink:0;border:1.5px solid var(--line2);border-radius:3px;position:relative;transition:.2s}
+.cat-item.active .cat-box{background:var(--ink);border-color:var(--ink)}
+.cat-item.active .cat-box::after{content:'';position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid var(--bg);border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
+.cat-label{flex:1}
 .cat-count{font-size:12px;color:var(--muted);font-weight:600}
-.cat-item.active .cat-count{color:var(--accent)}
+.cat-item.active .cat-count{color:var(--ink)}
 
 .cat-main{flex:1;min-width:0}
 .cat-topbar{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line)}
@@ -102,12 +108,12 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .sort-select:focus{outline:none;border-color:var(--accent)}
 
 /* ─── PRODUCT CARD ───────────────────────────────────────────────────────── */
-.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.product-card{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg2);transition:.35s;display:flex;flex-direction:column}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 24px}
+.product-card{border:none;border-radius:0;overflow:visible;background:none;transition:.35s;display:flex;flex-direction:column}
 .product-card.hidden{display:none}
-.product-card:hover{border-color:var(--line2);box-shadow:0 24px 48px rgba(43,36,28,.10);transform:translateY(-3px)}
-.product-media{position:relative;aspect-ratio:1/1;overflow:hidden}
-.product-media img{width:100%;height:100%;object-fit:cover}
+.product-card:hover .product-media img{transform:scale(1.045)}
+.product-media{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:4px;background:var(--bg2)}
+.product-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .product-media .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
 .product-media .ph.show{display:flex}
 .product-media .ph .icon{width:34%;height:34%;stroke:rgba(43,36,28,.5)}
@@ -115,13 +121,13 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .product-media.chairs{background:linear-gradient(135deg,#E6DFCC,#8E7A52)}
 .product-media.sofas{background:linear-gradient(135deg,#ECD8D0,#C08D7C)}
 .product-media.cabinets{background:linear-gradient(135deg,#E3DCC9,#8A6A4A)}
-.product-cat{position:absolute;top:12px;left:12px;background:rgba(250,246,239,.88);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:6px 10px;border-radius:2px;z-index:2}
-.product-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
-.product-body h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.2}
-.product-desc{font-size:12.5px;color:var(--muted);line-height:1.5}
-.product-foot{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.product-price{font-size:13px;font-weight:700;color:var(--ink)}
-.btn-order{background:none;border:1px solid var(--line2);color:var(--ink);padding:9px 14px;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border-radius:2px;transition:.25s;white-space:nowrap}
+.product-cat{position:absolute;top:10px;left:10px;background:rgba(250,246,239,.92);color:var(--ink);font-size:9.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:5px 9px;border-radius:20px;z-index:2}
+.product-body{padding:16px 2px 0;display:flex;flex-direction:column;gap:4px;flex:1}
+.product-body h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.25}
+.product-spec{font-size:12.5px;color:var(--muted);line-height:1.5}
+.product-foot{margin-top:12px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.product-price{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.btn-order{background:var(--ink);border:1px solid var(--ink);color:var(--bg);padding:10px 16px;font-size:10.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border-radius:30px;transition:.25s;white-space:nowrap}
 .btn-order:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 
 .empty-state{display:none;text-align:center;padding:80px 20px;color:var(--muted)}
@@ -250,6 +256,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
   <span class="section-kicker">Каталог</span>
   <h1>Вся мебель China Store</h1>
   <p>Коллекция обеденных столов, стульев и кресел из массива дерева в скандинавском стиле. Материал, размер и оттенок можно уточнить и изменить под ваш интерьер — цена рассчитывается индивидуально по каждой модели.</p>
+  <p class="page-meta">8 моделей в каталоге · доставка по всей России · подбор аналогов на фабриках</p>
 </div>
 
 <section class="container catalog-section">
@@ -257,11 +264,11 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
     <aside class="cat-sidebar">
       <h4>Категория</h4>
       <ul class="cat-list" id="catList">
-        <li><button type="button" class="cat-item active" data-filter="all">Все<span class="cat-count" data-count="all">0</span></button></li>
-        <li><button type="button" class="cat-item" data-filter="tables">Столы<span class="cat-count" data-count="tables">0</span></button></li>
-        <li><button type="button" class="cat-item" data-filter="chairs">Стулья<span class="cat-count" data-count="chairs">0</span></button></li>
-        <li><button type="button" class="cat-item" data-filter="sofas">Диваны<span class="cat-count" data-count="sofas">0</span></button></li>
-        <li><button type="button" class="cat-item" data-filter="cabinets">Тумбы<span class="cat-count" data-count="cabinets">0</span></button></li>
+        <li><button type="button" class="cat-item active" data-filter="all"><span class="cat-box"></span><span class="cat-label">Все</span><span class="cat-count" data-count="all">0</span></button></li>
+        <li><button type="button" class="cat-item" data-filter="tables"><span class="cat-box"></span><span class="cat-label">Столы</span><span class="cat-count" data-count="tables">0</span></button></li>
+        <li><button type="button" class="cat-item" data-filter="chairs"><span class="cat-box"></span><span class="cat-label">Стулья</span><span class="cat-count" data-count="chairs">0</span></button></li>
+        <li><button type="button" class="cat-item" data-filter="sofas"><span class="cat-box"></span><span class="cat-label">Диваны</span><span class="cat-count" data-count="sofas">0</span></button></li>
+        <li><button type="button" class="cat-item" data-filter="cabinets"><span class="cat-box"></span><span class="cat-label">Тумбы</span><span class="cat-count" data-count="cabinets">0</span></button></li>
       </ul>
     </aside>
     <div class="cat-main">
@@ -288,7 +295,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
         <span class="product-cat">Стол</span>
       </div>
-      <div class="product-body"><h3>Стол ARC</h3><p class="product-desc">Дизайнерский стол с массивным основанием. Подходит для 6–8 человек. Массив дерева, Scandinavian</p>
+      <div class="product-body"><h3>Стол ARC</h3><p class="product-spec">Массив дерева · на 6–8 персон</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
@@ -298,7 +305,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
         <span class="product-cat">Стул</span>
       </div>
-      <div class="product-body"><h3>Стул NORD</h3><p class="product-desc">Минималистичный стул из массива дерева. Scandinavian</p>
+      <div class="product-body"><h3>Стул NORD</h3><p class="product-spec">Массив дерева · Scandinavian</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
@@ -308,7 +315,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
         <span class="product-cat">Стол</span>
       </div>
-      <div class="product-body"><h3>Стол PURE</h3><p class="product-desc">Большой стол для современной столовой. Массив дерева, Scandinavian</p>
+      <div class="product-body"><h3>Стол PURE</h3><p class="product-spec">Массив дерева · для столовой</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
@@ -318,7 +325,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
         <span class="product-cat">Кресло</span>
       </div>
-      <div class="product-body"><h3>Кресло OAK Natural</h3><p class="product-desc">Кресло с подлокотниками в натуральном цвете. Массив дерева</p>
+      <div class="product-body"><h3>Кресло OAK Natural</h3><p class="product-spec">Массив дерева · натуральный цвет</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
@@ -328,7 +335,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
         <span class="product-cat">Кресло</span>
       </div>
-      <div class="product-body"><h3>Кресло OAK Walnut</h3><p class="product-desc">Та же модель в оттенке орех. Массив дерева</p>
+      <div class="product-body"><h3>Кресло OAK Walnut</h3><p class="product-spec">Массив дерева · оттенок орех</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
@@ -338,7 +345,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
         <span class="product-cat">Кресло</span>
       </div>
-      <div class="product-body"><h3>Кресло OAK Honey</h3><p class="product-desc">Та же модель в тёплом медовом оттенке. Массив дерева</p>
+      <div class="product-body"><h3>Кресло OAK Honey</h3><p class="product-spec">Массив дерева · медовый оттенок</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
@@ -348,7 +355,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
         <span class="product-cat">Стул</span>
       </div>
-      <div class="product-body"><h3>Стул LINE</h3><p class="product-desc">Стул с высокой эргономичной спинкой. Scandinavian</p>
+      <div class="product-body"><h3>Стул LINE</h3><p class="product-spec">Массив дерева · высокая спинка</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
@@ -358,7 +365,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
         <span class="product-cat">Кресло</span>
       </div>
-      <div class="product-body"><h3>Кресло LOOP</h3><p class="product-desc">Кресло с плавной дугообразной спинкой. Массив дерева</p>
+      <div class="product-body"><h3>Кресло LOOP</h3><p class="product-spec">Массив дерева · дугообразная спинка</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
@@ -543,7 +550,7 @@ function refresh(){
   cards.forEach(function(card){
     var matchCategory = currentFilter === 'all' || card.getAttribute('data-category') === currentFilter;
     var matchSearch = !query || card.getAttribute('data-name').toLowerCase().indexOf(query) !== -1 ||
-      card.querySelector('.product-desc').textContent.toLowerCase().indexOf(query) !== -1;
+      card.querySelector('.product-spec').textContent.toLowerCase().indexOf(query) !== -1;
     var match = matchCategory && matchSearch;
     card.classList.toggle('hidden', !match);
     if (match) visible++;
