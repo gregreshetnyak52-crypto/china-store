@@ -65,6 +65,10 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 
 /* ─── PAGE HEAD ──────────────────────────────────────────────────────────── */
 .page-head{padding:164px 0 0}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.breadcrumb a{color:var(--muted);transition:color .25s}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span{color:var(--ink)}
 .page-head .section-kicker{display:block}
 .page-head h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);letter-spacing:-.01em;margin:14px 0 18px}
 .page-head p{font-size:15.5px;color:var(--muted);max-width:560px;line-height:1.75}
@@ -73,16 +77,32 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .section-kicker{color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:700;margin-bottom:14px;display:block}
 .section-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.01em;line-height:1.08}
 
-/* ─── FILTER BAR ─────────────────────────────────────────────────────────── */
+/* ─── CATALOG LAYOUT (sidebar + main) ────────────────────────────────────── */
 .catalog-section{padding-top:56px}
-.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px}
-.filter-btn{border:1px solid var(--line2);background:none;color:var(--ink);padding:11px 22px;font-size:12px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;border-radius:30px;transition:.25s}
-.filter-btn:hover{border-color:var(--accent);color:var(--accent)}
-.filter-btn.active{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.filter-count{font-size:13px;color:var(--muted);margin-bottom:28px}
+.catalog-layout{display:flex;align-items:flex-start;gap:48px}
+.cat-sidebar{width:230px;flex-shrink:0;position:sticky;top:104px}
+.cat-sidebar h4{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.cat-list{list-style:none;display:flex;flex-direction:column;gap:2px}
+.cat-item{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;border:none;background:none;color:var(--ink);padding:11px 4px;font-size:14px;font-weight:500;text-align:left;border-radius:3px;transition:.2s}
+.cat-item:hover{color:var(--accent)}
+.cat-item.active{color:var(--accent);font-weight:700}
+.cat-count{font-size:12px;color:var(--muted);font-weight:600}
+.cat-item.active .cat-count{color:var(--accent)}
+
+.cat-main{flex:1;min-width:0}
+.cat-topbar{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.filter-count{font-size:13px;color:var(--muted)}
+.cat-controls{display:flex;gap:12px;flex-wrap:wrap}
+.search-wrap{position:relative}
+.search-wrap .icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:var(--muted)}
+.search-wrap input{background:var(--bg2);border:1px solid var(--line2);border-radius:30px;padding:11px 18px 11px 38px;font-family:inherit;font-size:13px;color:var(--ink);width:220px}
+.search-wrap input:focus{outline:none;border-color:var(--accent)}
+.search-wrap input::placeholder{color:var(--muted)}
+.sort-select{background:var(--bg2);border:1px solid var(--line2);border-radius:30px;padding:11px 34px 11px 18px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer}
+.sort-select:focus{outline:none;border-color:var(--accent)}
 
 /* ─── PRODUCT CARD ───────────────────────────────────────────────────────── */
-.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .product-card{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg2);transition:.35s;display:flex;flex-direction:column}
 .product-card.hidden{display:none}
 .product-card:hover{border-color:var(--line2);box-shadow:0 24px 48px rgba(43,36,28,.10);transform:translateY(-3px)}
@@ -164,6 +184,15 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
   .cta-strip{padding:40px 28px}
   section{padding:88px 0}
   .page-head{padding-top:140px}
+  .catalog-layout{flex-direction:column;gap:24px}
+  .cat-sidebar{width:100%;position:static}
+  .cat-list{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:4px}
+  .cat-item{width:auto;flex-shrink:0;border:1px solid var(--line2);border-radius:30px;padding:9px 18px;gap:8px}
+  .cat-item.active{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+  .cat-item.active .cat-count{color:var(--bg)}
+  .cat-topbar{flex-direction:column;align-items:stretch}
+  .cat-controls{flex-direction:column}
+  .search-wrap input{width:100%}
 }
 @media (max-width:640px){
   .prod-grid{grid-template-columns:1fr}
@@ -189,6 +218,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
 <symbol id="icon-desk" viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="5" rx="2"/><rect x="10" y="19" width="10" height="15"/><line x1="36" y1="19" x2="36" y2="38"/><line x1="10" y1="34" x2="20" y2="34"/></symbol>
 <symbol id="icon-shelf" viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="1"/><line x1="8" y1="18" x2="40" y2="18"/><line x1="8" y1="30" x2="40" y2="30"/></symbol>
 <symbol id="icon-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><path d="M13 7 L18 12 L13 17"/></symbol>
+<symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.3" y1="15.3" x2="21" y2="21"/></symbol>
 <symbol id="icon-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
 <symbol id="icon-mark" viewBox="0 0 100 100"><path d="M 72,30 A 27,27 0 1 0 72,70" fill="none" stroke="#B2502C" stroke-width="9" stroke-linecap="round"/><path d="M 76,34 C 64,27 52,33 52,44 C 52,55 80,51 80,63 C 80,74 66,80 55,73" fill="none" stroke="#8B4A28" stroke-width="9" stroke-linecap="round"/></symbol>
 </svg>
@@ -216,20 +246,39 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
 </div>
 
 <div class="page-head container">
+  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><span>Каталог</span></div>
   <span class="section-kicker">Каталог</span>
   <h1>Вся мебель China Store</h1>
   <p>Коллекция обеденных столов, стульев и кресел из массива дерева в скандинавском стиле. Материал, размер и оттенок можно уточнить и изменить под ваш интерьер — цена рассчитывается индивидуально по каждой модели.</p>
 </div>
 
 <section class="container catalog-section">
-  <div class="filter-bar" id="filterBar">
-    <button class="filter-btn active" data-filter="all">Все</button>
-    <button class="filter-btn" data-filter="tables">Столы</button>
-    <button class="filter-btn" data-filter="chairs">Стулья</button>
-    <button class="filter-btn" data-filter="sofas">Диваны</button>
-    <button class="filter-btn" data-filter="cabinets">Тумбы</button>
-  </div>
-  <p class="filter-count" id="filterCount"></p>
+  <div class="catalog-layout">
+    <aside class="cat-sidebar">
+      <h4>Категория</h4>
+      <ul class="cat-list" id="catList">
+        <li><button type="button" class="cat-item active" data-filter="all">Все<span class="cat-count" data-count="all">0</span></button></li>
+        <li><button type="button" class="cat-item" data-filter="tables">Столы<span class="cat-count" data-count="tables">0</span></button></li>
+        <li><button type="button" class="cat-item" data-filter="chairs">Стулья<span class="cat-count" data-count="chairs">0</span></button></li>
+        <li><button type="button" class="cat-item" data-filter="sofas">Диваны<span class="cat-count" data-count="sofas">0</span></button></li>
+        <li><button type="button" class="cat-item" data-filter="cabinets">Тумбы<span class="cat-count" data-count="cabinets">0</span></button></li>
+      </ul>
+    </aside>
+    <div class="cat-main">
+      <div class="cat-topbar">
+        <p class="filter-count" id="filterCount"></p>
+        <div class="cat-controls">
+          <div class="search-wrap">
+            <svg class="icon"><use href="#icon-search"/></svg>
+            <input type="search" id="searchInput" placeholder="Поиск по каталогу">
+          </div>
+          <select class="sort-select" id="sortSelect">
+            <option value="default">По умолчанию</option>
+            <option value="az">Название: А–Я</option>
+            <option value="za">Название: Я–А</option>
+          </select>
+        </div>
+      </div>
 
   <div class="prod-grid" id="prodGrid">
 
@@ -315,7 +364,9 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
     </article>
 
   </div>
-  <p class="empty-state" id="emptyState">В этой категории пока нет позиций — напишите нам, подберём индивидуально.</p>
+      <p class="empty-state" id="emptyState">В этой категории пока нет позиций — напишите нам, подберём индивидуально.</p>
+    </div>
+  </div>
 </section>
 
 <section class="container">
@@ -460,33 +511,69 @@ if (menuBtn){
   });
 }
 
-/* ─── FILTERING ──────────────────────────────────────────────────────────── */
-var filterBtns = document.querySelectorAll('.filter-btn');
+/* ─── FILTERING / SEARCH / SORT ──────────────────────────────────────────── */
+var catItems = document.querySelectorAll('.cat-item');
+var prodGrid = document.getElementById('prodGrid');
 var cards = document.querySelectorAll('.product-card');
 var emptyState = document.getElementById('emptyState');
 var filterCount = document.getElementById('filterCount');
+var searchInput = document.getElementById('searchInput');
+var sortSelect = document.getElementById('sortSelect');
+var currentFilter = 'all';
+var originalOrder = Array.prototype.slice.call(cards);
+
+/* живые счётчики категорий, чтобы не держать числа руками */
+document.querySelectorAll('.cat-count').forEach(function(countEl){
+  var key = countEl.getAttribute('data-count');
+  var n = key === 'all' ? cards.length : Array.prototype.filter.call(cards, function(c){ return c.getAttribute('data-category') === key; }).length;
+  countEl.textContent = n;
+});
 
 function applyFilter(filter){
+  currentFilter = filter;
+  catItems.forEach(function(item){
+    item.classList.toggle('active', item.getAttribute('data-filter') === filter);
+  });
+  refresh();
+}
+
+function refresh(){
+  var query = (searchInput.value || '').trim().toLowerCase();
   var visible = 0;
   cards.forEach(function(card){
-    var match = filter === 'all' || card.getAttribute('data-category') === filter;
+    var matchCategory = currentFilter === 'all' || card.getAttribute('data-category') === currentFilter;
+    var matchSearch = !query || card.getAttribute('data-name').toLowerCase().indexOf(query) !== -1 ||
+      card.querySelector('.product-desc').textContent.toLowerCase().indexOf(query) !== -1;
+    var match = matchCategory && matchSearch;
     card.classList.toggle('hidden', !match);
     if (match) visible++;
   });
   emptyState.classList.toggle('show', visible === 0);
-  filterCount.textContent = filter === 'all'
-    ? ('Показано моделей: ' + visible)
-    : ('Показано моделей для ' + CATEGORY_LABELS[filter] + ': ' + visible);
-  filterBtns.forEach(function(btn){
-    btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
-  });
+  filterCount.textContent = currentFilter === 'all'
+    ? ('Показано товаров: ' + visible)
+    : ('Показано ' + CATEGORY_LABELS[currentFilter] + ': ' + visible);
 }
 
-filterBtns.forEach(function(btn){
-  btn.addEventListener('click', function(){
-    applyFilter(btn.getAttribute('data-filter'));
-    history.replaceState(null, '', btn.getAttribute('data-filter') === 'all' ? 'catalog.html' : ('#' + btn.getAttribute('data-filter')));
+catItems.forEach(function(item){
+  item.addEventListener('click', function(){
+    var filter = item.getAttribute('data-filter');
+    applyFilter(filter);
+    history.replaceState(null, '', filter === 'all' ? 'catalog.html' : ('#' + filter));
   });
+});
+
+searchInput.addEventListener('input', refresh);
+
+sortSelect.addEventListener('change', function(){
+  var order;
+  if (sortSelect.value === 'az'){
+    order = Array.prototype.slice.call(cards).sort(function(a,b){ return a.getAttribute('data-name').localeCompare(b.getAttribute('data-name'), 'ru'); });
+  } else if (sortSelect.value === 'za'){
+    order = Array.prototype.slice.call(cards).sort(function(a,b){ return b.getAttribute('data-name').localeCompare(a.getAttribute('data-name'), 'ru'); });
+  } else {
+    order = originalOrder;
+  }
+  order.forEach(function(card){ prodGrid.appendChild(card); });
 });
 
 function applyFilterFromHash(){
