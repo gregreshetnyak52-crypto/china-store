@@ -26,7 +26,7 @@
   "@type": "Store",
   "name": "China Store",
   "url": "https://www.chinastore.ru/",
-  "description": "Заказ и доставка мебели напрямую с фабрик Китая: гостиная, спальня, кухня, кабинет, свет и декор, уличная мебель.",
+  "description": "Заказ и доставка мебели напрямую с фабрик Китая: столы, стулья, диваны, тумбы.",
   "areaServed": "RU"
 }
 </script>
@@ -122,7 +122,7 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .section-link .icon{width:14px;height:14px}
 
 /* ─── CATEGORIES ─────────────────────────────────────────────────────────── */
-.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .cat-card{position:relative;border:1px solid var(--line);border-radius:6px;padding:36px 28px;display:flex;flex-direction:column;gap:16px;transition:.35s;background:var(--bg2)}
 .cat-card:hover{border-color:var(--accent);transform:translateY(-4px)}
 .cat-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--bg3)}
@@ -142,12 +142,10 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .product-media .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
 .product-media .ph.show{display:flex}
 .product-media .ph .icon{width:34%;height:34%;stroke:rgba(43,36,28,.5)}
-.product-media.living-room{background:linear-gradient(135deg,#EAD0B3,#C1734A)}
-.product-media.bedroom{background:linear-gradient(135deg,#ECD8D0,#C08D7C)}
-.product-media.kitchen{background:linear-gradient(135deg,#E6DEC4,#A88A54)}
-.product-media.office{background:linear-gradient(135deg,#E6DFCC,#8E7A52)}
-.product-media.decor{background:linear-gradient(135deg,#E3DCC9,#8A6A4A)}
-.product-media.outdoor{background:linear-gradient(135deg,#DCE3D2,#6E8368)}
+.product-media.tables{background:linear-gradient(135deg,#EAD0B3,#C1734A)}
+.product-media.chairs{background:linear-gradient(135deg,#E6DFCC,#8E7A52)}
+.product-media.sofas{background:linear-gradient(135deg,#ECD8D0,#C08D7C)}
+.product-media.cabinets{background:linear-gradient(135deg,#E3DCC9,#8A6A4A)}
 .product-cat{position:absolute;top:12px;left:12px;background:rgba(250,246,239,.88);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:6px 10px;border-radius:2px;z-index:2}
 .product-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
 .product-body h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.2}
@@ -358,45 +356,33 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
   <div class="section-head">
     <div>
       <span class="section-kicker">Каталог</span>
-      <h2 class="section-title">Мебель для каждой комнаты</h2>
+      <h2 class="section-title">Мебель по типу</h2>
     </div>
     <a href="catalog.html" class="section-link">Весь каталог <svg class="icon"><use href="#icon-arrow"/></svg></a>
   </div>
   <div class="cat-grid">
-    <a href="catalog.html#living-room" class="cat-card reveal">
-      <div class="cat-icon"><svg class="icon"><use href="#icon-sofa"/></svg></div>
-      <h3>Гостиная</h3>
-      <p>Диваны, кресла, журнальные столики и системы хранения</p>
-      <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
-    </a>
-    <a href="catalog.html#bedroom" class="cat-card reveal">
-      <div class="cat-icon"><svg class="icon"><use href="#icon-bed"/></svg></div>
-      <h3>Спальня</h3>
-      <p>Кровати, шкафы, комоды и прикроватные тумбы</p>
-      <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
-    </a>
-    <a href="catalog.html#kitchen" class="cat-card reveal">
+    <a href="catalog.html#tables" class="cat-card reveal">
       <div class="cat-icon"><svg class="icon"><use href="#icon-table"/></svg></div>
-      <h3>Кухня и столовая</h3>
-      <p>Обеденные группы, стулья и буфеты</p>
+      <h3>Столы</h3>
+      <p>Обеденные, журнальные и письменные столы</p>
       <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
     </a>
-    <a href="catalog.html#office" class="cat-card reveal">
-      <div class="cat-icon"><svg class="icon"><use href="#icon-desk"/></svg></div>
-      <h3>Кабинет</h3>
-      <p>Письменные столы, кресла и стеллажи</p>
+    <a href="catalog.html#chairs" class="cat-card reveal">
+      <div class="cat-icon"><svg class="icon"><use href="#icon-chair"/></svg></div>
+      <h3>Стулья</h3>
+      <p>Стулья и кресла из массива дерева</p>
       <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
     </a>
-    <a href="catalog.html#decor" class="cat-card reveal">
-      <div class="cat-icon"><svg class="icon"><use href="#icon-lamp"/></svg></div>
-      <h3>Свет и декор</h3>
-      <p>Люстры, торшеры, зеркала и ковры ручной работы</p>
+    <a href="catalog.html#sofas" class="cat-card reveal">
+      <div class="cat-icon"><svg class="icon"><use href="#icon-sofa"/></svg></div>
+      <h3>Диваны</h3>
+      <p>Мягкая мебель для гостиной и отдыха</p>
       <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
     </a>
-    <a href="catalog.html#outdoor" class="cat-card reveal">
-      <div class="cat-icon"><svg class="icon"><use href="#icon-outdoor"/></svg></div>
-      <h3>Терраса и сад</h3>
-      <p>Комплекты и предметы для отдыха на воздухе</p>
+    <a href="catalog.html#cabinets" class="cat-card reveal">
+      <div class="cat-icon"><svg class="icon"><use href="#icon-wardrobe"/></svg></div>
+      <h3>Тумбы</h3>
+      <p>Тумбы, комоды и системы хранения</p>
       <span class="cat-more">Смотреть <svg class="icon"><use href="#icon-arrow"/></svg></span>
     </a>
   </div>
@@ -414,10 +400,10 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
   <div class="prod-grid">
 
     <article class="product-card reveal" data-name="Обеденный стол ARC">
-      <div class="product-media kitchen">
+      <div class="product-media tables">
         <img src="images/kitchen/arc.jpg" alt="Обеденный стол ARC" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Стол</span>
       </div>
       <div class="product-body">
         <h3>Стол ARC</h3>
@@ -426,10 +412,10 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       </div>
     </article>
     <article class="product-card reveal" data-name="Стул NORD">
-      <div class="product-media kitchen">
+      <div class="product-media chairs">
         <img src="images/kitchen/nord.jpg" alt="Стул NORD" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Стул</span>
       </div>
       <div class="product-body">
         <h3>Стул NORD</h3>
@@ -438,10 +424,10 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       </div>
     </article>
     <article class="product-card reveal" data-name="Обеденный стол PURE">
-      <div class="product-media kitchen">
+      <div class="product-media tables">
         <img src="images/kitchen/pure.jpg" alt="Обеденный стол PURE" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Стол</span>
       </div>
       <div class="product-body">
         <h3>Стол PURE</h3>
@@ -450,10 +436,10 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       </div>
     </article>
     <article class="product-card reveal" data-name="Кресло OAK Natural">
-      <div class="product-media kitchen">
+      <div class="product-media chairs">
         <img src="images/kitchen/oak-natural.jpg" alt="Кресло OAK Natural" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Кресло</span>
       </div>
       <div class="product-body">
         <h3>Кресло OAK Natural</h3>
@@ -462,10 +448,10 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       </div>
     </article>
     <article class="product-card reveal" data-name="Кресло OAK Walnut">
-      <div class="product-media kitchen">
+      <div class="product-media chairs">
         <img src="images/kitchen/oak-walnut.jpg" alt="Кресло OAK Walnut" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Кресло</span>
       </div>
       <div class="product-body">
         <h3>Кресло OAK Walnut</h3>
@@ -474,10 +460,10 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       </div>
     </article>
     <article class="product-card reveal" data-name="Кресло OAK Honey">
-      <div class="product-media kitchen">
+      <div class="product-media chairs">
         <img src="images/kitchen/oak-honey.jpg" alt="Кресло OAK Honey" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Кресло</span>
       </div>
       <div class="product-body">
         <h3>Кресло OAK Honey</h3>
@@ -486,10 +472,10 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       </div>
     </article>
     <article class="product-card reveal" data-name="Стул LINE">
-      <div class="product-media kitchen">
+      <div class="product-media chairs">
         <img src="images/kitchen/line.jpg" alt="Стул LINE" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Стул</span>
       </div>
       <div class="product-body">
         <h3>Стул LINE</h3>
@@ -498,10 +484,10 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       </div>
     </article>
     <article class="product-card reveal" data-name="Кресло LOOP">
-      <div class="product-media kitchen">
+      <div class="product-media chairs">
         <img src="images/kitchen/loop.jpg" alt="Кресло LOOP" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Кресло</span>
       </div>
       <div class="product-body">
         <h3>Кресло LOOP</h3>
@@ -641,12 +627,10 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       </div>
       <div class="footer-col">
         <h4>Каталог</h4>
-        <a href="catalog.html#living-room">Гостиная</a>
-        <a href="catalog.html#bedroom">Спальня</a>
-        <a href="catalog.html#kitchen">Кухня и столовая</a>
-        <a href="catalog.html#office">Кабинет</a>
-        <a href="catalog.html#decor">Свет и декор</a>
-        <a href="catalog.html#outdoor">Терраса и сад</a>
+        <a href="catalog.html#tables">Столы</a>
+        <a href="catalog.html#chairs">Стулья</a>
+        <a href="catalog.html#sofas">Диваны</a>
+        <a href="catalog.html#cabinets">Тумбы</a>
       </div>
       <div class="footer-col">
         <h4>Компания</h4>

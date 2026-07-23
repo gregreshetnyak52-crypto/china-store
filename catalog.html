@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Каталог мебели — China Store</title>
-<meta name="description" content="Каталог мебели из Китая напрямую с фабрик: гостиная, спальня, кухня, кабинет, свет и декор, уличная мебель. Без наценки посредников.">
+<meta name="description" content="Каталог мебели из Китая напрямую с фабрик: столы, стулья, диваны, тумбы. Без наценки посредников.">
 <link rel="canonical" href="https://www.chinastore.ru/catalog.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://www.chinastore.ru/catalog.html">
 <meta property="og:site_name" content="China Store">
 <meta property="og:title" content="Каталог мебели — China Store">
-<meta property="og:description" content="Мебель из Китая напрямую с фабрик — гостиная, спальня, кухня, кабинет, свет и декор, терраса.">
+<meta property="og:description" content="Мебель из Китая напрямую с фабрик — столы, стулья, диваны, тумбы.">
 <meta property="og:image" content="https://www.chinastore.ru/images/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -91,12 +91,10 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .product-media .ph{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
 .product-media .ph.show{display:flex}
 .product-media .ph .icon{width:34%;height:34%;stroke:rgba(43,36,28,.5)}
-.product-media.living-room{background:linear-gradient(135deg,#EAD0B3,#C1734A)}
-.product-media.bedroom{background:linear-gradient(135deg,#ECD8D0,#C08D7C)}
-.product-media.kitchen{background:linear-gradient(135deg,#E6DEC4,#A88A54)}
-.product-media.office{background:linear-gradient(135deg,#E6DFCC,#8E7A52)}
-.product-media.decor{background:linear-gradient(135deg,#E3DCC9,#8A6A4A)}
-.product-media.outdoor{background:linear-gradient(135deg,#DCE3D2,#6E8368)}
+.product-media.tables{background:linear-gradient(135deg,#EAD0B3,#C1734A)}
+.product-media.chairs{background:linear-gradient(135deg,#E6DFCC,#8E7A52)}
+.product-media.sofas{background:linear-gradient(135deg,#ECD8D0,#C08D7C)}
+.product-media.cabinets{background:linear-gradient(135deg,#E3DCC9,#8A6A4A)}
 .product-cat{position:absolute;top:12px;left:12px;background:rgba(250,246,239,.88);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;padding:6px 10px;border-radius:2px;z-index:2}
 .product-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
 .product-body h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.2}
@@ -226,92 +224,90 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
 <section class="container catalog-section">
   <div class="filter-bar" id="filterBar">
     <button class="filter-btn active" data-filter="all">Все</button>
-    <button class="filter-btn" data-filter="living-room">Гостиная</button>
-    <button class="filter-btn" data-filter="bedroom">Спальня</button>
-    <button class="filter-btn" data-filter="kitchen">Кухня и столовая</button>
-    <button class="filter-btn" data-filter="office">Кабинет</button>
-    <button class="filter-btn" data-filter="decor">Свет и декор</button>
-    <button class="filter-btn" data-filter="outdoor">Терраса и сад</button>
+    <button class="filter-btn" data-filter="tables">Столы</button>
+    <button class="filter-btn" data-filter="chairs">Стулья</button>
+    <button class="filter-btn" data-filter="sofas">Диваны</button>
+    <button class="filter-btn" data-filter="cabinets">Тумбы</button>
   </div>
   <p class="filter-count" id="filterCount"></p>
 
   <div class="prod-grid" id="prodGrid">
 
-    <article class="product-card reveal" data-category="kitchen" data-name="Обеденный стол ARC">
-      <div class="product-media kitchen">
+    <article class="product-card reveal" data-category="tables" data-name="Обеденный стол ARC">
+      <div class="product-media tables">
         <img src="images/kitchen/arc.jpg" alt="Обеденный стол ARC" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Стол</span>
       </div>
       <div class="product-body"><h3>Стол ARC</h3><p class="product-desc">Дизайнерский стол с массивным основанием. Подходит для 6–8 человек. Массив дерева, Scandinavian</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
-    <article class="product-card reveal" data-category="kitchen" data-name="Стул NORD">
-      <div class="product-media kitchen">
+    <article class="product-card reveal" data-category="chairs" data-name="Стул NORD">
+      <div class="product-media chairs">
         <img src="images/kitchen/nord.jpg" alt="Стул NORD" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Стул</span>
       </div>
       <div class="product-body"><h3>Стул NORD</h3><p class="product-desc">Минималистичный стул из массива дерева. Scandinavian</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
-    <article class="product-card reveal" data-category="kitchen" data-name="Обеденный стол PURE">
-      <div class="product-media kitchen">
+    <article class="product-card reveal" data-category="tables" data-name="Обеденный стол PURE">
+      <div class="product-media tables">
         <img src="images/kitchen/pure.jpg" alt="Обеденный стол PURE" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-table"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Стол</span>
       </div>
       <div class="product-body"><h3>Стол PURE</h3><p class="product-desc">Большой стол для современной столовой. Массив дерева, Scandinavian</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
-    <article class="product-card reveal" data-category="kitchen" data-name="Кресло OAK Natural">
-      <div class="product-media kitchen">
+    <article class="product-card reveal" data-category="chairs" data-name="Кресло OAK Natural">
+      <div class="product-media chairs">
         <img src="images/kitchen/oak-natural.jpg" alt="Кресло OAK Natural" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Кресло</span>
       </div>
       <div class="product-body"><h3>Кресло OAK Natural</h3><p class="product-desc">Кресло с подлокотниками в натуральном цвете. Массив дерева</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
-    <article class="product-card reveal" data-category="kitchen" data-name="Кресло OAK Walnut">
-      <div class="product-media kitchen">
+    <article class="product-card reveal" data-category="chairs" data-name="Кресло OAK Walnut">
+      <div class="product-media chairs">
         <img src="images/kitchen/oak-walnut.jpg" alt="Кресло OAK Walnut" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Кресло</span>
       </div>
       <div class="product-body"><h3>Кресло OAK Walnut</h3><p class="product-desc">Та же модель в оттенке орех. Массив дерева</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
-    <article class="product-card reveal" data-category="kitchen" data-name="Кресло OAK Honey">
-      <div class="product-media kitchen">
+    <article class="product-card reveal" data-category="chairs" data-name="Кресло OAK Honey">
+      <div class="product-media chairs">
         <img src="images/kitchen/oak-honey.jpg" alt="Кресло OAK Honey" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Кресло</span>
       </div>
       <div class="product-body"><h3>Кресло OAK Honey</h3><p class="product-desc">Та же модель в тёплом медовом оттенке. Массив дерева</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
-    <article class="product-card reveal" data-category="kitchen" data-name="Стул LINE">
-      <div class="product-media kitchen">
+    <article class="product-card reveal" data-category="chairs" data-name="Стул LINE">
+      <div class="product-media chairs">
         <img src="images/kitchen/line.jpg" alt="Стул LINE" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-chair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Стул</span>
       </div>
       <div class="product-body"><h3>Стул LINE</h3><p class="product-desc">Стул с высокой эргономичной спинкой. Scandinavian</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
       </div>
     </article>
-    <article class="product-card reveal" data-category="kitchen" data-name="Кресло LOOP">
-      <div class="product-media kitchen">
+    <article class="product-card reveal" data-category="chairs" data-name="Кресло LOOP">
+      <div class="product-media chairs">
         <img src="images/kitchen/loop.jpg" alt="Кресло LOOP" loading="lazy" onerror="handleImgError(this)">
         <div class="ph"><svg class="icon"><use href="#icon-armchair"/></svg></div>
-        <span class="product-cat">Кухня</span>
+        <span class="product-cat">Кресло</span>
       </div>
       <div class="product-body"><h3>Кресло LOOP</h3><p class="product-desc">Кресло с плавной дугообразной спинкой. Массив дерева</p>
         <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
@@ -341,12 +337,10 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
       </div>
       <div class="footer-col">
         <h4>Каталог</h4>
-        <a href="catalog.html#living-room">Гостиная</a>
-        <a href="catalog.html#bedroom">Спальня</a>
-        <a href="catalog.html#kitchen">Кухня и столовая</a>
-        <a href="catalog.html#office">Кабинет</a>
-        <a href="catalog.html#decor">Свет и декор</a>
-        <a href="catalog.html#outdoor">Терраса и сад</a>
+        <a href="catalog.html#tables">Столы</a>
+        <a href="catalog.html#chairs">Стулья</a>
+        <a href="catalog.html#sofas">Диваны</a>
+        <a href="catalog.html#cabinets">Тумбы</a>
       </div>
       <div class="footer-col">
         <h4>Компания</h4>
@@ -397,8 +391,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
 var WA_PHONE = "79165086569";
 var TG_USER = "LOCKED_CN_MANAGER";
 var CATEGORY_LABELS = {
-  "living-room":"гостиной","bedroom":"спальни","kitchen":"кухни и столовой",
-  "office":"кабинета","decor":"света и декора","outdoor":"террасы и сада"
+  "tables":"столов","chairs":"стульев","sofas":"диванов","cabinets":"тумб"
 };
 
 function handleImgError(img){
