@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оформление заказа — China Store</title>
+<meta name="description" content="Оформление заказа China Store: контакты, адрес доставки, подтверждение состава заказа.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://www.chinastore.ru/checkout.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="China Store">
+<meta property="og:image" content="https://www.chinastore.ru/images/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.chinastore.ru/images/og-cover.jpg">
+<meta name="theme-color" content="#FAF6EF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23B2502C'/%3E%3Cpath d='M72,32 A25,25 0 1 0 72,68' fill='none' stroke='%23FAF6EF' stroke-width='9' stroke-linecap='round'/%3E%3Cpath d='M75,36 C64,30 53,35 53,45 C53,55 78,52 78,62 C78,72 65,77 55,71' fill='none' stroke='%23FAF6EF' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="images/logo-touch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & TOKENS ─────────────────────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#FAF6EF;--bg2:#F1E8DB;--bg3:#E9DCC8;
+--ink:#2B241C;--muted:#7C6F5F;
+--line:rgba(43,36,28,.12);--line2:rgba(43,36,28,.22);
+--accent:#B2502C;--accent-ink:#FAF6EF;--signal:#63704A;
+--serif:'Instrument Serif',serif;--sans:'Manrope',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.container{width:min(1100px,92%);margin:auto}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:rgba(178,80,44,.18)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── NAV ────────────────────────────────────────────────────────────────── */
+nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blur(16px);background:rgba(250,246,239,.82);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:100%}
+.logo{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif);font-size:24px;letter-spacing:.01em}
+.logo span{color:var(--accent);font-style:italic}
+.logo-mark{width:28px;height:28px;flex-shrink:0}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links .nav-btn{background:var(--accent);color:var(--accent-ink);padding:13px 24px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-radius:2px;transition:.3s}
+.nav-links .nav-btn:hover{background:var(--ink);color:var(--accent-ink)}
+.nav-cart{position:relative;display:inline-flex;color:var(--ink)}
+.nav-cart-badge{position:absolute;top:-8px;right:-10px;background:var(--accent);color:var(--accent-ink);font-size:10px;font-weight:700;min-width:17px;height:17px;border-radius:20px;display:none;align-items:center;justify-content:center;padding:0 4px}
+.nav-cart-badge.show{display:flex}
+.menu{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.menu span{width:22px;height:1.5px;background:var(--ink)}
+.mobile-menu{position:fixed;inset:0;background:rgba(250,246,239,.98);z-index:1100;display:none;flex-direction:column;justify-content:center;align-items:center;gap:30px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:26px;color:var(--ink)}
+.mobile-close{position:absolute;top:26px;right:26px;background:none;border:none;color:var(--ink)}
+.mobile-close .icon{width:26px;height:26px}
+
+/* ─── PAGE HEAD ──────────────────────────────────────────────────────────── */
+.page-head{padding:150px 0 40px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.breadcrumb a{color:var(--muted);transition:color .25s}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span{color:var(--ink)}
+.page-head h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.4vw,52px);letter-spacing:-.01em}
+
+/* ─── CHECKOUT LAYOUT ────────────────────────────────────────────────────── */
+.checkout-section{padding-bottom:120px}
+.checkout-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
+.checkout-form{background:var(--bg2);border-radius:8px;padding:36px}
+.form-row{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.form-row label{font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--muted)}
+.form-row label .req{color:var(--accent)}
+.form-row input,.form-row textarea{background:var(--bg);border:1px solid var(--line2);border-radius:3px;padding:14px 16px;font-family:inherit;font-size:14.5px;color:var(--ink)}
+.form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--accent)}
+.form-row textarea{resize:vertical;min-height:80px}
+.form-row.error input,.form-row.error textarea{border-color:#B23A2C}
+.form-error-text{font-size:11.5px;color:#B23A2C;display:none}
+.form-row.error .form-error-text{display:block}
+.form-actions{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.form-consent{font-size:11.5px;color:var(--muted);line-height:1.6;margin-top:16px}
+.form-consent a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.form-consent a:hover{color:var(--accent)}
+
+.checkout-summary{background:var(--bg2);border-radius:8px;padding:32px;position:sticky;top:104px}
+.checkout-summary h3{font-family:var(--serif);font-weight:400;font-size:22px;margin-bottom:20px}
+.summary-item{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#4b4338;padding:10px 0;border-bottom:1px solid var(--line)}
+.summary-item span:first-child{max-width:220px}
+.summary-item .qty{color:var(--muted)}
+.checkout-summary-total{display:flex;justify-content:space-between;font-size:19px;font-weight:700;padding-top:18px;margin-top:6px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:17px 30px;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;transition:.3s;border-radius:2px;border:1px solid transparent;white-space:nowrap;width:100%}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--ink)}
+.btn-secondary{border:1px solid var(--line2);color:var(--ink);background:none}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ─── CONFIRMATION ───────────────────────────────────────────────────────── */
+.confirm-panel{text-align:center;padding:70px 24px;max-width:560px;margin:0 auto}
+.confirm-icon{width:64px;height:64px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;margin:0 auto 26px}
+.confirm-icon .icon{width:30px;height:30px;stroke:var(--signal)}
+.confirm-panel h2{font-family:var(--serif);font-weight:400;font-size:30px;margin-bottom:16px}
+.confirm-panel p{color:var(--muted);font-size:14.5px;line-height:1.7;margin-bottom:8px}
+.confirm-order-id{font-family:var(--serif);font-size:20px;color:var(--accent);margin:18px 0}
+.confirm-note{background:var(--bg2);border-radius:8px;padding:20px 24px;text-align:left;font-size:12.5px;color:var(--muted);line-height:1.65;margin:28px 0}
+.confirm-actions{display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.confirm-actions .btn{width:auto}
+
+.checkout-empty{text-align:center;padding:80px 20px}
+.checkout-empty p{color:var(--muted);margin-bottom:24px;font-size:15px}
+.checkout-empty .btn{width:auto}
+
+/* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .9fr .9fr .9fr;gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(250,246,239,.14)}
+.footer-brand .logo{color:var(--bg)}
+.footer-brand .logo span{color:var(--accent)}
+.footer-brand p{font-size:13.5px;line-height:1.7;margin-top:16px;max-width:280px;color:rgba(250,246,239,.55)}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:18px}
+.footer-col a,.footer-col span{display:block;font-size:13.5px;color:rgba(250,246,239,.72);margin-bottom:12px;transition:.25s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;font-size:12px;color:rgba(250,246,239,.4);flex-wrap:wrap;gap:12px}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
+@media (max-width:960px){
+  .nav-links > a:not(.nav-cart){display:none}
+  .menu{display:flex}
+  .checkout-layout{grid-template-columns:1fr}
+  .checkout-summary{position:static}
+  .footer-grid{grid-template-columns:1fr 1fr;row-gap:36px}
+}
+@media (max-width:640px){
+  .footer-grid{grid-template-columns:1fr}
+  .confirm-actions{flex-direction:column}
+  .confirm-actions .btn{width:100%}
+}
+/* ─── COOKIE CONSENT ─────────────────────────────────────────────────────── */
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:1500;background:var(--ink);padding:22px 0;transform:translateY(120%);transition:transform .45s ease;box-shadow:0 -10px 32px rgba(0,0,0,.16)}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.cookie-inner p{font-size:12.5px;line-height:1.65;max-width:720px;margin:0;color:rgba(250,246,239,.75)}
+.cookie-inner a{color:var(--bg);text-decoration:underline;text-underline-offset:2px}
+.cookie-inner a:hover{color:var(--accent)}
+.cookie-accept{flex-shrink:0;padding:13px 28px;background:var(--accent);color:var(--accent-ink);border:none;border-radius:2px;font-family:inherit;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:.25s;white-space:nowrap}
+.cookie-accept:hover{background:var(--bg);color:var(--ink)}
+@media (max-width:640px){
+  .cookie-banner{padding:18px 0}
+  .cookie-inner{flex-direction:column;align-items:stretch;text-align:left;gap:16px}
+  .cookie-accept{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<svg style="display:none">
+<symbol id="icon-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="icon-mark" viewBox="0 0 100 100"><path d="M 72,30 A 27,27 0 1 0 72,70" fill="none" stroke="#B2502C" stroke-width="9" stroke-linecap="round"/><path d="M 76,34 C 64,27 52,33 52,44 C 52,55 80,51 80,63 C 80,74 66,80 55,73" fill="none" stroke="#8B4A28" stroke-width="9" stroke-linecap="round"/></symbol>
+<symbol id="icon-cart" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+<symbol id="icon-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol>
+</svg>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo"><svg class="logo-mark"><use href="#icon-mark"/></svg>China <span>Store</span></a>
+    <div class="nav-links">
+      <a href="catalog.html">Каталог</a>
+      <a href="index.html#process">Как это работает</a>
+      <a href="index.html#why">Почему мы</a>
+      <a href="index.html#contact">Контакты</a>
+      <a href="cart.html" class="nav-cart" aria-label="Корзина"><svg class="icon"><use href="#icon-cart"/></svg><span class="nav-cart-badge">0</span></a>
+      <a href="https://t.me/LOCKED_CN_MANAGER" target="_blank" rel="noopener" class="nav-btn">Написать в Telegram</a>
+    </div>
+    <button class="menu" id="menuBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Закрыть меню"><svg class="icon"><use href="#icon-close"/></svg></button>
+  <a href="catalog.html">Каталог</a>
+  <a href="index.html#process">Как это работает</a>
+  <a href="index.html#why">Почему мы</a>
+  <a href="index.html#contact">Контакты</a>
+  <a href="cart.html">Корзина</a>
+</div>
+
+<div class="page-head container">
+  <div class="breadcrumb"><a href="index.html">Главная</a><span>/</span><a href="cart.html">Корзина</a><span>/</span><span>Оформление заказа</span></div>
+  <h1 id="pageTitle">Оформление заказа</h1>
+</div>
+
+<section class="container checkout-section" id="checkoutSection"></section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><svg class="logo-mark"><use href="#icon-mark"/></svg>China <span>Store</span></a>
+        <p>Мебель напрямую с фабрик Китая. Дизайн, материалы и сервис на уровне европейских шоурумов.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Каталог</h4>
+        <a href="catalog.html#tables">Столы</a>
+        <a href="catalog.html#chairs">Стулья</a>
+        <a href="catalog.html#sofas">Диваны</a>
+        <a href="catalog.html#cabinets">Тумбы</a>
+      </div>
+      <div class="footer-col">
+        <h4>Компания</h4>
+        <a href="index.html#process">Как это работает</a>
+        <a href="index.html#why">Почему мы</a>
+        <a href="index.html#contact">Контакты</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="oferta.html">Публичная оферта</a>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <span>+7 916 508-65-69</span>
+        <span>hello@chinastore.ru</span>
+        <a href="https://t.me/LOCKED_CN_MANAGER" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/79165086569" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 China Store. Все права защищены.</span>
+      <span>Мебель из Китая напрямую с фабрик</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script>
+var WA_PHONE = "79165086569";
+var TG_USER = "LOCKED_CN_MANAGER";
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+  });
+}
+
+function makeOrderId(){
+  return 'CS-' + Date.now().toString(36).toUpperCase();
+}
+
+function renderEmpty(){
+  document.getElementById('checkoutSection').innerHTML =
+    '<div class="checkout-empty">' +
+      '<p>Корзина пуста — сначала добавьте товары из каталога.</p>' +
+      '<a href="catalog.html" class="btn btn-primary">Смотреть каталог</a>' +
+    '</div>';
+}
+
+function renderCheckoutForm(){
+  var items = cartItemsWithData();
+  var total = cartTotalPrice();
+
+  var summaryHtml = items.map(function(it){
+    return '<div class="summary-item"><span>' + escapeHtml(it.product.name) + ' <span class="qty">× ' + it.qty + '</span></span><span>' + formatPrice(it.product.price * it.qty) + '</span></div>';
+  }).join('');
+
+  document.getElementById('checkoutSection').innerHTML =
+    '<div class="checkout-layout">' +
+      '<div class="checkout-form">' +
+        '<form id="checkoutForm" novalidate>' +
+          '<div class="form-row" id="rowName">' +
+            '<label for="fName">Имя <span class="req">*</span></label>' +
+            '<input type="text" id="fName" placeholder="Как к вам обращаться" autocomplete="name">' +
+            '<span class="form-error-text">Укажите имя</span>' +
+          '</div>' +
+          '<div class="form-row" id="rowPhone">' +
+            '<label for="fPhone">Телефон <span class="req">*</span></label>' +
+            '<input type="tel" id="fPhone" placeholder="+7" autocomplete="tel">' +
+            '<span class="form-error-text">Укажите телефон для связи</span>' +
+          '</div>' +
+          '<div class="form-row" id="rowAddress">' +
+            '<label for="fAddress">Город и адрес доставки <span class="req">*</span></label>' +
+            '<input type="text" id="fAddress" placeholder="Город, улица, дом, квартира" autocomplete="address-line1">' +
+            '<span class="form-error-text">Укажите город и адрес доставки</span>' +
+          '</div>' +
+          '<div class="form-row">' +
+            '<label for="fComment">Комментарий к заказу</label>' +
+            '<textarea id="fComment" placeholder="Пожелания по срокам, этаж, наличие лифта и т.п."></textarea>' +
+          '</div>' +
+          '<div class="form-actions">' +
+            '<button type="submit" class="btn btn-primary" data-channel="tg">Отправить заказ в Telegram</button>' +
+            '<button type="submit" class="btn btn-secondary" data-channel="wa">Отправить заказ в WhatsApp</button>' +
+          '</div>' +
+          '<p class="form-consent">Нажимая «Отправить заказ», вы соглашаетесь с <a href="privacy.html">политикой обработки персональных данных</a> и <a href="oferta.html">публичной офертой</a>. Заказ отправляется менеджеру для подтверждения — оплата и точные сроки согласовываются отдельно.</p>' +
+        '</form>' +
+      '</div>' +
+      '<div class="checkout-summary">' +
+        '<h3>Ваш заказ</h3>' +
+        summaryHtml +
+        '<div class="checkout-summary-total"><span>Итого</span><span>' + formatPrice(total) + '</span></div>' +
+      '</div>' +
+    '</div>';
+
+  var lastChannel = 'tg';
+  document.querySelectorAll('#checkoutForm [data-channel]').forEach(function(btn){
+    btn.addEventListener('click', function(){ lastChannel = btn.getAttribute('data-channel'); });
+  });
+
+  document.getElementById('checkoutForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('fName').value.trim();
+    var phone = document.getElementById('fPhone').value.trim();
+    var address = document.getElementById('fAddress').value.trim();
+    var comment = document.getElementById('fComment').value.trim();
+
+    var valid = true;
+    var checks = [['rowName', name], ['rowPhone', phone], ['rowAddress', address]];
+    checks.forEach(function(pair){
+      var row = document.getElementById(pair[0]);
+      var ok = pair[1].length > 0;
+      row.classList.toggle('error', !ok);
+      if (!ok) valid = false;
+    });
+    if (!valid) return;
+
+    var orderId = makeOrderId();
+    var currentItems = cartItemsWithData();
+    var message = buildOrderMessage(currentItems, { name: name, phone: phone, address: address, comment: comment }, orderId);
+    openChannel(lastChannel, message, WA_PHONE, TG_USER);
+
+    renderConfirmation(orderId, currentItems);
+    clearCart();
+  });
+}
+
+function renderConfirmation(orderId, items){
+  var total = items.reduce(function(s, it){ return s + (it.product ? it.product.price * it.qty : 0); }, 0);
+  document.getElementById('pageTitle').textContent = 'Заказ отправлен';
+  document.getElementById('checkoutSection').innerHTML =
+    '<div class="confirm-panel">' +
+      '<div class="confirm-icon"><svg class="icon"><use href="#icon-check"/></svg></div>' +
+      '<h2>Заказ отправлен менеджеру</h2>' +
+      '<p>Мы открыли мессенджер с готовым сообщением — если он не открылся сам, отправьте его вручную.</p>' +
+      '<div class="confirm-order-id">№ ' + orderId + '</div>' +
+      '<p>Сумма к подтверждению: <strong>' + formatPrice(total) + '</strong></p>' +
+      '<div class="confirm-note">Это заявка на заказ, а не оплата — деньги сайт не списывает. Менеджер свяжется с вами в течение дня, чтобы подтвердить наличие, сроки и удобный способ оплаты.</div>' +
+      '<div class="confirm-actions">' +
+        '<a href="catalog.html" class="btn btn-secondary">Продолжить покупки</a>' +
+        '<a href="index.html" class="btn btn-primary">На главную</a>' +
+      '</div>' +
+    '</div>';
+}
+
+if (!cartItemsWithData().length){
+  renderEmpty();
+} else {
+  renderCheckoutForm();
+}
+
+var menuBtn = document.getElementById('menuBtn');
+var mobileMenu = document.getElementById('mobileMenu');
+var mobileClose = document.getElementById('mobileClose');
+if (menuBtn){
+  menuBtn.addEventListener('click', function(){ mobileMenu.classList.add('active'); });
+  mobileClose.addEventListener('click', function(){ mobileMenu.classList.remove('active'); });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('active'); });
+  });
+}
+</script>
+<div class="cookie-banner" id="cookieBanner">
+  <div class="container cookie-inner">
+    <p>Мы используем cookie для работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy.html">политикой обработки персональных данных</a> в соответствии с 152-ФЗ.</p>
+    <button type="button" class="cookie-accept" id="cookieAccept">Принять</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY = 'cs_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  var btn = document.getElementById('cookieAccept');
+  if (!banner || !btn) return;
+  var accepted = false;
+  try { accepted = localStorage.getItem(KEY) === '1'; } catch(e){}
+  if (!accepted){
+    setTimeout(function(){ banner.classList.add('show'); }, 500);
+  }
+  btn.addEventListener('click', function(){
+    try { localStorage.setItem(KEY, '1'); } catch(e){}
+    banner.classList.remove('show');
+  });
+})();
+</script>
+</body>
+</html>

@@ -55,6 +55,11 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
 .nav-links .nav-btn{background:var(--accent);color:var(--accent-ink);padding:13px 24px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-radius:2px;transition:.3s}
 .nav-links .nav-btn:hover{background:var(--ink);color:var(--accent-ink)}
+.nav-cart{position:relative;display:inline-flex;color:var(--ink)}
+.nav-cart-badge{position:absolute;top:-8px;right:-10px;background:var(--accent);color:var(--accent-ink);font-size:10px;font-weight:700;min-width:17px;height:17px;border-radius:20px;display:none;align-items:center;justify-content:center;padding:0 4px}
+.nav-cart-badge.show{display:flex}
+.cs-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:14px 24px;border-radius:30px;font-size:13px;font-weight:600;opacity:0;transition:opacity .3s ease,transform .3s ease;z-index:3000;white-space:nowrap;box-shadow:0 12px 32px rgba(0,0,0,.25)}
+.cs-toast.show{opacity:1;transform:translate(-50%,0)}
 .menu{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
 .menu span{width:22px;height:1.5px;background:var(--ink)}
 .mobile-menu{position:fixed;inset:0;background:rgba(250,246,239,.98);z-index:1100;display:none;flex-direction:column;justify-content:center;align-items:center;gap:30px}
@@ -241,6 +246,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
 <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.3" y1="15.3" x2="21" y2="21"/></symbol>
 <symbol id="icon-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
 <symbol id="icon-mark" viewBox="0 0 100 100"><path d="M 72,30 A 27,27 0 1 0 72,70" fill="none" stroke="#B2502C" stroke-width="9" stroke-linecap="round"/><path d="M 76,34 C 64,27 52,33 52,44 C 52,55 80,51 80,63 C 80,74 66,80 55,73" fill="none" stroke="#8B4A28" stroke-width="9" stroke-linecap="round"/></symbol>
+<symbol id="icon-cart" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
 </svg>
 
 <nav>
@@ -251,6 +257,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
       <a href="index.html#process">Как это работает</a>
       <a href="index.html#why">Почему мы</a>
       <a href="index.html#contact">Контакты</a>
+      <a href="cart.html" class="nav-cart" aria-label="Корзина"><svg class="icon"><use href="#icon-cart"/></svg><span class="nav-cart-badge">0</span></a>
       <a href="https://t.me/LOCKED_CN_MANAGER" target="_blank" rel="noopener" class="nav-btn">Написать в Telegram</a>
     </div>
     <button class="menu" id="menuBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
@@ -263,6 +270,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
   <a href="index.html#process">Как это работает</a>
   <a href="index.html#why">Почему мы</a>
   <a href="index.html#contact">Контакты</a>
+  <a href="cart.html">Корзина</a>
 </div>
 
 <div class="page-head container">
@@ -310,7 +318,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=arc">Стол ARC</a></h3><p class="product-spec">Массив дерева · на 6–8 персон</p>
-        <div class="product-foot"><span class="product-price">41 400 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">41 400 ₽</span><button type="button" class="btn-order" data-add-cart="arc">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Стул NORD">
@@ -320,7 +328,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стул</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=nord">Стул NORD</a></h3><p class="product-spec">Массив дерева · Scandinavian</p>
-        <div class="product-foot"><span class="product-price">8 100 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">8 100 ₽</span><button type="button" class="btn-order" data-add-cart="nord">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Обеденный стол PURE">
@@ -330,7 +338,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=pure">Стол PURE</a></h3><p class="product-spec">Массив дерева · для столовой</p>
-        <div class="product-foot"><span class="product-price">33 600 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">33 600 ₽</span><button type="button" class="btn-order" data-add-cart="pure">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло OAK Natural">
@@ -340,7 +348,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Кресло</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=oak-natural">Кресло OAK Natural</a></h3><p class="product-spec">Массив дерева · натуральный цвет</p>
-        <div class="product-foot"><span class="product-price">9 600 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">9 600 ₽</span><button type="button" class="btn-order" data-add-cart="oak-natural">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло OAK Walnut">
@@ -350,7 +358,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Кресло</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=oak-walnut">Кресло OAK Walnut</a></h3><p class="product-spec">Массив дерева · оттенок орех</p>
-        <div class="product-foot"><span class="product-price">9 600 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">9 600 ₽</span><button type="button" class="btn-order" data-add-cart="oak-walnut">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло OAK Honey">
@@ -360,7 +368,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Кресло</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=oak-honey">Кресло OAK Honey</a></h3><p class="product-spec">Массив дерева · медовый оттенок</p>
-        <div class="product-foot"><span class="product-price">9 600 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">9 600 ₽</span><button type="button" class="btn-order" data-add-cart="oak-honey">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло LOOP">
@@ -370,7 +378,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Кресло</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=loop">Кресло LOOP</a></h3><p class="product-spec">Массив дерева · дугообразная спинка</p>
-        <div class="product-foot"><span class="product-price">9 800 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">9 800 ₽</span><button type="button" class="btn-order" data-add-cart="loop">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол NOIR">
@@ -380,7 +388,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=noir">Стол NOIR</a></h3><p class="product-spec">Массив ясеня · скульптурное основание</p>
-        <div class="product-foot"><span class="product-price">36 700 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">36 700 ₽</span><button type="button" class="btn-order" data-add-cart="noir">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол LINEN">
@@ -390,7 +398,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=linen">Стол LINEN</a></h3><p class="product-spec">Массив дуба · комплект со стульями</p>
-        <div class="product-foot"><span class="product-price">35 200 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">35 200 ₽</span><button type="button" class="btn-order" data-add-cart="linen">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Стул CESCA">
@@ -400,7 +408,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стул</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=cesca">Стул CESCA</a></h3><p class="product-spec">Ротанг и кожа · консольная рама</p>
-        <div class="product-foot"><span class="product-price">9 200 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">9 200 ₽</span><button type="button" class="btn-order" data-add-cart="cesca">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Стул BERG">
@@ -410,7 +418,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стул</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=berg">Стул BERG</a></h3><p class="product-spec">Массив дерева · круглое сиденье</p>
-        <div class="product-foot"><span class="product-price">8 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">8 500 ₽</span><button type="button" class="btn-order" data-add-cart="berg">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван CLOUD">
@@ -420,7 +428,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=cloud">Диван CLOUD</a></h3><p class="product-spec">Букле · органичная изогнутая форма</p>
-        <div class="product-foot"><span class="product-price">68 100 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">68 100 ₽</span><button type="button" class="btn-order" data-add-cart="cloud">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван HOLM">
@@ -430,7 +438,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=holm">Диван HOLM</a></h3><p class="product-spec">Массив дерева · 3-местный</p>
-        <div class="product-foot"><span class="product-price">69 200 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">69 200 ₽</span><button type="button" class="btn-order" data-add-cart="holm">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба GLOW">
@@ -440,7 +448,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=glow">Тумба GLOW</a></h3><p class="product-spec">С LED-подсветкой · беспроводная зарядка</p>
-        <div class="product-foot"><span class="product-price">18 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">18 500 ₽</span><button type="button" class="btn-order" data-add-cart="glow">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба MILK">
@@ -450,7 +458,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=milk">Тумба MILK</a></h3><p class="product-spec">Экокожа и массив дерева · 40×40×50 см</p>
-        <div class="product-foot"><span class="product-price">15 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">15 500 ₽</span><button type="button" class="btn-order" data-add-cart="milk">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол SIENA">
@@ -460,7 +468,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=siena">Стол SIENA</a></h3><p class="product-spec">Массив ореха · металлические ножки</p>
-        <div class="product-foot"><span class="product-price">39 200 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">39 200 ₽</span><button type="button" class="btn-order" data-add-cart="siena">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол LOFT">
@@ -470,7 +478,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=loft">Стол LOFT</a></h3><p class="product-spec">Массив дерева · чёрные металлические опоры</p>
-        <div class="product-foot"><span class="product-price">43 700 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">43 700 ₽</span><button type="button" class="btn-order" data-add-cart="loft">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол FOLIO">
@@ -480,7 +488,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=folio">Стол FOLIO</a></h3><p class="product-spec">Массив дерева · чёрный цвет · скульптурные опоры</p>
-        <div class="product-foot"><span class="product-price">37 900 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">37 900 ₽</span><button type="button" class="btn-order" data-add-cart="folio">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол BIRCH">
@@ -490,7 +498,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=birch">Стол BIRCH</a></h3><p class="product-spec">Массив дерева · светлый оттенок · компактный</p>
-        <div class="product-foot"><span class="product-price">26 700 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">26 700 ₽</span><button type="button" class="btn-order" data-add-cart="birch">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол MOBI">
@@ -500,7 +508,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=mobi">Стол MOBI</a></h3><p class="product-spec">Массив дерева · тёплый оттенок · со скамьёй</p>
-        <div class="product-foot"><span class="product-price">36 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">36 500 ₽</span><button type="button" class="btn-order" data-add-cart="mobi">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол ELDER">
@@ -510,7 +518,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=elder">Стол ELDER</a></h3><p class="product-spec">Массив дерева · крестообразные опоры</p>
-        <div class="product-foot"><span class="product-price">38 800 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">38 800 ₽</span><button type="button" class="btn-order" data-add-cart="elder">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол SEINE">
@@ -520,7 +528,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=seine">Стол SEINE</a></h3><p class="product-spec">Массив дерева · резной декор · комплект со скамьёй</p>
-        <div class="product-foot"><span class="product-price">39 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">39 500 ₽</span><button type="button" class="btn-order" data-add-cart="seine">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол HEVEA">
@@ -530,7 +538,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=hevea">Стол HEVEA</a></h3><p class="product-spec">Массив дерева · комплект на 6 персон</p>
-        <div class="product-foot"><span class="product-price">41 100 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">41 100 ₽</span><button type="button" class="btn-order" data-add-cart="hevea">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол GRAIN">
@@ -540,7 +548,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=grain">Стол GRAIN</a></h3><p class="product-spec">Массив дерева · комплект на 6 персон</p>
-        <div class="product-foot"><span class="product-price">41 100 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">41 100 ₽</span><button type="button" class="btn-order" data-add-cart="grain">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол PETIT">
@@ -550,7 +558,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=petit">Стол PETIT</a></h3><p class="product-spec">Массив дерева · компактный формат</p>
-        <div class="product-foot"><span class="product-price">24 100 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">24 100 ₽</span><button type="button" class="btn-order" data-add-cart="petit">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="tables" data-name="Стол DUNE">
@@ -560,7 +568,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стол</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=dune">Стол DUNE</a></h3><p class="product-spec">Массив ясеня · скруглённые края</p>
-        <div class="product-foot"><span class="product-price">31 600 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">31 600 ₽</span><button type="button" class="btn-order" data-add-cart="dune">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло HIRO">
@@ -570,7 +578,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Кресло</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=hiro">Кресло HIRO</a></h3><p class="product-spec">Массив ореха · с подлокотниками</p>
-        <div class="product-foot"><span class="product-price">11 300 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">11 300 ₽</span><button type="button" class="btn-order" data-add-cart="hiro">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло EAMES">
@@ -580,7 +588,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Кресло</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=eames">Кресло EAMES</a></h3><p class="product-spec">Гнутая фанера · кожаное сиденье</p>
-        <div class="product-foot"><span class="product-price">10 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">10 500 ₽</span><button type="button" class="btn-order" data-add-cart="eames">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло KENDO">
@@ -590,7 +598,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Кресло</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=kendo">Кресло KENDO</a></h3><p class="product-spec">Массив дерева · кожаное сиденье · подлокотники</p>
-        <div class="product-foot"><span class="product-price">11 100 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">11 100 ₽</span><button type="button" class="btn-order" data-add-cart="kendo">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Кресло ZEN">
@@ -600,7 +608,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Кресло</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=zen">Кресло ZEN</a></h3><p class="product-spec">Массив дерева · минимализм</p>
-        <div class="product-foot"><span class="product-price">11 900 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">11 900 ₽</span><button type="button" class="btn-order" data-add-cart="zen">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Стул SADDLE">
@@ -610,7 +618,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стул</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=saddle">Стул SADDLE</a></h3><p class="product-spec">Экокожа · цельнокроеная обивка</p>
-        <div class="product-foot"><span class="product-price">9 800 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">9 800 ₽</span><button type="button" class="btn-order" data-add-cart="saddle">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Стул CREAM">
@@ -620,7 +628,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стул</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=cream">Стул CREAM</a></h3><p class="product-spec">Букле · округлая спинка</p>
-        <div class="product-foot"><span class="product-price">10 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">10 000 ₽</span><button type="button" class="btn-order" data-add-cart="cream">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Стул HORN">
@@ -630,7 +638,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стул</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=horn">Стул HORN</a></h3><p class="product-spec">Массив дерева · экокожа · светлый оттенок</p>
-        <div class="product-foot"><span class="product-price">9 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">9 000 ₽</span><button type="button" class="btn-order" data-add-cart="horn">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="chairs" data-name="Стул MILA">
@@ -640,7 +648,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Стул</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=mila">Стул MILA</a></h3><p class="product-spec">Гнутая фанера · металлические ножки</p>
-        <div class="product-foot"><span class="product-price">8 700 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">8 700 ₽</span><button type="button" class="btn-order" data-add-cart="mila">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван AUSTIN">
@@ -650,7 +658,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=austin">Диван AUSTIN</a></h3><p class="product-spec">Массив дерева · текстиль · 3-местный</p>
-        <div class="product-foot"><span class="product-price">72 100 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">72 100 ₽</span><button type="button" class="btn-order" data-add-cart="austin">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван ONYX">
@@ -660,7 +668,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=onyx">Диван ONYX</a></h3><p class="product-spec">Массив дерева · комплект 3+2+1</p>
-        <div class="product-foot"><span class="product-price">155 400 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">155 400 ₽</span><button type="button" class="btn-order" data-add-cart="onyx">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван CHAISE">
@@ -670,7 +678,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=chaise">Диван CHAISE</a></h3><p class="product-spec">Массив дерева · 4-местный</p>
-        <div class="product-foot"><span class="product-price">79 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">79 500 ₽</span><button type="button" class="btn-order" data-add-cart="chaise">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван BLOCK">
@@ -680,7 +688,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=block">Диван BLOCK</a></h3><p class="product-spec">Букле · модульная система</p>
-        <div class="product-foot"><span class="product-price">76 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">76 500 ₽</span><button type="button" class="btn-order" data-add-cart="block">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван ASH">
@@ -690,7 +698,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=ash">Диван ASH</a></h3><p class="product-spec">Массив ясеня · платформенная база · лён</p>
-        <div class="product-foot"><span class="product-price">63 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">63 500 ₽</span><button type="button" class="btn-order" data-add-cart="ash">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван MIST">
@@ -700,7 +708,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=mist">Диван MIST</a></h3><p class="product-spec">Массив дерева · угловой · с оттоманкой</p>
-        <div class="product-foot"><span class="product-price">87 900 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">87 900 ₽</span><button type="button" class="btn-order" data-add-cart="mist">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван NIWA">
@@ -710,7 +718,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=niwa">Диван NIWA</a></h3><p class="product-spec">Массив дерева · комплект 3+2+1</p>
-        <div class="product-foot"><span class="product-price">148 900 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">148 900 ₽</span><button type="button" class="btn-order" data-add-cart="niwa">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван NOVA">
@@ -720,7 +728,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=nova">Диван NOVA</a></h3><p class="product-spec">Букле · угловой · плюшевые подлокотники</p>
-        <div class="product-foot"><span class="product-price">86 800 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">86 800 ₽</span><button type="button" class="btn-order" data-add-cart="nova">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван LINA">
@@ -730,7 +738,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=lina">Диван LINA</a></h3><p class="product-spec">Рогожка · тёмно-серый · с оттоманкой</p>
-        <div class="product-foot"><span class="product-price">81 300 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">81 300 ₽</span><button type="button" class="btn-order" data-add-cart="lina">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван FOLD">
@@ -740,7 +748,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=fold">Диван FOLD</a></h3><p class="product-spec">Массив дуба · декоративная решётка</p>
-        <div class="product-foot"><span class="product-price">71 000 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">71 000 ₽</span><button type="button" class="btn-order" data-add-cart="fold">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван ROMA">
@@ -750,7 +758,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=roma">Диван ROMA</a></h3><p class="product-spec">Букле · глубокая посадка</p>
-        <div class="product-foot"><span class="product-price">74 700 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">74 700 ₽</span><button type="button" class="btn-order" data-add-cart="roma">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван PETRA">
@@ -760,7 +768,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=petra">Диван PETRA</a></h3><p class="product-spec">Букле · модульная секция</p>
-        <div class="product-foot"><span class="product-price">36 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">36 500 ₽</span><button type="button" class="btn-order" data-add-cart="petra">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="sofas" data-name="Диван HAVEN">
@@ -770,7 +778,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Диван</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=haven">Диван HAVEN</a></h3><p class="product-spec">Металл и дерево · без подлокотников</p>
-        <div class="product-foot"><span class="product-price">53 200 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">53 200 ₽</span><button type="button" class="btn-order" data-add-cart="haven">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба CANE">
@@ -780,7 +788,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=cane">Тумба CANE</a></h3><p class="product-spec">Чёрный цвет · плетение ротанг</p>
-        <div class="product-foot"><span class="product-price">17 200 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">17 200 ₽</span><button type="button" class="btn-order" data-add-cart="cane">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба AMBER">
@@ -790,7 +798,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=amber">Тумба AMBER</a></h3><p class="product-spec">Массив дерева · два ящика · округлые углы</p>
-        <div class="product-foot"><span class="product-price">18 700 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">18 700 ₽</span><button type="button" class="btn-order" data-add-cart="amber">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба NATUR">
@@ -800,7 +808,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=natur">Тумба NATUR</a></h3><p class="product-spec">Экокожа и дерево · два ящика</p>
-        <div class="product-foot"><span class="product-price">16 600 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">16 600 ₽</span><button type="button" class="btn-order" data-add-cart="natur">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба RETRO">
@@ -810,7 +818,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=retro">Тумба RETRO</a></h3><p class="product-spec">Массив дерева · рельефный фасад</p>
-        <div class="product-foot"><span class="product-price">17 900 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">17 900 ₽</span><button type="button" class="btn-order" data-add-cart="retro">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба HALO">
@@ -820,7 +828,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=halo">Тумба HALO</a></h3><p class="product-spec">Глянцевый фасад · LED-подсветка</p>
-        <div class="product-foot"><span class="product-price">17 300 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">17 300 ₽</span><button type="button" class="btn-order" data-add-cart="halo">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба VOLT">
@@ -830,7 +838,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=volt">Тумба VOLT</a></h3><p class="product-spec">LED-подсветка · беспроводная зарядка</p>
-        <div class="product-foot"><span class="product-price">20 700 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">20 700 ₽</span><button type="button" class="btn-order" data-add-cart="volt">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба BIRK">
@@ -840,7 +848,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=birk">Тумба BIRK</a></h3><p class="product-spec">Массив дерева · скандинавские ножки</p>
-        <div class="product-foot"><span class="product-price">14 200 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">14 200 ₽</span><button type="button" class="btn-order" data-add-cart="birk">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба PECAN">
@@ -850,7 +858,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=pecan">Тумба PECAN</a></h3><p class="product-spec">Массив дерева · округлые формы</p>
-        <div class="product-foot"><span class="product-price">19 100 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">19 100 ₽</span><button type="button" class="btn-order" data-add-cart="pecan">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба STEM">
@@ -860,7 +868,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=stem">Тумба STEM</a></h3><p class="product-spec">Дерево и белый цвет · верхняя полка</p>
-        <div class="product-foot"><span class="product-price">20 200 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">20 200 ₽</span><button type="button" class="btn-order" data-add-cart="stem">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба MODUL">
@@ -870,7 +878,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=modul">Тумба MODUL</a></h3><p class="product-spec">Два тона · белый и орех</p>
-        <div class="product-foot"><span class="product-price">16 600 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">16 600 ₽</span><button type="button" class="btn-order" data-add-cart="modul">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба SIDE">
@@ -880,7 +888,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=side">Тумба SIDE</a></h3><p class="product-spec">Три яруса · открытые полки</p>
-        <div class="product-foot"><span class="product-price">15 300 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">15 300 ₽</span><button type="button" class="btn-order" data-add-cart="side">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба SLIM">
@@ -890,7 +898,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=slim">Тумба SLIM</a></h3><p class="product-spec">Белый цвет · узкий корпус · два ящика</p>
-        <div class="product-foot"><span class="product-price">11 900 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">11 900 ₽</span><button type="button" class="btn-order" data-add-cart="slim">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-category="cabinets" data-name="Тумба RATTAN">
@@ -900,7 +908,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
         <span class="product-cat">Тумба</span>
       </a>
       <div class="product-body"><h3><a href="product.html?p=rattan">Тумба RATTAN</a></h3><p class="product-spec">Ротанговое плетение · приставной столик</p>
-        <div class="product-foot"><span class="product-price">14 500 ₽</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">14 500 ₽</span><button type="button" class="btn-order" data-add-cart="rattan">В корзину</button></div>
       </div>
     </article>
 
@@ -957,31 +965,9 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px;marg
   </div>
 </footer>
 
-<!-- ─── ORDER MODAL ────────────────────────────────────────────────────────── -->
-<div class="modal-overlay" id="orderModal">
-  <div class="modal">
-    <button class="modal-close" id="modalClose" aria-label="Закрыть"><svg class="icon"><use href="#icon-close"/></svg></button>
-    <span class="modal-kicker">Быстрый заказ</span>
-    <h3 id="modalProductName">Товар</h3>
-    <div class="form-row">
-      <label for="mName">Имя</label>
-      <input type="text" id="mName" placeholder="Как к вам обращаться">
-    </div>
-    <div class="form-row">
-      <label for="mPhone">Телефон</label>
-      <input type="tel" id="mPhone" placeholder="+7">
-    </div>
-    <div class="form-actions">
-      <button type="button" class="btn btn-primary" onclick="sendOrder('tg')">Отправить в Telegram</button>
-      <button type="button" class="btn" onclick="sendOrder('wa')">Отправить в WhatsApp</button>
-    </div>
-    <p class="form-consent">Отправляя заявку, вы соглашаетесь с <a href="privacy.html">политикой обработки персональных данных</a> и <a href="oferta.html">публичной офертой</a>.</p>
-  </div>
-</div>
-
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
 <script>
-var WA_PHONE = "79165086569";
-var TG_USER = "LOCKED_CN_MANAGER";
 var CATEGORY_LABELS = {
   "tables":"столов","chairs":"стульев","sofas":"диванов","cabinets":"тумб"
 };
@@ -991,55 +977,6 @@ function handleImgError(img){
   var ph = img.parentElement.querySelector('.ph');
   if (ph) ph.classList.add('show');
 }
-
-function buildMessage(product, name, phone){
-  var lines = [];
-  lines.push(product ? ('Здравствуйте! Интересует: ' + product) : 'Здравствуйте! Хочу подобрать мебель.');
-  if (name) lines.push('Имя: ' + name);
-  if (phone) lines.push('Телефон: ' + phone);
-  return lines.join('\n');
-}
-
-function openChannel(channel, text){
-  var encoded = encodeURIComponent(text);
-  var url = channel === 'wa'
-    ? ('https://wa.me/' + WA_PHONE + '?text=' + encoded)
-    : ('https://t.me/' + TG_USER + '?text=' + encoded);
-  window.open(url, '_blank', 'noopener');
-}
-
-var currentProduct = '';
-function sendOrder(channel){
-  var name = document.getElementById('mName').value.trim();
-  var phone = document.getElementById('mPhone').value.trim();
-  openChannel(channel, buildMessage(currentProduct, name, phone));
-}
-
-function openOrderModal(productName){
-  currentProduct = productName || '';
-  document.getElementById('modalProductName').textContent = productName || 'Товар';
-  document.getElementById('mName').value = '';
-  document.getElementById('mPhone').value = '';
-  document.getElementById('orderModal').classList.add('active');
-}
-function closeOrderModal(){
-  document.getElementById('orderModal').classList.remove('active');
-}
-
-document.addEventListener('click', function(e){
-  var orderBtn = e.target.closest('[data-order]');
-  if (orderBtn){
-    var card = orderBtn.closest('[data-name]');
-    openOrderModal(card ? card.getAttribute('data-name') : '');
-  }
-});
-document.getElementById('modalClose').addEventListener('click', closeOrderModal);
-document.getElementById('orderModal').addEventListener('click', function(e){
-  if (e.target === this) closeOrderModal();
-});
-document.addEventListener('keydown', function(e){
-  if (e.key === 'Escape') closeOrderModal();
-});
 
 var menuBtn = document.getElementById('menuBtn');
 var mobileMenu = document.getElementById('mobileMenu');

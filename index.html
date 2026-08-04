@@ -65,6 +65,11 @@ nav{position:fixed;top:0;width:100%;z-index:1000;height:84px;backdrop-filter:blu
 .nav-links a:hover{color:var(--ink)}
 .nav-links .nav-btn{background:var(--accent);color:var(--accent-ink);padding:13px 24px;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;border-radius:2px;transition:.3s}
 .nav-links .nav-btn:hover{background:var(--ink);color:var(--accent-ink)}
+.nav-cart{position:relative;display:inline-flex;color:var(--ink)}
+.nav-cart-badge{position:absolute;top:-8px;right:-10px;background:var(--accent);color:var(--accent-ink);font-size:10px;font-weight:700;min-width:17px;height:17px;border-radius:20px;display:none;align-items:center;justify-content:center;padding:0 4px}
+.nav-cart-badge.show{display:flex}
+.cs-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:14px 24px;border-radius:30px;font-size:13px;font-weight:600;opacity:0;transition:opacity .3s ease,transform .3s ease;z-index:3000;white-space:nowrap;box-shadow:0 12px 32px rgba(0,0,0,.25)}
+.cs-toast.show{opacity:1;transform:translate(-50%,0)}
 .menu{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
 .menu span{width:22px;height:1.5px;background:var(--ink)}
 .mobile-menu{position:fixed;inset:0;background:rgba(250,246,239,.98);z-index:1100;display:none;flex-direction:column;justify-content:center;align-items:center;gap:30px}
@@ -296,6 +301,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
 <symbol id="icon-arrow" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><path d="M13 7 L18 12 L13 17"/></symbol>
 <symbol id="icon-close" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
 <symbol id="icon-mark" viewBox="0 0 100 100"><path d="M 72,30 A 27,27 0 1 0 72,70" fill="none" stroke="#B2502C" stroke-width="9" stroke-linecap="round"/><path d="M 76,34 C 64,27 52,33 52,44 C 52,55 80,51 80,63 C 80,74 66,80 55,73" fill="none" stroke="#8B4A28" stroke-width="9" stroke-linecap="round"/></symbol>
+<symbol id="icon-cart" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
 </svg>
 
 <nav>
@@ -306,6 +312,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       <a href="#process">Как это работает</a>
       <a href="catalog.html">Каталог</a>
       <a href="#contact">Контакты</a>
+      <a href="cart.html" class="nav-cart" aria-label="Корзина"><svg class="icon"><use href="#icon-cart"/></svg><span class="nav-cart-badge">0</span></a>
       <a href="https://t.me/LOCKED_CN_MANAGER" target="_blank" rel="noopener" class="nav-btn">Написать в Telegram</a>
     </div>
     <button class="menu" id="menuBtn" aria-label="Открыть меню"><span></span><span></span><span></span></button>
@@ -318,6 +325,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
   <a href="#process">Как это работает</a>
   <a href="catalog.html">Каталог</a>
   <a href="#contact">Контакты</a>
+  <a href="cart.html">Корзина</a>
 </div>
 
 <!-- ─── HERO ───────────────────────────────────────────────────────────────── -->
@@ -494,7 +502,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       <div class="product-body">
         <h3><a href="product.html?p=arc">Стол ARC</a></h3>
         <p class="product-desc">Массивное скульптурное основание, на 6–8 человек</p>
-        <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">41 400 ₽</span><button type="button" class="btn-order" data-add-cart="arc">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-name="Стол NOIR">
@@ -506,7 +514,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       <div class="product-body">
         <h3><a href="product.html?p=noir">Стол NOIR</a></h3>
         <p class="product-desc">Массив ясеня, скульптурное основание</p>
-        <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">36 700 ₽</span><button type="button" class="btn-order" data-add-cart="noir">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-name="Стул NORD">
@@ -518,7 +526,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       <div class="product-body">
         <h3><a href="product.html?p=nord">Стул NORD</a></h3>
         <p class="product-desc">Минималистичный, массив дерева</p>
-        <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">8 100 ₽</span><button type="button" class="btn-order" data-add-cart="nord">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-name="Стул BERG">
@@ -530,7 +538,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       <div class="product-body">
         <h3><a href="product.html?p=berg">Стул BERG</a></h3>
         <p class="product-desc">Массив дерева, круглое сиденье</p>
-        <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">8 500 ₽</span><button type="button" class="btn-order" data-add-cart="berg">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-name="Диван CLOUD">
@@ -542,7 +550,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       <div class="product-body">
         <h3><a href="product.html?p=cloud">Диван CLOUD</a></h3>
         <p class="product-desc">Букле, органичная изогнутая форма</p>
-        <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">68 100 ₽</span><button type="button" class="btn-order" data-add-cart="cloud">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-name="Диван HOLM">
@@ -554,7 +562,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       <div class="product-body">
         <h3><a href="product.html?p=holm">Диван HOLM</a></h3>
         <p class="product-desc">Массив дерева, 3-местный</p>
-        <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">69 200 ₽</span><button type="button" class="btn-order" data-add-cart="holm">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-name="Тумба GLOW">
@@ -566,7 +574,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       <div class="product-body">
         <h3><a href="product.html?p=glow">Тумба GLOW</a></h3>
         <p class="product-desc">С LED-подсветкой, беспроводная зарядка</p>
-        <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">18 500 ₽</span><button type="button" class="btn-order" data-add-cart="glow">В корзину</button></div>
       </div>
     </article>
     <article class="product-card reveal" data-name="Тумба MILK">
@@ -578,7 +586,7 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
       <div class="product-body">
         <h3><a href="product.html?p=milk">Тумба MILK</a></h3>
         <p class="product-desc">Экокожа и массив дерева</p>
-        <div class="product-foot"><span class="product-price">Цена по запросу</span><button type="button" class="btn-order" data-order>Заказать</button></div>
+        <div class="product-foot"><span class="product-price">15 500 ₽</span><button type="button" class="btn-order" data-add-cart="milk">В корзину</button></div>
       </div>
     </article>
   <div class="prod-cta"><a href="catalog.html" class="btn btn-secondary">Показать весь каталог</a></div>
@@ -665,28 +673,8 @@ footer{background:var(--ink);color:rgba(250,246,239,.7);padding:80px 0 32px}
   </div>
 </footer>
 
-<!-- ─── ORDER MODAL ────────────────────────────────────────────────────────── -->
-<div class="modal-overlay" id="orderModal">
-  <div class="modal">
-    <button class="modal-close" id="modalClose" aria-label="Закрыть"><svg class="icon"><use href="#icon-close"/></svg></button>
-    <span class="modal-kicker">Быстрый заказ</span>
-    <h3 id="modalProductName">Товар</h3>
-    <div class="form-row">
-      <label for="mName">Имя</label>
-      <input type="text" id="mName" placeholder="Как к вам обращаться">
-    </div>
-    <div class="form-row">
-      <label for="mPhone">Телефон</label>
-      <input type="tel" id="mPhone" placeholder="+7">
-    </div>
-    <div class="form-actions">
-      <button type="button" class="btn btn-primary" onclick="sendOrder('tg')">Отправить в Telegram</button>
-      <button type="button" class="btn" onclick="sendOrder('wa')">Отправить в WhatsApp</button>
-    </div>
-    <p class="form-consent">Отправляя заявку, вы соглашаетесь с <a href="privacy.html">политикой обработки персональных данных</a> и <a href="oferta.html">публичной офертой</a>.</p>
-  </div>
-</div>
-
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
 <script>
 var WA_PHONE = "79165086569";
 var TG_USER = "LOCKED_CN_MANAGER";
@@ -720,39 +708,6 @@ function sendLead(channel){
   var msg = document.getElementById('cMsg').value.trim();
   openChannel(channel, buildMessage(null, name, phone, msg));
 }
-
-var currentProduct = '';
-function sendOrder(channel){
-  var name = document.getElementById('mName').value.trim();
-  var phone = document.getElementById('mPhone').value.trim();
-  openChannel(channel, buildMessage(currentProduct, name, phone, null));
-}
-
-function openOrderModal(productName){
-  currentProduct = productName || '';
-  document.getElementById('modalProductName').textContent = productName || 'Товар';
-  document.getElementById('mName').value = '';
-  document.getElementById('mPhone').value = '';
-  document.getElementById('orderModal').classList.add('active');
-}
-function closeOrderModal(){
-  document.getElementById('orderModal').classList.remove('active');
-}
-
-document.addEventListener('click', function(e){
-  var orderBtn = e.target.closest('[data-order]');
-  if (orderBtn){
-    var card = orderBtn.closest('[data-name]');
-    openOrderModal(card ? card.getAttribute('data-name') : '');
-  }
-});
-document.getElementById('modalClose').addEventListener('click', closeOrderModal);
-document.getElementById('orderModal').addEventListener('click', function(e){
-  if (e.target === this) closeOrderModal();
-});
-document.addEventListener('keydown', function(e){
-  if (e.key === 'Escape') closeOrderModal();
-});
 
 var menuBtn = document.getElementById('menuBtn');
 var mobileMenu = document.getElementById('mobileMenu');
